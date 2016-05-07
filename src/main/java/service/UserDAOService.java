@@ -1,5 +1,6 @@
 package service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Query;
@@ -8,60 +9,88 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.transaction.annotation.Transactional;
 
-import model.User;
+import entities.UserEntity;
+import json.UsersDataJson;
+import json.UsersDataListJson;
+import json.UsersListJson;
 
 @Transactional
 public class UserDAOService implements UserDAO {
 	
-	private SessionFactory sessionFactory;
+	private static SessionFactory sessionFactory;
 	
 	public UserDAOService() {
-		sessionFactory = HibernateUtil.getSessionFactory();
+		if(sessionFactory == null)
+			sessionFactory = HibernateUtil.getSessionFactory();
 	}
 
 	@Override
-	public List<User> selectAll() {
+	public UsersListJson selectAll() {
 		Session session = sessionFactory.openSession();
 		Transaction trans = session.beginTransaction();
 		Query query = session.createQuery("FROM  User");
 		trans.commit();
-		return query.list();
+		return new UsersListJson((List<UserEntity>)query.list());
 	}
 
 	@Override
-	public User selectByEmail(String email) {
+	public UserEntity selectByEmail(String email) {
 		Session session = sessionFactory.openSession();
 		Transaction trans = session.beginTransaction();
 		Query query = session.createQuery("FROM User WHERE email = '" + email + "'");
 		trans.commit();
 		if(query.list().isEmpty())
-			return new User();
-		return (User) query.list().get(0);
+			return new UserEntity();
+		return (UserEntity) query.list().get(0);
 	}
 
 	@Override
-	public void add(User user) {
+	public void add(UserEntity user) {
 		Session session = sessionFactory.getCurrentSession();
 		Transaction trans = session.beginTransaction();
 		session.save(user);
 		trans.commit();
-		
 	}
 
 	@Override
 	public void delete(int id) {
 		Session session = sessionFactory.getCurrentSession();
 		Transaction trans = session.beginTransaction();
-		User user = (User) session.get(User.class, id);
+		UserEntity user = (UserEntity) session.get(UserEntity.class, id);
 		session.delete(user);
 		trans.commit();
 	}
 
 	@Override
-	public void edit(User user) {
-		// TODO Auto-generated method stub
+	public UsersDataJson selectUsersDataById(Integer id) {
+		Session session = sessionFactory.openSession();
+		Transaction trans = session.beginTransaction();
 		
+		Query query = session.createQuery("FROM User WHERE id = '" + id + "'");
+		trans.commit();
+		
+		UserEntity user = null;
+		UsersDataJson usersData = null;
+		
+		if(query.list().isEmpty())
+			user = new UserEntity();
+		else
+			user = (UserEntity) query.list().get(0);
+		
+		usersData = new UsersDataJson(user.getId(), user.getUsername(),
+									  user.getFirstname(), user.getLastname(),
+									  user.getCharacter());
+		return usersData;
 	}
-	
-	
+
+	@Override
+	public UsersDataListJson getUsersDataListByIds(List<Integer> ids) {
+		List<UsersDataJson> usersData = new ArrayList<UsersDataJson>();
+		
+		for (Integer id : ids) {
+			usersData.add(selectUsersDataById(id));
+		}
+		
+		return new UsersDataListJson(usersData);
+	}
 }

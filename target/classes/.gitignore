@@ -1,4 +1,6 @@
 /application/
+/json/
 /model/
 /service/
-/json/
+/entities/
+/modeles/

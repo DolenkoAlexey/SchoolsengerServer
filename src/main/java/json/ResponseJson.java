@@ -1,8 +1,10 @@
 package json;
 
+import java.io.Serializable;
+
 import com.google.gson.annotations.SerializedName;
 
-public class ResponseJson {
+public class ResponseJson implements Serializable{
 
     @SerializedName("response")
     private boolean response;

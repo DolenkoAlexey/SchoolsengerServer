@@ -4,7 +4,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
-import model.User;
+
 
 public class HibernateUtil {
 	
@@ -14,7 +14,6 @@ public class HibernateUtil {
 		if(sessionFactory == null) {
 			try{
 				Configuration conf = new Configuration().configure();
-				//conf.addClass(User.class);
 				StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().
 						applySettings(conf.getProperties());
 				

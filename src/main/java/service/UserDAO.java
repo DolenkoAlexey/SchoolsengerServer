@@ -2,17 +2,22 @@ package service;
 
 import java.util.List;
 
-import model.User;
+import entities.UserEntity;
+import json.UsersDataJson;
+import json.UsersDataListJson;
+import json.UsersListJson;
 
 public interface UserDAO {
 	
-	public List<User> selectAll();
+	public UsersListJson selectAll();
 	
-	public User selectByEmail(String email);
+	public UserEntity selectByEmail(String email);
 	
-	public void add(User user);
+	public UsersDataJson selectUsersDataById(Integer id);
+	
+	public UsersDataListJson getUsersDataListByIds(List<Integer> ids);
+	
+	public void add(UserEntity user);
 	
 	public void delete(int id);
-	
-	public void edit(User user);
 }
