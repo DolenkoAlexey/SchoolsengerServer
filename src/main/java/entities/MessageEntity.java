@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 import com.google.gson.annotations.SerializedName;
 
 @Entity
-public class MessageEntity implements Serializable{
+public class MessageEntity{
 
 	private int id;
 	private int idFrom;

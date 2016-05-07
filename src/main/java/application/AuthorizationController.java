@@ -14,6 +14,8 @@ import com.google.gson.GsonBuilder;
 
 import entities.UserEntity;
 import json.ResponseJson;
+import scala.collection.immutable.HashMap;
+import scala.util.parsing.json.JSONObject;
 import service.UserDAOService;
 
 
@@ -35,7 +37,7 @@ public class AuthorizationController {
 		UserDAOService userService = new UserDAOService();
 		userService.add(user);
 		
-		return new GsonBuilder().create().toJson(new ResponseJson(true));
+		return new GsonBuilder().create().toJson(new JSONObject(new HashMap<String, Object>()));
 	}
 	
 	@RequestMapping(method=RequestMethod.GET, value="/getall")
