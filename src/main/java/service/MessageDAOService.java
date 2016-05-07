@@ -25,7 +25,7 @@ public class MessageDAOService implements MessageDAO{
 	public MessagesListJson selectAll() {
 		Session session = sessionFactory.openSession();
 		Transaction trans = session.beginTransaction();
-		Query query = session.createQuery("FROM  Message m");
+		Query query = session.createQuery("FROM  MessageEntity m");
 		trans.commit();
 		return new MessagesListJson((List<MessageEntity>)query.list());
 	}
@@ -34,7 +34,7 @@ public class MessageDAOService implements MessageDAO{
 	public MessagesListJson selectMessagesByIds(Integer idFrom, Integer idTo) {
 		Session session = sessionFactory.openSession();
 		Transaction trans = session.beginTransaction();
-		Query query = session.createQuery("FROM  Message m "
+		Query query = session.createQuery("FROM  MessageEntity m "
 										+ "WHERE m.idFrom = '" + idFrom.toString() 
 										+ "' AND m.idTo = '" + idTo.toString() + "'");
 		trans.commit();
@@ -47,7 +47,7 @@ public class MessageDAOService implements MessageDAO{
 		Transaction trans = session.beginTransaction();
 		
 		Query query = session.createQuery("SELECT DISTINCT m.idTo "
-										+ "FROM  Message m " 
+										+ "FROM  MessageEntity m "
 										+ "WHERE m.idFrom = '" + idFrom.toString() + "'");
 		trans.commit();
 		return (List<Integer>)query.list();

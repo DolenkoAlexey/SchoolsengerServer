@@ -28,7 +28,7 @@ public class UserDAOService implements UserDAO {
 	public UsersListJson selectAll() {
 		Session session = sessionFactory.openSession();
 		Transaction trans = session.beginTransaction();
-		Query query = session.createQuery("FROM  User");
+		Query query = session.createQuery("FROM  UserEntity");
 		trans.commit();
 		return new UsersListJson((List<UserEntity>)query.list());
 	}
@@ -37,7 +37,7 @@ public class UserDAOService implements UserDAO {
 	public UserEntity selectByEmail(String email) {
 		Session session = sessionFactory.openSession();
 		Transaction trans = session.beginTransaction();
-		Query query = session.createQuery("FROM User WHERE email = '" + email + "'");
+		Query query = session.createQuery("FROM UserEntity WHERE email = '" + email + "'");
 		trans.commit();
 		if(query.list().isEmpty())
 			return new UserEntity();
@@ -66,7 +66,7 @@ public class UserDAOService implements UserDAO {
 		Session session = sessionFactory.openSession();
 		Transaction trans = session.beginTransaction();
 		
-		Query query = session.createQuery("FROM User WHERE id = '" + id + "'");
+		Query query = session.createQuery("FROM UserEntity WHERE id = '" + id + "'");
 		trans.commit();
 		
 		UserEntity user = null;
