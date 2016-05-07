@@ -11,15 +11,21 @@ import com.google.gson.annotations.SerializedName;
 @Entity
 public class UserEntity implements Serializable{
 
+    @SerializedName("id")
     private int id;
-
+    @SerializedName("email")
     private String email;
+    @SerializedName("username")
     private String username;
+    @SerializedName("password")
     private String password;
 
+    @SerializedName("firstname")
     private String firstname;
+    @SerializedName("lastname")
     private String lastname;
 
+    @SerializedName("character")
     private String character;
 
     public UserEntity(){ }
