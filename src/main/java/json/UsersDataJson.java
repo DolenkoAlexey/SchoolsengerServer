@@ -13,28 +13,13 @@ public class UsersDataJson {
     private String firstname;
     @SerializedName("lastname")
     private String lastname;
-
-    @SerializedName("character")
-    private String character;
     
-    /*
-     * public UsersDataJson(){
-    	id = 0;
-    	this.username = "";
-		this.firstname = "";
-		this.lastname = "";
-		this.character = "";
-    }
-    */
-    
-	public UsersDataJson(int id, String username, String firstname, String lastname, String character) {
+	public UsersDataJson(int id, String username, String firstname, String lastname) {
 		this.id = id;
 		this.username = username;
 		this.firstname = firstname;
 		this.lastname = lastname;
-		this.character = character;
 	}
-	
 
 	public String getUsername() {
 		return username;
@@ -60,19 +45,9 @@ public class UsersDataJson {
 		this.lastname = lastname;
 	}
 
-	public String getCharacter() {
-		return character;
-	}
-
-	public void setCharacter(String character) {
-		this.character = character;
-	}
-	
-
     public int getId() {
 		return id;
 	}
-
 
 	public void setId(int id) {
 		this.id = id;

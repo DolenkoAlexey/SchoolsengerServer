@@ -19,34 +19,21 @@ public class UserEntity{
     private String firstname;
     private String lastname;
 
-    private String character;
+    private String classNumber;
 
     public UserEntity(){ }
 
-    public UserEntity(HashMap<String, String> user){
-        setEmail(user.get("email"));
-        setUsername(user.get("username"));
-        setPassword(user.get("password"));
-        setFirstname(user.get("firstname"));
-        setLastname(user.get("lastname"));
-        setCharacter(user.get("character"));
-    }
-
-    public UserEntity(String email, String username, String password, String firstname, String lastname, String character){
+    public UserEntity(String email, String username, String password, String firstname, String lastname, String classNumber){
         setEmail(email);
         setUsername(username);
         setPassword(password);
         setFirstname(firstname);
         setLastname(lastname);
-        setCharacter(character);
+        setClassNumber(classNumber);
     }
 
     public int getId(){
         return id;
-    }
-
-    public String getCharacter() {
-        return character;
     }
 
     public String getLastname() {
@@ -73,10 +60,6 @@ public class UserEntity{
         this.id = id;
     }
 
-    public void setCharacter(String character) {
-        this.character = character;
-    }
-
     public void setLastname(String lastname) {
         this.lastname = lastname;
     }
@@ -95,5 +78,13 @@ public class UserEntity{
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getClassNumber() {
+        return classNumber;
+    }
+
+    public void setClassNumber(String classNumber) {
+        this.classNumber = classNumber;
     }
 }

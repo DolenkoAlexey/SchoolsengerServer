@@ -3,6 +3,7 @@ package service;
 import java.util.ArrayList;
 import java.util.List;
 
+import modeles.User;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -45,10 +46,13 @@ public class UserDAOService implements UserDAO {
 	}
 
 	@Override
-	public void add(UserEntity user) {
+	public void add(User user) {
 		Session session = sessionFactory.getCurrentSession();
+        UserEntity userEntity = UsersConverter.convertUserToUserEntity(user);
+
 		Transaction trans = session.beginTransaction();
-		session.save(user);
+		session.save(userEntity);
+
 		trans.commit();
 	}
 
@@ -78,8 +82,7 @@ public class UserDAOService implements UserDAO {
 			user = (UserEntity) query.list().get(0);
 		
 		usersData = new UsersDataJson(user.getId(), user.getUsername(),
-									  user.getFirstname(), user.getLastname(),
-									  user.getCharacter());
+									  user.getFirstname(), user.getLastname());
 		return usersData;
 	}
 

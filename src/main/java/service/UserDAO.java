@@ -6,18 +6,19 @@ import entities.UserEntity;
 import json.UsersDataJson;
 import json.UsersDataListJson;
 import json.UsersListJson;
+import modeles.User;
 
 public interface UserDAO {
-	
-	public UsersListJson selectAll();
-	
-	public UserEntity selectByEmail(String email);
-	
-	public UsersDataJson selectUsersDataById(Integer id);
-	
-	public UsersDataListJson getUsersDataListByIds(List<Integer> ids);
-	
-	public void add(UserEntity user);
-	
-	public void delete(int id);
+
+	UsersListJson selectAll();
+
+	UserEntity selectByEmail(String email);
+
+	UsersDataJson selectUsersDataById(Integer id);
+
+	UsersDataListJson getUsersDataListByIds(List<Integer> ids);
+
+	void add(User user);
+
+	void delete(int id);
 }

@@ -1,9 +1,7 @@
 package application;
 
 
-import java.sql.SQLException;
-import java.util.List;
-
+import modeles.User;
 import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.google.gson.GsonBuilder;
 
 import entities.UserEntity;
-import json.ResponseJson;
 import scala.collection.immutable.HashMap;
 import scala.util.parsing.json.JSONObject;
 import service.UserDAOService;
@@ -32,7 +29,7 @@ public class AuthorizationController {
 	}
 	
 	@RequestMapping(method=RequestMethod.POST, value="/adduser")
-	public String adduser(@RequestBody UserEntity user) throws ClassNotFoundException {
+	public String adduser(@RequestBody User user) throws ClassNotFoundException {
 		
 		UserDAOService userService = new UserDAOService();
 		userService.add(user);
