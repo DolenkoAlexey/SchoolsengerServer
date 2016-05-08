@@ -31,9 +31,9 @@ public class SessionController {
 		MessageDAO messageService = new MessageDAOService();
 		UserDAO userService = new UserDAOService();
 		
-		List<Integer> idsTo = messageService.selectIdsToByIdFrom(idFrom);
-		UsersDataListJson usersDataList = userService.getUsersDataListByIds(idsTo);
+//		List<Integer> idsTo = messageService.selectIdsToByIdFrom(idFrom);
+//		UsersDataListJson usersDataList = userService.getUsersDataListByIds(idsTo);
 		
-		return new GsonBuilder().create().toJson(usersDataList);
+		return new GsonBuilder().create().toJson("usersDataList");
 	}
 }

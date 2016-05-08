@@ -23,7 +23,7 @@ public class AuthorizationController {
 	public String getUserByEmail(@Param(value="email") String email) throws ClassNotFoundException {
 
 		UserDAOService userService = new UserDAOService();
-		UserEntity selectedUser = userService.selectByEmail(email);
+		User selectedUser = userService.selectByEmail(email);
 		return new GsonBuilder().create().toJson(selectedUser);
 	}
 	
