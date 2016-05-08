@@ -7,6 +7,7 @@ public class Schoolkid extends User{
 	public Schoolkid(String email, String username, String password, String firstname, String lastname, String classNumber) {
 		super(email, username, password, firstname, lastname);
 		this.setClassNumber(classNumber);
+		role = "schoolkid";
 	}
 
 	public String getClassNumber() {

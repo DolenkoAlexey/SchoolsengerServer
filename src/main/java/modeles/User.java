@@ -14,6 +14,8 @@ public class User{
     private String firstname;
     private String lastname;
 
+    protected String role;
+
     public User(){}
 
     public User(String email, String username, String password, String firstname, String lastname){
