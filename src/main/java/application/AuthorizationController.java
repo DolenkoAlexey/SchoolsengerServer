@@ -1,6 +1,7 @@
 package application;
 
 
+import modeles.Teacher;
 import modeles.User;
 import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -40,6 +41,7 @@ public class AuthorizationController {
 	public String getAll() throws ClassNotFoundException {
 
 		UserDAOService userService = new UserDAOService();
-		return new GsonBuilder().create().toJson(userService.selectAll());
+		//return new GsonBuilder().create().toJson(userService.selectAll());
+		return new GsonBuilder().create().toJson(new Teacher("wde","wde","wde","wde","wde"));
 	}
 }

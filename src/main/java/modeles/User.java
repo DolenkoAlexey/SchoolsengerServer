@@ -14,6 +14,8 @@ public class User{
     private String firstname;
     private String lastname;
 
+    protected String role;
+
     public String getRole() {
         return role;
     }
@@ -21,8 +23,6 @@ public class User{
     public void setRole(String role) {
         this.role = role;
     }
-
-    protected String role;
 
     public User(){}
 
