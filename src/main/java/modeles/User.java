@@ -1,5 +1,7 @@
 package modeles;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 import java.util.HashMap;
 
@@ -14,15 +16,8 @@ public class User{
     private String firstname;
     private String lastname;
 
+    @SerializedName("role")
     protected String role;
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
 
     public User(){}
 
