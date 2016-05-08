@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="588a524f-6d5b-40ef-a981-4091511ed350" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/modeles/Schoolkid.java" afterPath="$PROJECT_DIR$/src/main/java/modeles/Schoolkid.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/modeles/Superadmin.java" afterPath="$PROJECT_DIR$/src/main/java/modeles/Superadmin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/modeles/Teacher.java" afterPath="$PROJECT_DIR$/src/main/java/modeles/Teacher.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/modeles/User.java" afterPath="$PROJECT_DIR$/src/main/java/modeles/User.java" />
     </list>
     <ignored path="SchoolsengerServer.iws" />
@@ -47,10 +44,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Schoolkid.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Schoolkid.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/modeles/Schoolkid.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.27517986">
+            <state vertical-scroll-proportion="-5.6666665">
               <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
               <folding />
             </state>
@@ -67,12 +64,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="User.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/modeles/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-              <folding />
+            <state vertical-scroll-proportion="0.4373928">
+              <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+              <folding>
+                <element signature="e#315#316#0" expanded="true" />
+                <element signature="e#355#356#0" expanded="true" />
+                <element signature="e#387#388#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -169,10 +170,10 @@
         <option value="$PROJECT_DIR$/src/main/java/application/AuthorizationController.java" />
         <option value="$PROJECT_DIR$/src/main/java/application/SessionController.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/UserDAOService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/modeles/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/modeles/Superadmin.java" />
         <option value="$PROJECT_DIR$/src/main/java/modeles/Teacher.java" />
         <option value="$PROJECT_DIR$/src/main/java/modeles/Schoolkid.java" />
+        <option value="$PROJECT_DIR$/src/main/java/modeles/User.java" />
       </list>
     </option>
   </component>
@@ -890,14 +891,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/modeles/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/modeles/Superadmin.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.7777777">
@@ -916,9 +909,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/modeles/Schoolkid.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27517986">
+        <state vertical-scroll-proportion="-5.6666665">
           <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modeles/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4373928">
+          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+          <folding>
+            <element signature="e#315#316#0" expanded="true" />
+            <element signature="e#355#356#0" expanded="true" />
+            <element signature="e#387#388#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

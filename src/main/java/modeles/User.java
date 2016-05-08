@@ -14,6 +14,14 @@ public class User{
     private String firstname;
     private String lastname;
 
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
     protected String role;
 
     public User(){}
