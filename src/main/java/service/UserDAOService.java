@@ -3,6 +3,7 @@ package service;
 import java.util.ArrayList;
 import java.util.List;
 
+import entities.TeacherEntity;
 import modeles.Schoolkid;
 import modeles.Superadmin;
 import modeles.Teacher;
@@ -78,7 +79,7 @@ public class UserDAOService implements UserDAO {
 		Session session = sessionFactory.getCurrentSession();
         Transaction trans = session.beginTransaction();
 
-        session.save(new Teacher("qweqwe@weqwe.qwe", "qwe", "qwe", "qwe", "qwe"));
+        session.save(new TeacherEntity("qweqwe@weqwe.qwe", "qwe", "qwe", "qwe", "qwe"));
 
 		trans.commit();
 	}
