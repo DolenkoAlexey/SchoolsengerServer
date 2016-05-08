@@ -3,7 +3,7 @@ package modeles;
 import java.io.Serializable;
 import java.util.HashMap;
 
-public abstract class User{
+public class User{
 
     private int id;
 
@@ -13,6 +13,8 @@ public abstract class User{
 
     private String firstname;
     private String lastname;
+
+    public User(){}
 
     public User(String email, String username, String password, String firstname, String lastname){
         setEmail(email);

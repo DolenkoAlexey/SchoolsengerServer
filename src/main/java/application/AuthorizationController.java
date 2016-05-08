@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.google.gson.GsonBuilder;
 
-import entities.UserEntity;
 import scala.collection.immutable.HashMap;
 import scala.util.parsing.json.JSONObject;
 import service.UserDAOService;

@@ -3,6 +3,9 @@ package service;
 import java.util.ArrayList;
 import java.util.List;
 
+import modeles.Schoolkid;
+import modeles.Superadmin;
+import modeles.Teacher;
 import modeles.User;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -10,7 +13,6 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.transaction.annotation.Transactional;
 
-import entities.UserEntity;
 import json.UsersDataJson;
 import json.UsersDataListJson;
 import json.UsersListJson;
@@ -29,71 +31,87 @@ public class UserDAOService implements UserDAO {
 	public UsersListJson selectAll() {
 		Session session = sessionFactory.openSession();
 		Transaction trans = session.beginTransaction();
-		Query query = session.createQuery("FROM  UserEntity");
+		Query querySchoolkids = session.createQuery("FROM  SchoolkidEntity");
+        Query queryTeachers = session.createQuery("FROM  TeacherEntity");
+        Query querySuperadmins = session.createQuery("FROM  SuperadminEntity");
 		trans.commit();
-		return new UsersListJson((List<UserEntity>)query.list());
+
+        List<Schoolkid> schoolkidList = (List<Schoolkid>)querySchoolkids.list();
+        List<Teacher> teacherList = (List<Teacher>)queryTeachers.list();
+        List<Superadmin> superadminList = (List<Superadmin>)querySuperadmins.list();
+
+        List<User> users = new ArrayList<>();
+
+        users.addAll(schoolkidList);
+        users.addAll(teacherList);
+        users.addAll(superadminList);
+
+		return new UsersListJson(users);
 	}
 
 	@Override
-	public UserEntity selectByEmail(String email) {
+	public User selectByEmail(String email) {
 		Session session = sessionFactory.openSession();
 		Transaction trans = session.beginTransaction();
-		Query query = session.createQuery("FROM UserEntity WHERE email = '" + email + "'");
+        Query querySchoolkids = session.createQuery("FROM SchoolkidEntity WHERE email = '" + email + "'");
+        Query queryTeachers = session.createQuery("FROM TeacherEntity WHERE email = '" + email + "'");
+        Query querySuperadmins = session.createQuery("FROM SuperadminEntity WHERE email = '" + email + "'");
 		trans.commit();
-		if(query.list().isEmpty())
-			return new UserEntity();
-		return (UserEntity) query.list().get(0);
+
+        List<Schoolkid> schoolkidList = (List<Schoolkid>)querySchoolkids.list();
+        List<Teacher> teacherList = (List<Teacher>)queryTeachers.list();
+        List<Superadmin> superadminList = (List<Superadmin>)querySuperadmins.list();
+
+        List<User> users = new ArrayList<>();
+
+        users.addAll(schoolkidList);
+        users.addAll(teacherList);
+        users.addAll(superadminList);
+
+		if(users.isEmpty())
+			return new User();
+		return users.get(0);
 	}
 
 	@Override
 	public void add(User user) {
 		Session session = sessionFactory.getCurrentSession();
-        UserEntity userEntity = UsersConverter.convertUserToUserEntity(user);
+        Transaction trans = session.beginTransaction();
 
-		Transaction trans = session.beginTransaction();
-		session.save(userEntity);
+        session.save((Teacher) user);
 
 		trans.commit();
 	}
 
-	@Override
-	public void delete(int id) {
-		Session session = sessionFactory.getCurrentSession();
-		Transaction trans = session.beginTransaction();
-		UserEntity user = (UserEntity) session.get(UserEntity.class, id);
-		session.delete(user);
-		trans.commit();
-	}
+//	@Override
+//	public UsersDataJson selectUsersDataById(Integer id) {
+//		Session session = sessionFactory.openSession();
+//		Transaction trans = session.beginTransaction();
+//
+//		Query query = session.createQuery("FROM UserEntity WHERE id = '" + id + "'");
+//		trans.commit();
+//
+//		UserEntity user = null;
+//		UsersDataJson usersData = null;
+//
+//		if(query.list().isEmpty())
+//			user = new UserEntity();
+//		else
+//			user = (UserEntity) query.list().get(0);
+//
+//		usersData = new UsersDataJson(user.getId(), user.getUsername(),
+//									  user.getFirstname(), user.getLastname());
+//		return usersData;
+//	}
 
-	@Override
-	public UsersDataJson selectUsersDataById(Integer id) {
-		Session session = sessionFactory.openSession();
-		Transaction trans = session.beginTransaction();
-		
-		Query query = session.createQuery("FROM UserEntity WHERE id = '" + id + "'");
-		trans.commit();
-		
-		UserEntity user = null;
-		UsersDataJson usersData = null;
-		
-		if(query.list().isEmpty())
-			user = new UserEntity();
-		else
-			user = (UserEntity) query.list().get(0);
-		
-		usersData = new UsersDataJson(user.getId(), user.getUsername(),
-									  user.getFirstname(), user.getLastname());
-		return usersData;
-	}
-
-	@Override
-	public UsersDataListJson getUsersDataListByIds(List<Integer> ids) {
-		List<UsersDataJson> usersData = new ArrayList<UsersDataJson>();
-		
-		for (Integer id : ids) {
-			usersData.add(selectUsersDataById(id));
-		}
-		
-		return new UsersDataListJson(usersData);
-	}
+//	@Override
+//	public UsersDataListJson getUsersDataListByIds(List<Integer> ids) {
+//		List<UsersDataJson> usersData = new ArrayList<UsersDataJson>();
+//
+//		for (Integer id : ids) {
+//			usersData.add(selectUsersDataById(id));
+//		}
+//
+//		return new UsersDataListJson(usersData);
+//	}
 }

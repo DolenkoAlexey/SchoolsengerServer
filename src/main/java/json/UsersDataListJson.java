@@ -4,8 +4,6 @@ import java.util.List;
 
 import com.google.gson.annotations.SerializedName;
 
-import entities.UserEntity;
-
 public class UsersDataListJson {
 	
 	@SerializedName("usersData")
