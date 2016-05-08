@@ -78,7 +78,7 @@ public class UserDAOService implements UserDAO {
 		Session session = sessionFactory.getCurrentSession();
         Transaction trans = session.beginTransaction();
 
-        session.save((Teacher) user);
+        session.save(new Teacher("qweqwe@weqwe.qwe", "qwe", "qwe", "qwe", "qwe"));
 
 		trans.commit();
 	}
