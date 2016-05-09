@@ -16,9 +16,7 @@ import modeles.User;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Alex on 09.05.2016.
- */
+
 public class Converter {
     public static List<UserJson> convertUserEntitiesToUsersJson(List<UserEntity> userEntities) {
 

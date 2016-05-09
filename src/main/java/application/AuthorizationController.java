@@ -19,6 +19,8 @@ import service.UserDAOService;
 import service.UserJsonParser;
 
 import javax.jws.soap.SOAPBinding;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @RestController
@@ -48,7 +50,11 @@ public class AuthorizationController {
 	@RequestMapping(method=RequestMethod.GET, value="/getall")
 	public String getAll() throws ClassNotFoundException {
 
-		UserDAOService userService = new UserDAOService();
-		return new GsonBuilder().create().toJson(userService.selectAll());
+//		UserDAOService userService = new UserDAOService();
+//		return new GsonBuilder().create().toJson(userService.selectAll());
+
+		List list =  new ArrayList<UserJson>();
+		list.add(new SchoolkidJson(1,"1","2","3","4","5","6"));
+		return new GsonBuilder().create().toJson(list);
 	}
 }
