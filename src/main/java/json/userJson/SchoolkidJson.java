@@ -1,5 +1,7 @@
 package json.userJson;
 
+import modeles.Schoolkid;
+
 import java.io.Serializable;
 
 /**
@@ -8,6 +10,8 @@ import java.io.Serializable;
 public class SchoolkidJson extends UserJson implements Serializable {
 
     private String classNumber;
+
+    public SchoolkidJson(){}
 
     public SchoolkidJson(Integer id, String email, String username, String password, String firstname, String lastname, String classNumber) {
         super(id, email, username, password, firstname, lastname);
