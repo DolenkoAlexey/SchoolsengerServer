@@ -29,7 +29,7 @@ public class UserDAOService implements UserDAO {
 	}
 
 	@Override
-	public Teacher selectAll() {
+	public UsersListJson selectAll() {
 		Session session = sessionFactory.openSession();
 		Transaction trans = session.beginTransaction();
 		Query querySchoolkids = session.createQuery("FROM  SchoolkidEntity");
@@ -47,8 +47,7 @@ public class UserDAOService implements UserDAO {
         users.addAll(teacherList);
         users.addAll(superadminList);
 
-		//return new UsersListJson(users);
-        return (Teacher)queryTeachers.list().get(0);
+		return new UsersListJson(users);
 	}
 
 	@Override
