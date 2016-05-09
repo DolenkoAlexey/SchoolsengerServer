@@ -83,7 +83,7 @@ public class UserDAOService implements UserDAO {
         Transaction trans = session.beginTransaction();
 
         UserEntity userEntity = Converter.convertUserToUserEntity(user);
-        session.save(user);
+        session.save(userEntity);
 
 		trans.commit();
 	}

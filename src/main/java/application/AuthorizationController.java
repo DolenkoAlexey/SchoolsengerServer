@@ -47,6 +47,5 @@ public class AuthorizationController {
 
 		UserDAOService userService = new UserDAOService();
 		return new GsonBuilder().create().toJson(userService.selectAll());
-		//return new GsonBuilder().create().toJson(new Teacher("wde","wde","wde","wde","wde"));
 	}
 }
