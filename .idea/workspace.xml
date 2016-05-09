@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="588a524f-6d5b-40ef-a981-4091511ed350" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/application/AuthorizationController.java" afterPath="$PROJECT_DIR$/src/main/java/application/AuthorizationController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/entities/SchoolkidEntity.java" afterPath="$PROJECT_DIR$/src/main/java/entities/SchoolkidEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/json/userJson/SuperadminJson.java" afterPath="$PROJECT_DIR$/src/main/java/json/userJson/SuperadminJson.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/json/userJson/TeacherJson.java" afterPath="$PROJECT_DIR$/src/main/java/json/userJson/TeacherJson.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/json/userJson/UserJson.java" afterPath="$PROJECT_DIR$/src/main/java/json/userJson/UserJson.java" />
     </list>
     <ignored path="SchoolsengerServer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -73,8 +69,8 @@
       <file leaf-file-name="AuthorizationController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/application/AuthorizationController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5917667">
-              <caret line="45" column="74" selection-start-line="45" selection-start-column="74" selection-end-line="45" selection-end-column="74" />
+            <state vertical-scroll-proportion="0.47512865">
+              <caret line="41" column="30" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -185,12 +181,12 @@
         <option value="$PROJECT_DIR$/src/main/java/service/UserDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/UserDAOService.java" />
         <option value="$PROJECT_DIR$/src/main/java/json/userJson/SchoolkidJson.java" />
-        <option value="$PROJECT_DIR$/src/main/java/application/AuthorizationController.java" />
         <option value="$PROJECT_DIR$/src/main/java/entities/SchoolkidEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/entities/UserEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/json/userJson/UserJson.java" />
         <option value="$PROJECT_DIR$/src/main/java/json/userJson/TeacherJson.java" />
         <option value="$PROJECT_DIR$/src/main/java/json/userJson/SuperadminJson.java" />
+        <option value="$PROJECT_DIR$/src/main/java/application/AuthorizationController.java" />
       </list>
     </option>
   </component>
@@ -1056,8 +1052,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/application/AuthorizationController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5917667">
-          <caret line="45" column="74" selection-start-line="45" selection-start-column="74" selection-end-line="45" selection-end-column="74" />
+        <state vertical-scroll-proportion="0.47512865">
+          <caret line="41" column="30" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
           <folding />
         </state>
       </provider>
