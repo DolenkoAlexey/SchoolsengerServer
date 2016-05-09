@@ -35,11 +35,12 @@ public class AuthorizationController {
 	@RequestMapping(method=RequestMethod.POST, value="/adduser")
 	public String adduser(@RequestBody UserJson userJson) throws ClassNotFoundException {
 		
-		UserDAOService userService = new UserDAOService();
-		User user = UserJsonParser.UserParse(userJson);
-		userService.add(user);
+//		UserDAOService userService = new UserDAOService();
+//		User user = UserJsonParser.UserParse(userJson);
+//		userService.add(user);
 
-		return new GsonBuilder().create().toJson(new JSONObject(new HashMap<String, Object>()));
+//		return new GsonBuilder().create().toJson(new JSONObject(new HashMap<String, Object>()));
+		return new GsonBuilder().create().toJson(userJson);
 	}
 	
 	@RequestMapping(method=RequestMethod.GET, value="/getall")
