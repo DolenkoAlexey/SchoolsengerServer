@@ -39,9 +39,9 @@ public class AuthorizationController {
 //		UserDAOService userService = new UserDAOService();
 //		User user = UserJsonParser.UserParse(userJson);
 //		userService.add(user);
-
 //		return new GsonBuilder().create().toJson(new JSONObject(new HashMap<String, Object>()));
-		return new GsonBuilder().create().toJson(UserJsonParser.UserParse(userJson));
+		
+		return new GsonBuilder().create().toJson(UserJsonParser.UserParse(new UserJson(0,"123","qwe","qwe","qwe","qweqwe")));
 	}
 	
 	@RequestMapping(method=RequestMethod.GET, value="/getall")
