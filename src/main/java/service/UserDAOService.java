@@ -3,7 +3,10 @@ package service;
 import java.util.ArrayList;
 import java.util.List;
 
+import entities.SchoolkidEntity;
+import entities.SuperadminEntity;
 import entities.TeacherEntity;
+import entities.UserEntity;
 import modeles.Schoolkid;
 import modeles.Superadmin;
 import modeles.Teacher;
@@ -37,17 +40,19 @@ public class UserDAOService implements UserDAO {
         Query querySuperadmins = session.createQuery("FROM  SuperadminEntity");
 		trans.commit();
 
-        List<Schoolkid> schoolkidList = (List<Schoolkid>)querySchoolkids.list();
-        List<Teacher> teacherList = (List<Teacher>)queryTeachers.list();
-        List<Superadmin> superadminList = (List<Superadmin>)querySuperadmins.list();
+        List<SchoolkidEntity> schoolkidList = (List<SchoolkidEntity>)querySchoolkids.list();
+        List<TeacherEntity> teacherList = (List<TeacherEntity>)queryTeachers.list();
+        List<SuperadminEntity> superadminList = (List<SuperadminEntity>)querySuperadmins.list();
 
-        List<User> users = new ArrayList<>();
+        List<UserEntity> userEntities = new ArrayList<>();
 
-        users.addAll(schoolkidList);
-        users.addAll(teacherList);
-        users.addAll(superadminList);
+        userEntities.addAll(schoolkidList);
+        userEntities.addAll(teacherList);
+        userEntities.addAll(superadminList);
 
-		return new UsersListJson(users);
+        List<User> users = Converter.convertUserEntitiesToUsers(userEntities);
+
+        return new UsersListJson(users);
 	}
 
 	@Override

@@ -16,12 +16,12 @@ public class User{
     private String firstname;
     private String lastname;
 
-    @SerializedName("role")
     protected String role;
 
     public User(){}
 
-    public User(String email, String username, String password, String firstname, String lastname){
+    public User(Integer id, String email, String username, String password, String firstname, String lastname){
+        setId(id);
         setEmail(email);
         setUsername(username);
         setPassword(password);
