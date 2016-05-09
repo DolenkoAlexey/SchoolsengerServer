@@ -27,7 +27,7 @@ public class Converter {
             if(e instanceof SchoolkidEntity)
                 users.add(new SchoolkidJson(e.getId(), e.getEmail(), e.getUsername(),
                                         e.getPassword(), e.getFirstname(),
-                                        e.getLastname(), ((SchoolkidEntity) e.get));
+                                        e.getLastname(), ((SchoolkidEntity) e).getClassNumber()));
             else if(e instanceof TeacherEntity)
                 users.add(new TeacherJson(e.getId(), e.getEmail(), e.getUsername(),
                         e.getPassword(), e.getFirstname(),
