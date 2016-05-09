@@ -36,9 +36,7 @@ public class AuthorizationController {
 	public String adduser(@RequestBody UserJson userJson) throws ClassNotFoundException {
 		
 		UserDAOService userService = new UserDAOService();
-
 		User user = UserJsonParser.UserParse(userJson);
-
 		userService.add(user);
 
 		return new GsonBuilder().create().toJson(new JSONObject(new HashMap<String, Object>()));

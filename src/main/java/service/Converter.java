@@ -4,6 +4,10 @@ import entities.SchoolkidEntity;
 import entities.SuperadminEntity;
 import entities.TeacherEntity;
 import entities.UserEntity;
+import json.userJson.SchoolkidJson;
+import json.userJson.SuperadminJson;
+import json.userJson.TeacherJson;
+import json.userJson.UserJson;
 import modeles.Schoolkid;
 import modeles.Superadmin;
 import modeles.Teacher;
@@ -16,20 +20,20 @@ import java.util.List;
  * Created by Alex on 09.05.2016.
  */
 public class Converter {
-    public static List<User> convertUserEntitiesToUsers(List<UserEntity> userEntities) {
+    public static List<UserJson> convertUserEntitiesToUsersJson(List<UserEntity> userEntities) {
 
-        List<User> users = new ArrayList<>();
+        List<UserJson> users = new ArrayList<>();
         for (UserEntity e: userEntities) {
             if(e instanceof SchoolkidEntity)
-                users.add(new Schoolkid(e.getId(), e.getEmail(), e.getUsername(),
+                users.add(new SchoolkidJson(e.getId(), e.getEmail(), e.getUsername(),
                                         e.getPassword(), e.getFirstname(),
                                         e.getLastname(), ((SchoolkidEntity) e).getClassNumber()));
             else if(e instanceof TeacherEntity)
-                users.add(new Teacher(e.getId(), e.getEmail(), e.getUsername(),
+                users.add(new TeacherJson(e.getId(), e.getEmail(), e.getUsername(),
                         e.getPassword(), e.getFirstname(),
                         e.getLastname()));
             else if(e instanceof SuperadminEntity)
-                users.add(new Superadmin(e.getId(), e.getEmail(), e.getUsername(),
+                users.add(new SuperadminJson(e.getId(), e.getEmail(), e.getUsername(),
                         e.getPassword(), e.getFirstname(),
                         e.getLastname()));
         }

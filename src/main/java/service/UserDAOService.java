@@ -7,9 +7,7 @@ import entities.SchoolkidEntity;
 import entities.SuperadminEntity;
 import entities.TeacherEntity;
 import entities.UserEntity;
-import modeles.Schoolkid;
-import modeles.Superadmin;
-import modeles.Teacher;
+import json.userJson.UserJson;
 import modeles.User;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -17,8 +15,6 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.transaction.annotation.Transactional;
 
-import json.UsersDataJson;
-import json.UsersDataListJson;
 import json.UsersListJson;
 
 @Transactional
@@ -40,23 +36,23 @@ public class UserDAOService implements UserDAO {
         Query querySuperadmins = session.createQuery("FROM  SuperadminEntity");
 		trans.commit();
 
-        List<SchoolkidEntity> schoolkidList = (List<SchoolkidEntity>)querySchoolkids.list();
-        List<TeacherEntity> teacherList = (List<TeacherEntity>)queryTeachers.list();
-        List<SuperadminEntity> superadminList = (List<SuperadminEntity>)querySuperadmins.list();
+        List<SchoolkidEntity> schoolkidEntities = (List<SchoolkidEntity>)querySchoolkids.list();
+        List<TeacherEntity> teacherEntities = (List<TeacherEntity>)queryTeachers.list();
+        List<SuperadminEntity> superadminEntities = (List<SuperadminEntity>)querySuperadmins.list();
 
         List<UserEntity> userEntities = new ArrayList<>();
 
-        userEntities.addAll(schoolkidList);
-        userEntities.addAll(teacherList);
-        userEntities.addAll(superadminList);
+        userEntities.addAll(schoolkidEntities);
+        userEntities.addAll(teacherEntities);
+        userEntities.addAll(superadminEntities);
 
-        List<User> users = Converter.convertUserEntitiesToUsers(userEntities);
+        List<UserJson> users = Converter.convertUserEntitiesToUsersJson(userEntities);
 
         return new UsersListJson(users);
 	}
 
 	@Override
-	public User selectByEmail(String email) {
+	public UserJson selectByEmail(String email) {
 		Session session = sessionFactory.openSession();
 		Transaction trans = session.beginTransaction();
         Query querySchoolkids = session.createQuery("FROM SchoolkidEntity WHERE email = '" + email + "'");
@@ -74,10 +70,10 @@ public class UserDAOService implements UserDAO {
         userEntities.addAll(teacherList);
         userEntities.addAll(superadminList);
 
-        List<User> users = Converter.convertUserEntitiesToUsers(userEntities);
+        List<UserJson> users = Converter.convertUserEntitiesToUsersJson(userEntities);
 
 		if(userEntities.isEmpty())
-			return new User();
+			return new UserJson();
 		return users.get(0);
 	}
 
