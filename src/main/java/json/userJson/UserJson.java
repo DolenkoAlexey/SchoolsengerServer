@@ -21,6 +21,14 @@ public class UserJson implements Serializable {
 
     private String classNumber;
 
+    public String getClassNumber() {
+        return classNumber;
+    }
+
+    public void setClassNumber(String classNumber) {
+        this.classNumber = classNumber;
+    }
+
     public UserJson(){}
 
     public UserJson(Integer id, String email, String username, String password, String firstname, String lastname){
