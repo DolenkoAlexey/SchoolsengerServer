@@ -72,8 +72,8 @@ public class UserDAOService implements UserDAO {
 
         List<UserJson> users = Converter.convertUserEntitiesToUsersJson(userEntities);
 
-//		if(userEntities.isEmpty())
-//			return new UserJson();
+		if(userEntities.isEmpty())
+			return new UserJson();
 		return users.get(0);
 	}
 

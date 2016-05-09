@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Created by Alex on 09.05.2016.
  */
-public abstract class UserJson implements Serializable {
+public class UserJson implements Serializable {
     private int id;
 
     private String email;
