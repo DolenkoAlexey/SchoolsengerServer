@@ -43,7 +43,7 @@ public class AuthorizationController {
 //
 //		return new GsonBuilder().create().toJson(new JSONObject(new HashMap<String, Object>()));
 
-		return new GsonBuilder().create().toJson(userJson);
+		return new GsonBuilder().create().toJson((SchoolkidJson)userJson);
 	}
 
 

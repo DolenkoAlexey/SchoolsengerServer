@@ -8,19 +8,9 @@ import javax.persistence.Entity;
 @Entity
 public class SchoolkidEntity extends UserEntity{
 
-    private String classNumber;
-
     public SchoolkidEntity(){ }
 
     public SchoolkidEntity(String email, String username, String password, String firstname, String lastname, String classNumber){
         super(email, username, password, firstname, lastname);
-    }
-
-    public String getClassNumber() {
-        return classNumber;
-    }
-
-    public void setClassNumber(String classNumber) {
-        this.classNumber = classNumber;
     }
 }

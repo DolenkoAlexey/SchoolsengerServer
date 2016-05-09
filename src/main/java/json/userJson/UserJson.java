@@ -31,13 +31,15 @@ public class UserJson implements Serializable {
 
     public UserJson(){}
 
-    public UserJson(Integer id, String email, String username, String password, String firstname, String lastname){
+    public UserJson(Integer id, String email, String username, String password,
+                    String firstname, String lastname, String classNumber){
         setId(id);
         setEmail(email);
         setUsername(username);
         setPassword(password);
         setFirstname(firstname);
         setLastname(lastname);
+        setClassNumber(classNumber);
     }
 
     public int getId(){
