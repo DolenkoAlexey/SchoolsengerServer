@@ -1,6 +1,7 @@
 package application;
 
 
+import json.userJson.SchoolkidJson;
 import json.userJson.UserJson;
 import modeles.Teacher;
 import modeles.User;
@@ -35,14 +36,14 @@ public class AuthorizationController {
 	
 	@RequestMapping(method=RequestMethod.POST, value="/adduser")
 	public String adduser(@RequestBody UserJson userJson) throws ClassNotFoundException {
-		
-//		UserDAOService userService = new UserDAOService();
-//		User user = UserJsonParser.UserParse(userJson);
-//		userService.add(user);
-//		return new GsonBuilder().create().toJson(new JSONObject(new HashMap<String, Object>()));
-		
-		return new GsonBuilder().create().toJson(UserJsonParser.UserParse(new UserJson(0,"123","qwe","qwe","qwe","qweqwe")));
+
+		UserDAOService userService = new UserDAOService();
+		User user = UserJsonParser.UserParse(userJson);
+		userService.add(user);
+		return new GsonBuilder().create().toJson(new JSONObject(new HashMap<String, Object>()));
 	}
+
+
 	
 	@RequestMapping(method=RequestMethod.GET, value="/getall")
 	public String getAll() throws ClassNotFoundException {
