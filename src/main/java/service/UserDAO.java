@@ -5,11 +5,12 @@ import java.util.List;
 import json.UsersDataJson;
 import json.UsersDataListJson;
 import json.UsersListJson;
+import modeles.Teacher;
 import modeles.User;
 
 public interface UserDAO {
 
-	UsersListJson selectAll();
+	Teacher selectAll();
 
 	User selectByEmail(String email);
 
