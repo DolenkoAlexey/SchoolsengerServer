@@ -13,7 +13,6 @@ public class SchoolkidJson extends UserJson implements Serializable {
 
     public SchoolkidJson(Integer id, String email, String username, String password, String firstname, String lastname, String classNumber) {
         super(id, email, username, password, firstname, lastname, classNumber);
-        this.setClassNumber(classNumber);
         role = "schoolkid";
     }
 }
