@@ -64,17 +64,19 @@ public class UserDAOService implements UserDAO {
         Query querySuperadmins = session.createQuery("FROM SuperadminEntity WHERE email = '" + email + "'");
 		trans.commit();
 
-        List<Schoolkid> schoolkidList = (List<Schoolkid>)querySchoolkids.list();
-        List<Teacher> teacherList = (List<Teacher>)queryTeachers.list();
-        List<Superadmin> superadminList = (List<Superadmin>)querySuperadmins.list();
+        List<SchoolkidEntity> schoolkidList = (List<SchoolkidEntity>)querySchoolkids.list();
+        List<TeacherEntity> teacherList = (List<TeacherEntity>)queryTeachers.list();
+        List<SuperadminEntity> superadminList = (List<SuperadminEntity>)querySuperadmins.list();
 
-        List<User> users = new ArrayList<>();
+        List<UserEntity> userEntities = new ArrayList<>();
 
-        users.addAll(schoolkidList);
-        users.addAll(teacherList);
-        users.addAll(superadminList);
+        userEntities.addAll(schoolkidList);
+        userEntities.addAll(teacherList);
+        userEntities.addAll(superadminList);
 
-		if(users.isEmpty())
+        List<User> users = Converter.convertUserEntitiesToUsers(userEntities);
+
+		if(userEntities.isEmpty())
 			return new User();
 		return users.get(0);
 	}
@@ -84,7 +86,8 @@ public class UserDAOService implements UserDAO {
 		Session session = sessionFactory.getCurrentSession();
         Transaction trans = session.beginTransaction();
 
-
+        UserEntity userEntity = Converter.convertUserToUserEntity(user);
+        session.save(user);
 
 		trans.commit();
 	}

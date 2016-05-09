@@ -1,6 +1,7 @@
 package application;
 
 
+import json.userJson.UserJson;
 import modeles.Teacher;
 import modeles.User;
 import org.springframework.data.repository.query.Param;
@@ -14,6 +15,9 @@ import com.google.gson.GsonBuilder;
 import scala.collection.immutable.HashMap;
 import scala.util.parsing.json.JSONObject;
 import service.UserDAOService;
+import service.UserJsonParser;
+
+import javax.jws.soap.SOAPBinding;
 
 
 @RestController
@@ -29,11 +33,14 @@ public class AuthorizationController {
 	}
 	
 	@RequestMapping(method=RequestMethod.POST, value="/adduser")
-	public String adduser(@RequestBody User user) throws ClassNotFoundException {
+	public String adduser(@RequestBody UserJson userJson) throws ClassNotFoundException {
 		
 		UserDAOService userService = new UserDAOService();
+
+		User user = UserJsonParser.UserParse(userJson);
+
 		userService.add(user);
-		
+
 		return new GsonBuilder().create().toJson(new JSONObject(new HashMap<String, Object>()));
 	}
 	

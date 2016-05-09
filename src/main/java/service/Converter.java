@@ -36,4 +36,22 @@ public class Converter {
 
         return users;
     }
+
+    public static UserEntity convertUserToUserEntity(User user){
+        UserEntity userEntity = null;
+
+        if(user instanceof Schoolkid)
+            userEntity = new SchoolkidEntity( user.getEmail(), user.getUsername(),
+                    user.getPassword(), user.getFirstname(),
+                    user.getLastname(), ((Schoolkid) user).getClassNumber());
+        else if(user instanceof Teacher)
+            userEntity = new TeacherEntity(user.getEmail(), user.getUsername(),
+                    user.getPassword(), user.getFirstname(),
+                    user.getLastname());
+        else if(user instanceof Superadmin)
+            userEntity = new SuperadminEntity(user.getEmail(), user.getUsername(),
+                    user.getPassword(), user.getFirstname(),
+                    user.getLastname());
+        return userEntity;
+    }
 }

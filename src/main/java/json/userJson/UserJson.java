@@ -1,12 +1,9 @@
-package modeles;
+package json.userJson;
 
-import com.google.gson.annotations.SerializedName;
-
-import java.io.Serializable;
-import java.util.HashMap;
-
-public class User{
-
+/**
+ * Created by Alex on 09.05.2016.
+ */
+public class UserJson {
     private int id;
 
     private String email;
@@ -16,9 +13,11 @@ public class User{
     private String firstname;
     private String lastname;
 
-    public User(){}
+    protected String role;
 
-    public User(Integer id, String email, String username, String password, String firstname, String lastname){
+    public UserJson(){}
+
+    public UserJson(Integer id, String email, String username, String password, String firstname, String lastname){
         setId(id);
         setEmail(email);
         setUsername(username);
@@ -55,6 +54,10 @@ public class User{
         this.id = id;
     }
 
+    public String getRole() {
+        return role;
+    }
+
     public void setLastname(String lastname) {
         this.lastname = lastname;
     }
@@ -73,5 +76,9 @@ public class User{
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }
