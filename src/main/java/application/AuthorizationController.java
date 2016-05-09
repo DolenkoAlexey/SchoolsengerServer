@@ -2,9 +2,7 @@ package application;
 
 
 import json.userJson.SchoolkidJson;
-import json.userJson.TeacherJson;
 import json.userJson.UserJson;
-import modeles.Schoolkid;
 import modeles.Teacher;
 import modeles.User;
 import org.springframework.data.repository.query.Param;
@@ -36,24 +34,15 @@ public class AuthorizationController {
 		return new GsonBuilder().create().toJson(selectedUser);
 	}
 	
-	@RequestMapping(method=RequestMethod.POST, value="/addschoolkid")
-	public String addSchoolkid(@RequestBody SchoolkidJson schoolkidJson) throws ClassNotFoundException {
+	@RequestMapping(method=RequestMethod.POST, value="/adduser")
+	public String adduser(@RequestBody UserJson userJson) throws ClassNotFoundException {
 
 		UserDAOService userService = new UserDAOService();
-		User user = UserJsonParser.UserParse(schoolkidJson);
+		User user = UserJsonParser.UserParse(userJson);
 		userService.add(user);
 		return new GsonBuilder().create().toJson(new JSONObject(new HashMap<String, Object>()));
 	}
 
-	@RequestMapping(method=RequestMethod.POST, value="/addsteacher")
-	public String addTeacher(@RequestBody TeacherJson teacherJson) throws ClassNotFoundException {
-
-		UserDAOService userService = new UserDAOService();
-		User user = UserJsonParser.UserParse(teacherJson);
-		userService.add(user);
-		return new GsonBuilder().create().toJson(new JSONObject(new HashMap<String, Object>()));
-	}
-	
 	@RequestMapping(method=RequestMethod.GET, value="/getall")
 	public String getAll() throws ClassNotFoundException {
 
