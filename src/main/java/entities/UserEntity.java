@@ -12,6 +12,8 @@ public class UserEntity {
     private String firstname;
     private String lastname;
 
+    private String classNumber;
+
     public UserEntity(){}
 
     public UserEntity(String email, String username, String password, String firstname, String lastname){
