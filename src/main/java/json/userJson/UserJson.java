@@ -1,9 +1,11 @@
 package json.userJson;
 
+import java.io.Serializable;
+
 /**
  * Created by Alex on 09.05.2016.
  */
-public class UserJson {
+public class UserJson implements Serializable {
     private int id;
 
     private String email;
