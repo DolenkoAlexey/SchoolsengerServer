@@ -12,16 +12,6 @@ public class UserEntity {
     private String firstname;
     private String lastname;
 
-    private String classNumber;
-
-    public String getClassNumber() {
-        return classNumber;
-    }
-
-    public void setClassNumber(String classNumber) {
-        this.classNumber = classNumber;
-    }
-
     public UserEntity(){}
 
     public UserEntity(String email, String username, String password, String firstname, String lastname){

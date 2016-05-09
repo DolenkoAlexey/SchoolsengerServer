@@ -1,5 +1,7 @@
 package json.userJson;
 
+import org.neo4j.cypher.internal.compiler.v2_0.functions.Str;
+
 import java.io.Serializable;
 
 /**
@@ -16,6 +18,8 @@ public class UserJson implements Serializable {
     private String lastname;
 
     protected String role;
+
+    private String classNumber;
 
     public UserJson(){}
 
