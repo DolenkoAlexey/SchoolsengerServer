@@ -39,11 +39,9 @@ public class AuthorizationController {
 	}
 	
 	@RequestMapping(method=RequestMethod.POST, value="/adduser")
-	public String adduser(@RequestBody UserJson userJson) throws ClassNotFoundException {
+	public String adduser(@RequestBody String userString) throws ClassNotFoundException {
 
-		Schoolkid user = new Schoolkid(userJson.getId(), userJson.getEmail(), userJson.getUsername(),
-					userJson.getPassword(), userJson.getFirstname(), userJson.getLastname(),
-					(userJson).getClassNumber());
+		User user = UserJsonParser.ParseUserByString(userString);
 
 //		UserDAOService userService = new UserDAOService();
 //		User user = UserJsonParser.UserParse(userJson);
