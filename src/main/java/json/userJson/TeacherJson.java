@@ -10,7 +10,7 @@ public class TeacherJson extends UserJson implements Serializable{
     public TeacherJson(){}
 
     public TeacherJson(Integer id, String email, String username, String password, String firstname, String lastname) {
-        super(id, email, username, password, firstname, lastname, null);
+        super(id, email, username, password, firstname, lastname);
         role = "teacher";
     }
 }

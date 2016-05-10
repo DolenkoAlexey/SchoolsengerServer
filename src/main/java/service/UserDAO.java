@@ -1,22 +1,21 @@
 package service;
 
-import java.util.List;
-
-import json.UsersDataJson;
-import json.UsersDataListJson;
-import json.UsersListJson;
+import json.UsersMapJson;
 import json.userJson.UserJson;
-import modeles.User;
+import modeles.Schoolkid;
+import modeles.Teacher;
 
 public interface UserDAO {
 
-	UsersListJson selectAll();
+	UsersMapJson selectAll();
 
-	List selectByEmail(String email);
+	UserJson selectUserByEmail(String email);
 
 	//UsersDataJson selectUsersDataById(Integer id);
 
 	//UsersDataListJson getUsersDataListByIds(List<Integer> ids);
 
-	void add(User user);
+	void addUser(Schoolkid schoolkid);
+
+	void addUser(Teacher teacher);
 }

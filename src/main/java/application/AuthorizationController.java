@@ -1,13 +1,9 @@
 package application;
 
 
-import entities.TeacherEntity;
 import json.userJson.SchoolkidJson;
 import json.userJson.TeacherJson;
 import json.userJson.UserJson;
-import modeles.Schoolkid;
-import modeles.Teacher;
-import modeles.User;
 import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,11 +14,10 @@ import com.google.gson.GsonBuilder;
 
 import scala.collection.immutable.HashMap;
 import scala.util.parsing.json.JSONObject;
+import service.EntityConverter;
 import service.UserDAOService;
 import service.UserJsonParser;
 
-import javax.jws.soap.SOAPBinding;
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -30,28 +25,40 @@ import java.util.List;
 @RequestMapping("/authorization")
 public class AuthorizationController {
 	
-	@RequestMapping(method=RequestMethod.GET, value="/getuser")
+	@RequestMapping(method=RequestMethod.GET, value="/user")
 	public String getUserByEmail(@Param(value="email") String email) throws ClassNotFoundException {
 
 		UserDAOService userService = new UserDAOService();
-		List selectedUser = userService.selectByEmail(email);
+		UserJson selectedUser = userService.selectUserByEmail(email);
 		return new GsonBuilder().create().toJson(selectedUser);
 	}
 	
-	@RequestMapping(method=RequestMethod.POST, value="/adduser")
-	public String adduser(@RequestBody UserJson userJson) throws ClassNotFoundException {
-
+	@RequestMapping(method=RequestMethod.POST, value="/schoolkid")
+	public String addUser(@RequestBody SchoolkidJson schoolkidJson) throws ClassNotFoundException {
 
 		UserDAOService userService = new UserDAOService();
-		User user = UserJsonParser.UserParse(userJson);
-		userService.add(user);
+		EntityConverter converter = new EntityConverter();
+		UserJsonParser parser =  new UserJsonParser();
+
+		userService.addUser(parser.ParseUserFromJson(schoolkidJson));
 
 		return new GsonBuilder().create().toJson(new JSONObject(new HashMap<String, Object>()));
+	}
 
+	@RequestMapping(method=RequestMethod.POST, value="/teacher")
+	public String addUser(@RequestBody TeacherJson teacherJson) throws ClassNotFoundException {
+
+		UserDAOService userService = new UserDAOService();
+		EntityConverter converter = new EntityConverter();
+		UserJsonParser parser =  new UserJsonParser();
+
+		userService.addUser(parser.ParseUserFromJson(teacherJson));
+
+		return new GsonBuilder().create().toJson(new JSONObject(new HashMap<String, Object>()));
 	}
 
 
-	@RequestMapping(method=RequestMethod.GET, value="/getall")
+	@RequestMapping(method=RequestMethod.GET, value="/all")
 	public String getAll() throws ClassNotFoundException {
 
 		UserDAOService userService = new UserDAOService();

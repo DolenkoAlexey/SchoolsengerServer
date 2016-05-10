@@ -19,19 +19,16 @@ public class UserJson implements Serializable {
 
     protected String role;
 
-    private String classNumber;
-
     public UserJson(){}
 
     public UserJson(Integer id, String email, String username, String password,
-                    String firstname, String lastname, String classNumber){
+                    String firstname, String lastname){
         setId(id);
         setEmail(email);
         setUsername(username);
         setPassword(password);
         setFirstname(firstname);
         setLastname(lastname);
-        setClassNumber(classNumber);
     }
 
     public int getId(){
@@ -88,13 +85,5 @@ public class UserJson implements Serializable {
 
     public void setRole(String role) {
         this.role = role;
-    }
-
-    public String getClassNumber() {
-        return classNumber;
-    }
-
-    public void setClassNumber(String classNumber) {
-        this.classNumber = classNumber;
     }
 }
