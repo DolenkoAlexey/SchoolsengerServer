@@ -37,15 +37,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserJsonParser.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UserJsonParser.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/service/UserJsonParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="41" column="56" selection-start-line="41" selection-start-column="56" selection-end-line="41" selection-end-column="56" />
+            <state vertical-scroll-proportion="0.8498233">
+              <caret line="41" column="33" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1645#1646#0" expanded="true" />
-                <element signature="e#1708#1709#0" expanded="true" />
+                <element signature="e#1649#1650#0" expanded="true" />
+                <element signature="e#1716#1717#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -101,11 +101,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AuthorizationController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AuthorizationController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/application/AuthorizationController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.54063606">
-              <caret line="43" column="65" selection-start-line="43" selection-start-column="65" selection-end-line="43" selection-end-column="65" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="50" column="57" selection-start-line="50" selection-start-column="57" selection-end-line="50" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -187,8 +187,8 @@
         <option value="$PROJECT_DIR$/src/main/java/entities/UserEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/entities/SchoolkidEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/json/userJson/SchoolkidJson.java" />
-        <option value="$PROJECT_DIR$/src/main/java/service/UserJsonParser.java" />
         <option value="$PROJECT_DIR$/src/main/java/application/AuthorizationController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/service/UserJsonParser.java" />
       </list>
     </option>
   </component>
@@ -1043,23 +1043,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/UserJsonParser.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/AuthorizationController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="41" column="56" selection-start-line="41" selection-start-column="56" selection-end-line="41" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1645#1646#0" expanded="true" />
-            <element signature="e#1708#1709#0" expanded="true" />
-          </folding>
+          <caret line="50" column="57" selection-start-line="50" selection-start-column="57" selection-end-line="50" selection-end-column="57" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/application/AuthorizationController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/UserJsonParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54063606">
-          <caret line="43" column="65" selection-start-line="43" selection-start-column="65" selection-end-line="43" selection-end-column="65" />
-          <folding />
+        <state vertical-scroll-proportion="0.8498233">
+          <caret line="41" column="33" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1649#1650#0" expanded="true" />
+            <element signature="e#1716#1717#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

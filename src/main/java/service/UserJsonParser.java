@@ -38,7 +38,7 @@ public class UserJsonParser {
 
     }
 
-    static public User ParseUserByString(String userString){
-        return new Schoolkid(1,"1","2","3","4","5","6");
+    static public UserJson ParseUserByString(String userString){
+        return new SchoolkidJson(1,"1","2","3","4","5","6");
     }
 }
