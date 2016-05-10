@@ -39,16 +39,14 @@ public class AuthorizationController {
 	}
 	
 	@RequestMapping(method=RequestMethod.POST, value="/adduser")
-	public String adduser(@RequestBody String userString) throws ClassNotFoundException {
+	public String adduser(@RequestBody UserJson userJson) throws ClassNotFoundException {
 
-		List<UserJson> user = UserJsonParser.ParseUserByString(userString);
 
-//		UserDAOService userService = new UserDAOService();
-//		User user = UserJsonParser.UserParse(userJson);
-//		userService.add(user);
-//
-//		return new GsonBuilder().create().toJson(new JSONObject(new HashMap<String, Object>()));
-		return new GsonBuilder().create().toJson(user);
+		UserDAOService userService = new UserDAOService();
+		User user = UserJsonParser.UserParse(userJson);
+		userService.add(user);
+
+		return new GsonBuilder().create().toJson(new JSONObject(new HashMap<String, Object>()));
 
 	}
 
@@ -56,12 +54,7 @@ public class AuthorizationController {
 	@RequestMapping(method=RequestMethod.GET, value="/getall")
 	public String getAll() throws ClassNotFoundException {
 
-//		UserDAOService userService = new UserDAOService();
-//		return new GsonBuilder().create().toJson(userService.selectAll());
-
-		List list =  new ArrayList<UserJson>();
-		list.add(new SchoolkidJson(1,"1","2","3","4","5","6"));
-		list.add(new TeacherJson(2,"1","2","3","4","5"));
-		return new GsonBuilder().create().toJson(list);
+		UserDAOService userService = new UserDAOService();
+		return new GsonBuilder().create().toJson(userService.selectAll());
 	}
 }
