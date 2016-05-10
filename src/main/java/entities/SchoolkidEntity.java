@@ -14,8 +14,8 @@ public class SchoolkidEntity extends UserEntity{
 
     public SchoolkidEntity(String email, String username, String password, String firstname, String lastname, String classNumber){
         super(email, username, password, firstname, lastname);
+        setClassNumber(classNumber);
     }
-
     public String getClassNumber() {
         return classNumber;
     }

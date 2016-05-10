@@ -37,4 +37,6 @@ public class UserJsonParser {
         return user;
 
     }
+
+    //// TODO: 10.05.2016 parser
 }
