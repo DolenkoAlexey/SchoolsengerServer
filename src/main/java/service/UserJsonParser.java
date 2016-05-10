@@ -8,6 +8,9 @@ import modeles.Schoolkid;
 import modeles.Teacher;
 import modeles.User;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Alex on 09.05.2016.
  */
@@ -38,7 +41,10 @@ public class UserJsonParser {
 
     }
 
-    static public UserJson ParseUserByString(String userString){
-        return new SchoolkidJson(1,"1","2","3","4","5","6");
+    static public List<UserJson> ParseUserByString(String userString){
+        List list = new ArrayList<UserJson>();
+        list.add(new TeacherJson(2,"1","2","3","4","5"));
+        list.add(new SchoolkidJson(1,"1","2","3","4","5","6"));
+        return list;
     }
 }

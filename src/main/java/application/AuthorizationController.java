@@ -41,7 +41,7 @@ public class AuthorizationController {
 	@RequestMapping(method=RequestMethod.POST, value="/adduser")
 	public String adduser(@RequestBody String userString) throws ClassNotFoundException {
 
-		UserJson user = UserJsonParser.ParseUserByString(userString);
+		List<UserJson> user = UserJsonParser.ParseUserByString(userString);
 
 //		UserDAOService userService = new UserDAOService();
 //		User user = UserJsonParser.UserParse(userJson);
