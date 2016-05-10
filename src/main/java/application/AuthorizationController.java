@@ -43,7 +43,7 @@ public class AuthorizationController {
 
 		Schoolkid user = new Schoolkid(userJson.getId(), userJson.getEmail(), userJson.getUsername(),
 					userJson.getPassword(), userJson.getFirstname(), userJson.getLastname(),
-					((SchoolkidJson)userJson).getClassNumber());
+					(userJson).getClassNumber());
 
 //		UserDAOService userService = new UserDAOService();
 //		User user = UserJsonParser.UserParse(userJson);
