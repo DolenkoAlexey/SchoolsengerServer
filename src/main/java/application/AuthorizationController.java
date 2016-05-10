@@ -1,7 +1,9 @@
 package application;
 
 
+import entities.TeacherEntity;
 import json.userJson.SchoolkidJson;
+import json.userJson.TeacherJson;
 import json.userJson.UserJson;
 import modeles.Teacher;
 import modeles.User;
@@ -55,6 +57,7 @@ public class AuthorizationController {
 
 		List list =  new ArrayList<UserJson>();
 		list.add(new SchoolkidJson(1,"1","2","3","4","5","6"));
+		list.add(new TeacherJson(2,"1","2","3","4","5"));
 		return new GsonBuilder().create().toJson(list);
 	}
 }

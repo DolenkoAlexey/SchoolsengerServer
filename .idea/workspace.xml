@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="588a524f-6d5b-40ef-a981-4091511ed350" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/application/AuthorizationController.java" afterPath="$PROJECT_DIR$/src/main/java/application/AuthorizationController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/service/Converter.java" afterPath="$PROJECT_DIR$/src/main/java/service/Converter.java" />
     </list>
     <ignored path="SchoolsengerServer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,7 +40,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/application/AuthorizationController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.7375643">
-              <caret line="57" column="55" selection-start-line="57" selection-start-column="55" selection-end-line="57" selection-end-column="55" />
+              <caret line="59" column="57" selection-start-line="59" selection-start-column="57" selection-end-line="59" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -1036,14 +1035,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/UserDAOService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="66" column="58" selection-start-line="66" selection-start-column="58" selection-end-line="66" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/service/Converter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1054,10 +1045,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/UserDAOService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="66" column="58" selection-start-line="66" selection-start-column="58" selection-end-line="66" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/application/AuthorizationController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7375643">
-          <caret line="57" column="55" selection-start-line="57" selection-start-column="55" selection-end-line="57" selection-end-column="55" />
+          <caret line="59" column="57" selection-start-line="59" selection-start-column="57" selection-end-line="59" selection-end-column="57" />
           <folding />
         </state>
       </provider>
