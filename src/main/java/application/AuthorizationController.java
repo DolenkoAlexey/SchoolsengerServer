@@ -5,6 +5,7 @@ import entities.TeacherEntity;
 import json.userJson.SchoolkidJson;
 import json.userJson.TeacherJson;
 import json.userJson.UserJson;
+import modeles.Schoolkid;
 import modeles.Teacher;
 import modeles.User;
 import org.springframework.data.repository.query.Param;
@@ -40,12 +41,17 @@ public class AuthorizationController {
 	@RequestMapping(method=RequestMethod.POST, value="/adduser")
 	public String adduser(@RequestBody UserJson userJson) throws ClassNotFoundException {
 
+		Schoolkid user = new Schoolkid(userJson.getId(), userJson.getEmail(), userJson.getUsername(),
+					userJson.getPassword(), userJson.getFirstname(), userJson.getLastname(),
+					((SchoolkidJson)userJson).getClassNumber());
 
-		UserDAOService userService = new UserDAOService();
-		User user = UserJsonParser.UserParse(userJson);
-		userService.add(user);
+//		UserDAOService userService = new UserDAOService();
+//		User user = UserJsonParser.UserParse(userJson);
+//		userService.add(user);
+//
+//		return new GsonBuilder().create().toJson(new JSONObject(new HashMap<String, Object>()));
+		return new GsonBuilder().create().toJson(user);
 
-		return new GsonBuilder().create().toJson(new JSONObject(new HashMap<String, Object>()));
 	}
 
 

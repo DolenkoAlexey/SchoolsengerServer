@@ -19,7 +19,7 @@ public class UserJson implements Serializable {
 
     protected String role;
 
-    private String classNumber;
+    //private String classNumber;
 
     public UserJson(){}
 
@@ -31,7 +31,7 @@ public class UserJson implements Serializable {
         setPassword(password);
         setFirstname(firstname);
         setLastname(lastname);
-        setClassNumber(classNumber);
+        //setClassNumber(classNumber);
     }
 
     public int getId(){
@@ -90,11 +90,11 @@ public class UserJson implements Serializable {
         this.role = role;
     }
 
-    public String getClassNumber() {
-        return classNumber;
-    }
-
-    public void setClassNumber(String classNumber) {
-        this.classNumber = classNumber;
-    }
+//    public String getClassNumber() {
+//        return classNumber;
+//    }
+//
+//    public void setClassNumber(String classNumber) {
+//        this.classNumber = classNumber;
+//    }
 }
