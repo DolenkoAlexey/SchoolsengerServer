@@ -48,7 +48,7 @@ public class AuthorizationController {
 //		userService.add(user);
 //
 //		return new GsonBuilder().create().toJson(new JSONObject(new HashMap<String, Object>()));
-		return new GsonBuilder().create().toJson(UserJson);
+		return new GsonBuilder().create().toJson(user);
 
 	}
 
