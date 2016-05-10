@@ -52,29 +52,30 @@ public class UserDAOService implements UserDAO {
 	}
 
 	@Override
-	public UserJson selectByEmail(String email) {
+	public List selectByEmail(String email) {
 		Session session = sessionFactory.openSession();
 		Transaction trans = session.beginTransaction();
         Query querySchoolkids = session.createQuery("FROM SchoolkidEntity WHERE email = '" + email + "'");
-        Query queryTeachers = session.createQuery("FROM TeacherEntity WHERE email = '" + email + "'");
-        Query querySuperadmins = session.createQuery("FROM SuperadminEntity WHERE email = '" + email + "'");
+        //Query queryTeachers = session.createQuery("FROM TeacherEntity WHERE email = '" + email + "'");
+        //Query querySuperadmins = session.createQuery("FROM SuperadminEntity WHERE email = '" + email + "'");
 		trans.commit();
 
-        List<SchoolkidEntity> schoolkidList = (List<SchoolkidEntity>)querySchoolkids.list();
-        List<TeacherEntity> teacherList = (List<TeacherEntity>)queryTeachers.list();
-        List<SuperadminEntity> superadminList = (List<SuperadminEntity>)querySuperadmins.list();
-
-        List<UserEntity> userEntities = new ArrayList<>();
-
-        userEntities.addAll(schoolkidList);
-        userEntities.addAll(teacherList);
-        userEntities.addAll(superadminList);
-
-        List<UserJson> users = Converter.convertUserEntitiesToUsersJson(userEntities);
-
-		if(userEntities.isEmpty())
-			return new UserJson();
-		return users.get(0);
+//        List<SchoolkidEntity> schoolkidList = (List<SchoolkidEntity>)querySchoolkids.list();
+//        List<TeacherEntity> teacherList = (List<TeacherEntity>)queryTeachers.list();
+//        List<SuperadminEntity> superadminList = (List<SuperadminEntity>)querySuperadmins.list();
+//
+//        List<UserEntity> userEntities = new ArrayList<>();
+//
+//        userEntities.addAll(schoolkidList);
+//        userEntities.addAll(teacherList);
+//        userEntities.addAll(superadminList);
+//
+//        List<UserJson> users = Converter.convertUserEntitiesToUsersJson(userEntities);
+//
+//		if(userEntities.isEmpty())
+//			return new UserJson();
+//		return users.get(0);
+        return querySchoolkids.list();
 	}
 
 	@Override

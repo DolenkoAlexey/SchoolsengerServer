@@ -12,7 +12,7 @@ public interface UserDAO {
 
 	UsersListJson selectAll();
 
-	UserJson selectByEmail(String email);
+	List selectByEmail(String email);
 
 	//UsersDataJson selectUsersDataById(Integer id);
 
