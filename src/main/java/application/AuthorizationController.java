@@ -61,7 +61,6 @@ public class AuthorizationController {
 	public String getAll() throws ClassNotFoundException {
 
 		UserDAOService userService = new UserDAOService();
-        UsersMapJson usersMapJson = userService.selectAll();
-        return new GsonBuilder().create().toJson(usersMapJson);
+        return new GsonBuilder().create().toJson(userService.selectAll());
 	}
 }

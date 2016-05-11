@@ -51,8 +51,7 @@ public class UserDAOService implements UserDAO {
         userEntities.put(TeacherEntity.class, teacherEntities);
         userEntities.put(SuperadminEntity.class, superadminEntities);
 
-        Map<Class, List<? extends UserJson>> usersJson = converter.convertUserEntitiesToUsersJson(userEntities);
-        return new UsersMapJson(usersJson);
+        return new UsersMapJson(converter.convertUserEntitiesToUsersJson(userEntities));
 //
 //        Session session = sessionFactory.openSession();
 //		Transaction trans = session.beginTransaction();
