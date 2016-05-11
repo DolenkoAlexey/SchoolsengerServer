@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface UserDAO {
 
-	SchoolkidJson selectAll();
+	UsersMapJson selectAll();
 
 	UserJson selectUserByEmail(String email);
 

@@ -5,6 +5,9 @@ import entities.SuperadminEntity;
 import entities.TeacherEntity;
 import entities.UserEntity;
 import json.UsersMapJson;
+import json.userJson.SchoolkidJson;
+import json.userJson.SuperadminJson;
+import json.userJson.TeacherJson;
 import json.userJson.UserJson;
 import modeles.Schoolkid;
 import modeles.Teacher;
@@ -30,32 +33,50 @@ public class DemoApplicationTests {
 	@Test
 	public void contextLoads() {
 
-        EntityConverter converter = new EntityConverter();
-        UserJsonParser parser = new UserJsonParser();
+            List<SchoolkidEntity> schoolkidEntities = new ArrayList<>();
+            List<TeacherEntity> teacherEntities = new ArrayList<>();
+            List<SuperadminEntity> superadminEntities = new ArrayList<>();
+
+            schoolkidEntities.add(new SchoolkidEntity("123","qwe","asd","zxc","asd","asd"));
+            teacherEntities.add(new TeacherEntity("123123","qwqsdase","aasdassd","asdzxc","asasdd"));
+
+            Map<Class, List<? extends UserEntity>> userEntities = new HashMap<>();
+
+            userEntities.put(SchoolkidEntity.class, schoolkidEntities);
+            userEntities.put(TeacherEntity.class, teacherEntities);
+            userEntities.put(SuperadminEntity.class, superadminEntities);
+
+            UserJsonParser parser = new UserJsonParser();
+
+            List<SchoolkidEntity> schoolkids = (List<SchoolkidEntity>)userEntities.get(SchoolkidEntity.class);
+            List<TeacherEntity> teachers = (List<TeacherEntity>)userEntities.get(TeacherEntity.class);
+            List<SuperadminEntity> superadmins = (List<SuperadminEntity>)userEntities.get(SuperadminEntity.class);
+
+            List<SchoolkidJson> schoolkidsJson = new ArrayList<>();
+            List<TeacherJson> teachersJson = new ArrayList<>();
+            List<SuperadminJson> superadminsJson = new ArrayList<>();
+
+            EntityConverter converter = new EntityConverter();
+
+            if(schoolkids != null)
+                    for (SchoolkidEntity entity: schoolkids) {
+                            schoolkidsJson.add(parser.ParseUserToJson(converter.convertUserEntityToUser(entity)));
+                    }
+            if(teachers != null)
+                    for (TeacherEntity entity: teachers) {
+                            teachersJson.add(parser.ParseUserToJson(converter.convertUserEntityToUser(entity)));
+                    }
+            if(superadmins != null)
+                    for (SuperadminEntity entity: superadmins) {
+                            superadminsJson.add(parser.ParseUserToJson(converter.convertUserEntityToUser(entity)));
+                    }
+
+            Map<Class, List<? extends UserJson>> userJsons = new HashMap<>();
+            userJsons.put(SchoolkidJson.class, schoolkidsJson);
+            userJsons.put(TeacherJson.class, teachersJson);
+            userJsons.put(SuperadminJson.class, superadminsJson);
 
 
-        List<SchoolkidEntity> schoolkidEntities = new ArrayList<>();
-        schoolkidEntities.add(new SchoolkidEntity("12","wqe","qwe","qwe","qwe","qwe"));
-
-        List<TeacherEntity> teacherEntities = new ArrayList<>();
-        teacherEntities.add(new TeacherEntity("12","wqe","qwe","qwe","qwe"));
-
-        UserJson user = null;
-
-        if(!schoolkidEntities.isEmpty()){
-            user =  parser.ParseUserToJson(converter.convertUserEntityToUser(schoolkidEntities.get(0)));
-        }
-        else if(!teacherEntities.isEmpty()){
-            user =  parser.ParseUserToJson(converter.convertUserEntityToUser(teacherEntities.get(0)));
-        }
-
-
-        Map<Class, List<? extends UserEntity>> userEntities = new HashMap<>();
-
-        userEntities.put(SchoolkidEntity.class, schoolkidEntities);
-        userEntities.put(TeacherEntity.class, teacherEntities);
-
-        UsersMapJson usersMapJson = new UsersMapJson(converter.convertUserEntitiesToUsersJson(userEntities));
     }
 
 }

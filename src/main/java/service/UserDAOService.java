@@ -31,36 +31,36 @@ public class UserDAOService implements UserDAO {
 	}
 
 	@Override
-	public SchoolkidJson selectAll() {
-//		Session session = sessionFactory.openSession();
-//		Transaction trans = session.beginTransaction();
-//        EntityConverter converter = new EntityConverter();
-//
-//		Query querySchoolkids = session.createQuery("FROM  SchoolkidEntity");
-//        Query queryTeachers = session.createQuery("FROM  TeacherEntity");
-//        Query querySuperadmins = session.createQuery("FROM  SuperadminEntity");
-//		trans.commit();
-//
-//        List<SchoolkidEntity> schoolkidEntities = (List<SchoolkidEntity>)querySchoolkids.list();
-//        List<TeacherEntity> teacherEntities = (List<TeacherEntity>)queryTeachers.list();
-//        List<SuperadminEntity> superadminEntities = (List<SuperadminEntity>)querySuperadmins.list();
-//
-//        Map<Class, List<? extends UserEntity>> userEntities = new HashMap<>();
-//
-//        userEntities.put(SchoolkidEntity.class, schoolkidEntities);
-//        userEntities.put(TeacherEntity.class, teacherEntities);
-//        userEntities.put(SuperadminEntity.class, superadminEntities);
-//
-//        return new UsersMapJson(converter.convertUserEntitiesToUsersJson(userEntities));
-
-        Session session = sessionFactory.openSession();
+	public UsersMapJson selectAll() {
+		Session session = sessionFactory.openSession();
 		Transaction trans = session.beginTransaction();
-        Query querySchoolkids = session.createQuery("FROM  SchoolkidEntity");
-        trans.commit();
-        List<SchoolkidEntity> list = (List<SchoolkidEntity>) querySchoolkids.list();
         EntityConverter converter = new EntityConverter();
-        UserJsonParser parser = new UserJsonParser();
-        return parser.ParseUserToJson(converter.convertUserEntityToUser(list.get(0)));
+
+		Query querySchoolkids = session.createQuery("FROM  SchoolkidEntity");
+        Query queryTeachers = session.createQuery("FROM  TeacherEntity");
+        Query querySuperadmins = session.createQuery("FROM  SuperadminEntity");
+		trans.commit();
+
+        List<SchoolkidEntity> schoolkidEntities = (List<SchoolkidEntity>)querySchoolkids.list();
+        List<TeacherEntity> teacherEntities = (List<TeacherEntity>)queryTeachers.list();
+        List<SuperadminEntity> superadminEntities = (List<SuperadminEntity>)querySuperadmins.list();
+
+        Map<Class, List<? extends UserEntity>> userEntities = new HashMap<>();
+
+        userEntities.put(SchoolkidEntity.class, schoolkidEntities);
+        userEntities.put(TeacherEntity.class, teacherEntities);
+        userEntities.put(SuperadminEntity.class, superadminEntities);
+
+        return new UsersMapJson(converter.convertUserEntitiesToUsersJson(userEntities));
+//
+//        Session session = sessionFactory.openSession();
+//		Transaction trans = session.beginTransaction();
+//        Query querySchoolkids = session.createQuery("FROM  SchoolkidEntity");
+//        trans.commit();
+//        List<SchoolkidEntity> list = (List<SchoolkidEntity>) querySchoolkids.list();
+//        EntityConverter converter = new EntityConverter();
+//        UserJsonParser parser = new UserJsonParser();
+//        return parser.ParseUserToJson(converter.convertUserEntityToUser(list.get(0)));
 	}
 
 
