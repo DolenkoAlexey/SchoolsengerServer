@@ -24,17 +24,12 @@ public class SessionController {
 	
 	@RequestMapping(method=RequestMethod.GET, value="/interlocutors")
 	public String getInterlocutors(@RequestParam(value="id") Integer idFrom) {
-	
+
 		MessageDAO messageService = new MessageDAOService();
 		UserDAO userService = new UserDAOService();
 		
-//		List<Integer> idsTo = messageService.selectIdsToByIdFrom(idFrom);
-//		UsersDataMapJson usersDataList = userService.getUsersDataListByIds(idsTo);
-		List<Integer> list = new ArrayList<>();
-		list.add(1);
-		list.add(2);
-		list.add(3);
-		
-		return new GsonBuilder().create().toJson(userService.getUsersDataListByIds(list));
+		List<Integer> idsTo = messageService.selectIdsToByIdFrom(idFrom);
+
+		return new GsonBuilder().create().toJson(userService.getUsersDataListByIds(idsTo));
 	}
 }
