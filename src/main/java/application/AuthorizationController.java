@@ -37,7 +37,6 @@ public class AuthorizationController {
 	public String addUser(@RequestBody SchoolkidJson schoolkidJson) throws ClassNotFoundException {
 
 		UserDAOService userService = new UserDAOService();
-		EntityConverter converter = new EntityConverter();
 		UserJsonParser parser =  new UserJsonParser();
 
 		userService.addUser(parser.ParseUserFromJson(schoolkidJson));
@@ -49,7 +48,6 @@ public class AuthorizationController {
 	public String addUser(@RequestBody TeacherJson teacherJson) throws ClassNotFoundException {
 
 		UserDAOService userService = new UserDAOService();
-		EntityConverter converter = new EntityConverter();
 		UserJsonParser parser =  new UserJsonParser();
 
 		userService.addUser(parser.ParseUserFromJson(teacherJson));

@@ -84,7 +84,7 @@ public class EntityConverter {
 
         Schoolkid schoolkid = new Schoolkid(schoolkidEntity.getId(), schoolkidEntity.getEmail(), schoolkidEntity.getUsername(),
                 schoolkidEntity.getPassword(), schoolkidEntity.getFirstname(),
-                schoolkidEntity.getLastname(), (schoolkidEntity.getClassNumber()));
+                schoolkidEntity.getLastname(), schoolkidEntity.getClassNumber());
 
         return schoolkid;
     }

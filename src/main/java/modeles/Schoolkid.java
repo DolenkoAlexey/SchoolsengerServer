@@ -1,7 +1,5 @@
 package modeles;
 
-import scala.Int;
-
 public class Schoolkid extends User{
 	
 	private String classNumber;

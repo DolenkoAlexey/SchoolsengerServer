@@ -4,6 +4,7 @@ import entities.SchoolkidEntity;
 import entities.SuperadminEntity;
 import entities.TeacherEntity;
 import entities.UserEntity;
+import json.UsersMapJson;
 import json.userJson.UserJson;
 import modeles.Schoolkid;
 import modeles.Teacher;
@@ -47,6 +48,14 @@ public class DemoApplicationTests {
         else if(!teacherEntities.isEmpty()){
             user =  parser.ParseUserToJson(converter.convertUserEntityToUser(teacherEntities.get(0)));
         }
+
+
+        Map<Class, List<? extends UserEntity>> userEntities = new HashMap<>();
+
+        userEntities.put(SchoolkidEntity.class, schoolkidEntities);
+        userEntities.put(TeacherEntity.class, teacherEntities);
+
+        UsersMapJson usersMapJson = new UsersMapJson(converter.convertUserEntitiesToUsersJson(userEntities));
     }
 
 }
