@@ -56,7 +56,7 @@ public class UserDAOService implements UserDAO {
 		Transaction trans = session.beginTransaction();
         Query querySchoolkids = session.createQuery("FROM  SchoolkidEntity");
         trans.commit();
-        return querySchoolkids.list();
+        return (List<SchoolkidEntity>)querySchoolkids.list();
 	}
 
 
