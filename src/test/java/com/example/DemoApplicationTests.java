@@ -1,5 +1,6 @@
 package com.example;
 
+import com.google.gson.GsonBuilder;
 import entities.SchoolkidEntity;
 import entities.SuperadminEntity;
 import entities.TeacherEntity;
@@ -77,6 +78,8 @@ public class DemoApplicationTests {
             userJsons.put(SuperadminJson.class, superadminsJson);
 
             UsersMapJson usersMapJson = new UsersMapJson(userJsons);
+
+            String json = new GsonBuilder().create().toJson(usersMapJson);
     }
 
 }

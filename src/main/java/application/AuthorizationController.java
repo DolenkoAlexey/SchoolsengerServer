@@ -1,6 +1,7 @@
 package application;
 
 
+import json.UsersMapJson;
 import json.userJson.SchoolkidJson;
 import json.userJson.TeacherJson;
 import json.userJson.UserJson;
@@ -60,6 +61,7 @@ public class AuthorizationController {
 	public String getAll() throws ClassNotFoundException {
 
 		UserDAOService userService = new UserDAOService();
-		return new GsonBuilder().create().toJson(userService.selectAll());
+        UsersMapJson usersMapJson = userService.selectAll();
+        return new GsonBuilder().create().toJson(usersMapJson);
 	}
 }
