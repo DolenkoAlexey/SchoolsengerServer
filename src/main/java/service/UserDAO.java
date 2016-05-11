@@ -1,14 +1,13 @@
 package service;
 
-import entities.UserEntity;
+import json.UsersDataMapJson;
 import json.UsersMapJson;
-import json.userJson.SchoolkidJson;
 import json.userJson.UserJson;
+import json.usersDataJson.UsersDataJson;
 import modeles.Schoolkid;
 import modeles.Teacher;
 
 import java.util.List;
-import java.util.Map;
 
 public interface UserDAO {
 
@@ -16,9 +15,9 @@ public interface UserDAO {
 
 	UserJson selectUserByEmail(String email);
 
-	//UsersDataJson selectUsersDataById(Integer id);
+	UsersDataJson selectUsersDataById(Integer id);
 
-	//UsersDataListJson getUsersDataListByIds(List<Integer> ids);
+	UsersDataMapJson getUsersDataListByIds(List<Integer> ids);
 
 	void addUser(Schoolkid schoolkid);
 

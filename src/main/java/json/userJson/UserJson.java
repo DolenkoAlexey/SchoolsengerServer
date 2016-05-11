@@ -1,5 +1,6 @@
 package json.userJson;
 
+import com.google.gson.annotations.SerializedName;
 import org.neo4j.cypher.internal.compiler.v2_0.functions.Str;
 
 import java.io.Serializable;
@@ -8,15 +9,22 @@ import java.io.Serializable;
  * Created by Alex on 09.05.2016.
  */
 public class UserJson implements Serializable {
+    @SerializedName("id")
     private int id;
 
+    @SerializedName("email")
     private String email;
+    @SerializedName("username")
     private String username;
+    @SerializedName("password")
     private String password;
 
+    @SerializedName("firstname")
     private String firstname;
+    @SerializedName("lastname")
     private String lastname;
 
+    @SerializedName("role")
     protected String role;
 
     public UserJson(){}

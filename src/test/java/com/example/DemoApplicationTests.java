@@ -10,6 +10,8 @@ import json.userJson.SchoolkidJson;
 import json.userJson.SuperadminJson;
 import json.userJson.TeacherJson;
 import json.userJson.UserJson;
+import json.usersDataJson.SchoolkidsDataJson;
+import json.usersDataJson.UsersDataJson;
 import modeles.Schoolkid;
 import modeles.Teacher;
 import modeles.User;
@@ -33,53 +35,36 @@ public class DemoApplicationTests {
 
 	@Test
 	public void contextLoads() {
+        EntityConverter converter = new EntityConverter();
+        UserJsonParser parser = new UserJsonParser();
 
-            List<SchoolkidEntity> schoolkidEntities = new ArrayList<>();
-            List<TeacherEntity> teacherEntities = new ArrayList<>();
-            List<SuperadminEntity> superadminEntities = new ArrayList<>();
+        List<SchoolkidEntity> schoolkidList = new ArrayList<>();
+        List<TeacherEntity> teacherList = new ArrayList<>();
+        List<SuperadminEntity> superadminList = new ArrayList<>();
 
-            schoolkidEntities.add(new SchoolkidEntity("123","qwe","asd","zxc","asd","asd"));
-            teacherEntities.add(new TeacherEntity("123123","qwqsdase","aasdassd","asdzxc","asasdd"));
+        schoolkidList.add(new SchoolkidEntity("qwe","asd","wer","ert","rt","weasd"));
 
-            Map<Class, List<? extends UserEntity>> userEntities = new HashMap<>();
+        UserJson userJson;
+        UsersDataJson usersData = null;
 
-            userEntities.put(SchoolkidEntity.class, schoolkidEntities);
-            userEntities.put(TeacherEntity.class, teacherEntities);
-            userEntities.put(SuperadminEntity.class, superadminEntities);
+        if(!schoolkidList.isEmpty()){
+            userJson =  parser.ParseUserToJson(converter.convertUserEntityToUser(schoolkidList.get(0)));
+            usersData = new SchoolkidsDataJson(userJson.getId(), userJson.getUsername(),
+                    userJson.getFirstname(), userJson.getLastname(), ((SchoolkidJson)userJson).getClassNumber());
+        }
+        else if(!teacherList.isEmpty()){
+            userJson =  parser.ParseUserToJson(converter.convertUserEntityToUser(teacherList.get(0)));
+        }
+        else if (!superadminList.isEmpty()){
+            userJson =  parser.ParseUserToJson(converter.convertUserEntityToUser(superadminList.get(0)));
+        }
+        else {
+            userJson = new UserJson();
+            usersData = new UsersDataJson(userJson.getId(), userJson.getUsername(),
+                    userJson.getFirstname(), userJson.getLastname());
+        }
 
-            UserJsonParser parser = new UserJsonParser();
-
-            List<SchoolkidEntity> schoolkids = (List<SchoolkidEntity>)userEntities.get(SchoolkidEntity.class);
-            List<TeacherEntity> teachers = (List<TeacherEntity>)userEntities.get(TeacherEntity.class);
-            List<SuperadminEntity> superadmins = (List<SuperadminEntity>)userEntities.get(SuperadminEntity.class);
-
-            List<SchoolkidJson> schoolkidsJson = new ArrayList<>();
-            List<TeacherJson> teachersJson = new ArrayList<>();
-            List<SuperadminJson> superadminsJson = new ArrayList<>();
-
-            EntityConverter converter = new EntityConverter();
-
-            if(schoolkids != null)
-                    for (SchoolkidEntity entity: schoolkids) {
-                            schoolkidsJson.add(parser.ParseUserToJson(converter.convertUserEntityToUser(entity)));
-                    }
-            if(teachers != null)
-                    for (TeacherEntity entity: teachers) {
-                            teachersJson.add(parser.ParseUserToJson(converter.convertUserEntityToUser(entity)));
-                    }
-            if(superadmins != null)
-                    for (SuperadminEntity entity: superadmins) {
-                            superadminsJson.add(parser.ParseUserToJson(converter.convertUserEntityToUser(entity)));
-                    }
-
-            Map<Class, List<? extends UserJson>> userJsons = new HashMap<>();
-            userJsons.put(SchoolkidJson.class, schoolkidsJson);
-            userJsons.put(TeacherJson.class, teachersJson);
-            userJsons.put(SuperadminJson.class, superadminsJson);
-
-            UsersMapJson usersMapJson = new UsersMapJson(userJsons);
-
-            String json = new GsonBuilder().create().toJson(usersMapJson);
+        String firstname = usersData.getFirstname();
     }
 
 }

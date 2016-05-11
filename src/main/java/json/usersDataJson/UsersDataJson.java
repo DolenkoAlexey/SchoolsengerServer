@@ -1,4 +1,4 @@
-package json;
+package json.usersDataJson;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -13,6 +13,9 @@ public class UsersDataJson {
     private String firstname;
     @SerializedName("lastname")
     private String lastname;
+
+	@SerializedName("role")
+	protected String role;
     
 	public UsersDataJson(int id, String username, String firstname, String lastname) {
 		this.id = id;
