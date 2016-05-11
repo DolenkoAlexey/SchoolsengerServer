@@ -77,8 +77,6 @@ public class DemoApplicationTests {
             userJsons.put(SuperadminJson.class, superadminsJson);
 
             UsersMapJson usersMapJson = new UsersMapJson(userJsons);
-
-
     }
 
 }

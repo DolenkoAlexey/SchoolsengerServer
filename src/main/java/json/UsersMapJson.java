@@ -20,10 +20,10 @@ public class UsersMapJson implements Serializable{
 	private Map<Class, List<? extends UserJson>> users;
 	
 	public UsersMapJson(Map<Class, List<? extends UserJson>> users) {
-		users = new HashMap<>();
-		users.put(SchoolkidJson.class, users.get(SchoolkidJson.class));
-		users.put(TeacherJson.class, users.get(TeacherJson.class));
-		users.put(Superadmin.class, users.get(Superadmin.class));
+		this.users = new HashMap<>();
+		this.users.put(SchoolkidJson.class, users.get(SchoolkidJson.class));
+		this.users.put(TeacherJson.class, users.get(TeacherJson.class));
+		this.users.put(Superadmin.class, users.get(Superadmin.class));
 	}
 
 	public Map<Class, List<? extends UserJson>> getMessages() {
@@ -31,8 +31,8 @@ public class UsersMapJson implements Serializable{
 	}
 
 	public void setMessages(Map<Class, List<? extends UserJson>> users) {
-		users.put(SchoolkidJson.class, users.get(SchoolkidJson.class));
-		users.put(TeacherJson.class, users.get(TeacherJson.class));
-		users.put(Superadmin.class, users.get(Superadmin.class));
+		this.users.put(SchoolkidJson.class, users.get(SchoolkidJson.class));
+		this.users.put(TeacherJson.class, users.get(TeacherJson.class));
+		this.users.put(Superadmin.class, users.get(Superadmin.class));
 	}
 }
