@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="588a524f-6d5b-40ef-a981-4091511ed350" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/service/UserDAO.java" afterPath="$PROJECT_DIR$/src/main/java/service/UserDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/service/UserDAOService.java" afterPath="$PROJECT_DIR$/src/main/java/service/UserDAOService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/json/UsersMapJson.java" afterPath="$PROJECT_DIR$/src/main/java/json/UsersMapJson.java" />
     </list>
     <ignored path="SchoolsengerServer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -65,11 +64,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserDAOService.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserDAOService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/service/UserDAOService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.13893653">
-              <caret line="33" column="11" selection-start-line="33" selection-start-column="11" selection-end-line="33" selection-end-column="47" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="47" column="78" selection-start-line="47" selection-start-column="78" selection-end-line="47" selection-end-column="78" />
               <folding>
                 <element signature="method#addUser#1;class#UserDAOService#0" expanded="false" />
               </folding>
@@ -90,18 +89,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UsersMapJson.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UsersMapJson.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/json/UsersMapJson.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
+            <state vertical-scroll-proportion="0.7338129">
+              <caret line="35" column="65" selection-start-line="35" selection-start-column="65" selection-end-line="35" selection-end-column="65" />
               <folding>
-                <element signature="e#395#396#0" expanded="true" />
-                <element signature="e#420#421#0" expanded="true" />
-                <element signature="e#482#483#0" expanded="true" />
-                <element signature="e#501#502#0" expanded="true" />
-                <element signature="e#573#574#0" expanded="true" />
-                <element signature="e#598#599#0" expanded="true" />
+                <element signature="e#798#799#0" expanded="true" />
+                <element signature="e#817#818#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -187,9 +182,9 @@
         <option value="$PROJECT_DIR$/src/main/java/modeles/Schoolkid.java" />
         <option value="$PROJECT_DIR$/src/main/java/application/AuthorizationController.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/example/DemoApplicationTests.java" />
-        <option value="$PROJECT_DIR$/src/main/java/json/UsersMapJson.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/UserDAOService.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/UserDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/json/UsersMapJson.java" />
       </list>
     </option>
   </component>
@@ -1095,21 +1090,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/json/UsersMapJson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
-          <folding>
-            <element signature="e#395#396#0" expanded="true" />
-            <element signature="e#420#421#0" expanded="true" />
-            <element signature="e#482#483#0" expanded="true" />
-            <element signature="e#501#502#0" expanded="true" />
-            <element signature="e#573#574#0" expanded="true" />
-            <element signature="e#598#599#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/application/SessionController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1147,10 +1127,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/service/UserDAOService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13893653">
-          <caret line="33" column="11" selection-start-line="33" selection-start-column="11" selection-end-line="33" selection-end-column="47" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="47" column="78" selection-start-line="47" selection-start-column="78" selection-end-line="47" selection-end-column="78" />
           <folding>
             <element signature="method#addUser#1;class#UserDAOService#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/json/UsersMapJson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7338129">
+          <caret line="35" column="65" selection-start-line="35" selection-start-column="65" selection-end-line="35" selection-end-column="65" />
+          <folding>
+            <element signature="e#798#799#0" expanded="true" />
+            <element signature="e#817#818#0" expanded="true" />
           </folding>
         </state>
       </provider>
