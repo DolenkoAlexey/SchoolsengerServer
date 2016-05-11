@@ -31,7 +31,7 @@ public class UserDAOService implements UserDAO {
 	}
 
 	@Override
-	public UsersMapJson selectAll() {
+	public Map<Class, List<? extends UserJson>> selectAll() {
 		Session session = sessionFactory.openSession();
 		Transaction trans = session.beginTransaction();
         EntityConverter converter = new EntityConverter();
@@ -51,7 +51,7 @@ public class UserDAOService implements UserDAO {
         userEntities.put(TeacherEntity.class, teacherEntities);
         userEntities.put(SuperadminEntity.class, superadminEntities);
 
-        return new UsersMapJson(converter.convertUserEntitiesToUsersJson(userEntities));
+        return converter.convertUserEntitiesToUsersJson(userEntities);
 //
 //        Session session = sessionFactory.openSession();
 //		Transaction trans = session.beginTransaction();
