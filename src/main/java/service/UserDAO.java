@@ -1,6 +1,7 @@
 package service;
 
 import json.UsersMapJson;
+import json.userJson.SchoolkidJson;
 import json.userJson.UserJson;
 import modeles.Schoolkid;
 import modeles.Teacher;
@@ -9,7 +10,7 @@ import java.util.List;
 
 public interface UserDAO {
 
-	Schoolkid selectAll();
+	SchoolkidJson selectAll();
 
 	UserJson selectUserByEmail(String email);
 

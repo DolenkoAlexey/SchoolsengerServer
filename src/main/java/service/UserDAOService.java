@@ -8,6 +8,7 @@ import entities.SchoolkidEntity;
 import entities.SuperadminEntity;
 import entities.TeacherEntity;
 import entities.UserEntity;
+import json.userJson.SchoolkidJson;
 import json.userJson.UserJson;
 import modeles.Schoolkid;
 import modeles.Teacher;
@@ -30,7 +31,7 @@ public class UserDAOService implements UserDAO {
 	}
 
 	@Override
-	public Schoolkid selectAll() {
+	public SchoolkidJson selectAll() {
 //		Session session = sessionFactory.openSession();
 //		Transaction trans = session.beginTransaction();
 //        EntityConverter converter = new EntityConverter();
@@ -58,7 +59,8 @@ public class UserDAOService implements UserDAO {
         trans.commit();
         List<SchoolkidEntity> list = (List<SchoolkidEntity>) querySchoolkids.list();
         EntityConverter converter = new EntityConverter();
-        return converter.convertUserEntityToUser(list.get(0));
+        UserJsonParser parser = new UserJsonParser();
+        return parser.ParseUserToJson(converter.convertUserEntityToUser(list.get(0)));
 	}
 
 
