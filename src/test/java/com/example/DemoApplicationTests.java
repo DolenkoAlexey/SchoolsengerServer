@@ -1,6 +1,7 @@
 package com.example;
 
 import entities.SchoolkidEntity;
+import entities.SuperadminEntity;
 import entities.TeacherEntity;
 import entities.UserEntity;
 import json.userJson.UserJson;
@@ -27,8 +28,10 @@ public class DemoApplicationTests {
 
 	@Test
 	public void contextLoads() {
+
         EntityConverter converter = new EntityConverter();
-        Map<Class, List<? extends UserEntity>> userEntities = new HashMap<>();
+        UserJsonParser parser = new UserJsonParser();
+
 
         List<SchoolkidEntity> schoolkidEntities = new ArrayList<>();
         schoolkidEntities.add(new SchoolkidEntity("12","wqe","qwe","qwe","qwe","qwe"));
@@ -36,11 +39,14 @@ public class DemoApplicationTests {
         List<TeacherEntity> teacherEntities = new ArrayList<>();
         teacherEntities.add(new TeacherEntity("12","wqe","qwe","qwe","qwe"));
 
-        userEntities.put(SchoolkidEntity.class, schoolkidEntities);
-        userEntities.put(TeacherEntity.class, teacherEntities);
+        UserJson user = null;
 
-        Map<Class, List<? extends UserJson>> listMap = converter.convertUserEntitiesToUsersJson(userEntities);
-
+        if(!schoolkidEntities.isEmpty()){
+            user =  parser.ParseUserToJson(converter.convertUserEntityToUser(schoolkidEntities.get(0)));
+        }
+        else if(!teacherEntities.isEmpty()){
+            user =  parser.ParseUserToJson(converter.convertUserEntityToUser(teacherEntities.get(0)));
+        }
     }
 
 }
