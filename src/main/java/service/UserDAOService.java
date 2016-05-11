@@ -30,7 +30,7 @@ public class UserDAOService implements UserDAO {
 	}
 
 	@Override
-	public List selectAll() {
+	public Schoolkid selectAll() {
 //		Session session = sessionFactory.openSession();
 //		Transaction trans = session.beginTransaction();
 //        EntityConverter converter = new EntityConverter();
@@ -57,7 +57,8 @@ public class UserDAOService implements UserDAO {
         Query querySchoolkids = session.createQuery("FROM  SchoolkidEntity");
         trans.commit();
         List<SchoolkidEntity> list = (List<SchoolkidEntity>) querySchoolkids.list();
-        return list;
+        EntityConverter converter = new EntityConverter();
+        return converter.convertUserEntityToUser(list.get(0));
 	}
 
 

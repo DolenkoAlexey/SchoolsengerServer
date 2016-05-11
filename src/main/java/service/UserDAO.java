@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface UserDAO {
 
-	List selectAll();
+	Schoolkid selectAll();
 
 	UserJson selectUserByEmail(String email);
 
