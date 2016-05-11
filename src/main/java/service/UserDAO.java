@@ -12,7 +12,7 @@ import java.util.Map;
 
 public interface UserDAO {
 
-	UsersMapJson selectAll();
+	Map<Class, List<? extends UserJson>> selectAll();
 
 	UserJson selectUserByEmail(String email);
 
