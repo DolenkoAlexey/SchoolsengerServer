@@ -24,5 +24,5 @@ public interface UserDAO {
 
 	void addUser(Teacher teacher);
 
-	UserJson delete(Integer id);
+	void delete(Integer id);
 }
