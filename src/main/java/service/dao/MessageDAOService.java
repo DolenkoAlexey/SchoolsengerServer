@@ -1,7 +1,9 @@
-package service;
+package service.dao;
 
 import java.util.List;
 
+import json.messagesJson.MessageJson;
+import modeles.Message;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -9,10 +11,13 @@ import org.hibernate.Transaction;
 import org.springframework.transaction.annotation.Transactional;
 
 import entities.MessageEntity;
-import json.MessagesListJson;
+import json.messagesJson.MessagesListJson;
+import service.HibernateUtil;
+import service.dao.MessageDAO;
+import service.converters.MessageConverter;
 
 @Transactional
-public class MessageDAOService implements MessageDAO{
+public class MessageDAOService implements MessageDAO {
 
 	private static SessionFactory sessionFactory;
 	
@@ -27,7 +32,12 @@ public class MessageDAOService implements MessageDAO{
 		Transaction trans = session.beginTransaction();
 		Query query = session.createQuery("FROM  MessageEntity m");
 		trans.commit();
-		return new MessagesListJson((List<MessageEntity>)query.list());
+
+        MessageConverter converter = new MessageConverter();
+
+        List<MessageEntity> messages = (List<MessageEntity>) query.list();
+        List<MessageJson> messageJsons = converter.convertMessageEntitiesToMessageJsons(messages);
+        return new MessagesListJson(messageJsons);
 	}
 
 	@Override
@@ -38,7 +48,12 @@ public class MessageDAOService implements MessageDAO{
 										+ "WHERE m.idFrom = '" + idFrom.toString() 
 										+ "' AND m.idTo = '" + idTo.toString() + "'");
 		trans.commit();
-		return new MessagesListJson((List<MessageEntity>)query.list());
+
+        MessageConverter converter = new MessageConverter();
+
+        List<MessageEntity> messages = (List<MessageEntity>) query.list();
+        List<MessageJson> messageJsons = converter.convertMessageEntitiesToMessageJsons(messages);
+        return new MessagesListJson(messageJsons);
 	}
 
 	@Override
@@ -54,10 +69,13 @@ public class MessageDAOService implements MessageDAO{
 	}
 
 	@Override
-	public void add(MessageEntity message) {
+	public void add(Message message) {
 		Session session = sessionFactory.getCurrentSession();
 		Transaction trans = session.beginTransaction();
-		session.save(message);
+
+		MessageConverter converter = new MessageConverter();
+
+		session.save(converter.convertMessageToMessageEntity(message));
 		trans.commit();	
 	}
 

@@ -1,4 +1,4 @@
-package service;
+package service.parsers;
 
 import json.userJson.SchoolkidJson;
 import json.userJson.SuperadminJson;
@@ -34,6 +34,7 @@ public class UserJsonParser {
         return teacher;
     }
 
+
     public TeacherJson ParseUserToJson(Teacher teacher){
 
         TeacherJson teacherJson = new TeacherJson(teacher.getId(), teacher.getEmail(), teacher.getUsername(),
@@ -54,25 +55,4 @@ public class UserJsonParser {
                 superadmin.getPassword(), superadmin.getFirstname(), superadmin.getLastname());
         return superadminJson;
     }
-
-//    public Map<Class , List<? extends User>> func(UserJson user) {
-//        List<UserJson> users = new ArrayList<>();
-//        users.add(user);
-//        return func(users);
-//    }
-//
-//    public Map<Class , List<? extends User>> func(List<UserJson> users) {
-//        Map<Class, List<? extends User>> result = new HashMap<>();
-//
-//        List<Schoolkid> schoolkids = new ArrayList<>();
-//        List<Teacher> teachers = new ArrayList<>();
-//
-//        schoolkids.add(new Schoolkid(1,"1","2","3","4","5","6"));
-//        teachers.add(new Teacher(2,"1","2","3","4","5"));
-//
-//        result.put(Teacher.class, teachers);
-//        result.put(Schoolkid.class, schoolkids);
-//
-//        return result;
-//    }
 }

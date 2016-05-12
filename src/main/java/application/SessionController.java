@@ -2,20 +2,21 @@ package application;
 
 
 
-import org.neo4j.cypher.internal.compiler.v2_0.ast.In;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import json.messagesJson.MessageJson;
+import json.messagesJson.MessagesListJson;
+import modeles.User;
+import org.springframework.web.bind.annotation.*;
 
 import com.google.gson.GsonBuilder;
 
-import service.MessageDAO;
-import service.MessageDAOService;
-import service.UserDAO;
-import service.UserDAOService;
+import scala.collection.immutable.HashMap;
+import scala.util.parsing.json.JSONObject;
+import service.dao.MessageDAO;
+import service.dao.MessageDAOService;
+import service.dao.UserDAO;
+import service.dao.UserDAOService;
+import service.parsers.MessageJsonParser;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -32,4 +33,23 @@ public class SessionController {
 
 		return new GsonBuilder().create().toJson(userService.getUsersDataListByIds(idsTo));
 	}
+
+	@RequestMapping(method=RequestMethod.POST, value="/message")
+	public String addMessage(@RequestBody MessageJson messageJson) {
+
+		MessageDAO messageService = new MessageDAOService();
+
+        MessageJsonParser parser = new MessageJsonParser();
+        messageService.add(parser.parseMessageFromJson(messageJson));
+
+		return new GsonBuilder().create().toJson(new JSONObject(new HashMap<String, Object>()));
+	}
+
+    @RequestMapping(method=RequestMethod.GET, value="/allmessages")
+    public String getMessages() {
+
+        MessageDAO messageService = new MessageDAOService();
+
+        return new GsonBuilder().create().toJson(messageService.selectAll());
+    }
 }

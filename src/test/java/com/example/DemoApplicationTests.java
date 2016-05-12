@@ -1,20 +1,12 @@
 package com.example;
 
-import com.google.gson.GsonBuilder;
 import entities.SchoolkidEntity;
 import entities.SuperadminEntity;
 import entities.TeacherEntity;
-import entities.UserEntity;
-import json.UsersMapJson;
 import json.userJson.SchoolkidJson;
-import json.userJson.SuperadminJson;
-import json.userJson.TeacherJson;
 import json.userJson.UserJson;
 import json.usersDataJson.SchoolkidsDataJson;
 import json.usersDataJson.UsersDataJson;
-import modeles.Schoolkid;
-import modeles.Teacher;
-import modeles.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.SpringApplicationConfiguration;
@@ -22,11 +14,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
 import application.SchoolsengerServerApplication;
-import service.EntityConverter;
-import service.UserJsonParser;;import java.util.ArrayList;
-import java.util.HashMap;
+import service.converters.UserConverter;
+import service.parsers.UserJsonParser;;import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = SchoolsengerServerApplication.class)
@@ -35,7 +25,7 @@ public class DemoApplicationTests {
 
 	@Test
 	public void contextLoads() {
-        EntityConverter converter = new EntityConverter();
+        UserConverter converter = new UserConverter();
         UserJsonParser parser = new UserJsonParser();
 
         List<SchoolkidEntity> schoolkidList = new ArrayList<>();

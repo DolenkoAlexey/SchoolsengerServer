@@ -1,4 +1,4 @@
-package json;
+package json.messagesJson;
 
 import java.io.Serializable;
 import java.util.List;
@@ -10,17 +10,17 @@ import entities.MessageEntity;
 public class MessagesListJson implements Serializable {
 	
 	@SerializedName("messages")
-	private List<MessageEntity> messages;
+	private List<MessageJson> messages;
 	
-	public MessagesListJson(List<MessageEntity> messages) {
+	public MessagesListJson(List<MessageJson> messages) {
 		this.messages = messages;
 	}
 
-	public List<MessageEntity> getMessages() {
+	public List<MessageJson> getMessages() {
 		return messages;
 	}
 
-	public void setMessages(List<MessageEntity> messages) {
+	public void setMessages(List<MessageJson> messages) {
 		this.messages = messages;
 	}
 	

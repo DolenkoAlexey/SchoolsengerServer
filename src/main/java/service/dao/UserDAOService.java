@@ -1,4 +1,4 @@
-package service;
+package service.dao;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -9,7 +9,7 @@ import entities.SchoolkidEntity;
 import entities.SuperadminEntity;
 import entities.TeacherEntity;
 import entities.UserEntity;
-import json.UsersDataMapJson;
+import json.usersDataJson.UsersDataMapJson;
 import json.userJson.SchoolkidJson;
 import json.usersDataJson.SchoolkidsDataJson;
 import json.usersDataJson.SuperadminsDataJson;
@@ -24,7 +24,11 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.transaction.annotation.Transactional;
 
-import json.UsersMapJson;
+import json.userJson.UsersMapJson;
+import service.HibernateUtil;
+import service.dao.UserDAO;
+import service.converters.UserConverter;
+import service.parsers.UserJsonParser;
 
 @Transactional
 public class UserDAOService implements UserDAO {
@@ -40,7 +44,7 @@ public class UserDAOService implements UserDAO {
 	public UsersMapJson selectAll() {
 		Session session = sessionFactory.openSession();
 		Transaction trans = session.beginTransaction();
-        EntityConverter converter = new EntityConverter();
+        UserConverter converter = new UserConverter();
 
 		Query querySchoolkids = session.createQuery("FROM  SchoolkidEntity");
         Query queryTeachers = session.createQuery("FROM  TeacherEntity");
@@ -65,7 +69,7 @@ public class UserDAOService implements UserDAO {
         Session session = sessionFactory.openSession();
         Transaction trans = session.beginTransaction();
 
-        EntityConverter converter = new EntityConverter();
+        UserConverter converter = new UserConverter();
         UserJsonParser parser = new UserJsonParser();
 
         Query querySchoolkids = session.createQuery("FROM SchoolkidEntity WHERE email = '" + email + "'");
@@ -96,7 +100,7 @@ public class UserDAOService implements UserDAO {
 	public void addUser(Schoolkid schoolkid) {
 		Session session = sessionFactory.getCurrentSession();
         Transaction trans = session.beginTransaction();
-        EntityConverter converter = new EntityConverter();
+        UserConverter converter = new UserConverter();
 
         SchoolkidEntity schoolkidEntity = converter.convertUserToUserEntity(schoolkid);
         session.save(schoolkidEntity);
@@ -108,7 +112,7 @@ public class UserDAOService implements UserDAO {
     public void addUser(Teacher teacher) {
         Session session = sessionFactory.getCurrentSession();
         Transaction trans = session.beginTransaction();
-        EntityConverter converter = new EntityConverter();
+        UserConverter converter = new UserConverter();
 
         TeacherEntity teacherEntity = converter.convertUserToUserEntity(teacher);
         session.save(teacherEntity);
@@ -122,7 +126,7 @@ public class UserDAOService implements UserDAO {
 		Transaction trans = session.beginTransaction();
 
 
-        EntityConverter converter = new EntityConverter();
+        UserConverter converter = new UserConverter();
         UserJsonParser parser = new UserJsonParser();
 
         Query querySchoolkids = session.createQuery("FROM SchoolkidEntity WHERE id = '" + id + "'");

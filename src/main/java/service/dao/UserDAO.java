@@ -1,7 +1,7 @@
-package service;
+package service.dao;
 
-import json.UsersDataMapJson;
-import json.UsersMapJson;
+import json.usersDataJson.UsersDataMapJson;
+import json.userJson.UsersMapJson;
 import json.userJson.UserJson;
 import json.usersDataJson.UsersDataJson;
 import modeles.Schoolkid;

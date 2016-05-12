@@ -1,14 +1,15 @@
 package modeles;
 
-public class MessageModel {
+public class Message {
     private int id;
     private int idFrom;
     private int idTo;
     private String messageString;
 
-    public MessageModel(){}
+    public Message(){}
 
-    public MessageModel(int idFrom, int idTo, String messageString) {
+    public Message(int  id, int idFrom, int idTo, String messageString) {
+        this.id = id;
         this.idFrom = idFrom;
         this.idTo = idTo;
         this.messageString = messageString;

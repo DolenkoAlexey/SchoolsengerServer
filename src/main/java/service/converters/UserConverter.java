@@ -1,4 +1,4 @@
-package service;
+package service.converters;
 
 import entities.SchoolkidEntity;
 import entities.SuperadminEntity;
@@ -11,7 +11,7 @@ import json.userJson.UserJson;
 import modeles.Schoolkid;
 import modeles.Superadmin;
 import modeles.Teacher;
-import modeles.User;
+import service.parsers.UserJsonParser;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.Map;
 
 
-public class EntityConverter {
+public class UserConverter {
     public Map<Class, List<? extends UserJson>> convertUserEntitiesToUsersJson(Map<Class, List<? extends UserEntity>> userEntities) {
 
         UserJsonParser parser = new UserJsonParser();

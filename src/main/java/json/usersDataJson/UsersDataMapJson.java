@@ -1,4 +1,4 @@
-package json;
+package json.usersDataJson;
 
 import java.util.List;
 import java.util.Map;

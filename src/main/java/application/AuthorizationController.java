@@ -1,7 +1,6 @@
 package application;
 
 
-import json.UsersMapJson;
 import json.userJson.SchoolkidJson;
 import json.userJson.TeacherJson;
 import json.userJson.UserJson;
@@ -15,11 +14,8 @@ import com.google.gson.GsonBuilder;
 
 import scala.collection.immutable.HashMap;
 import scala.util.parsing.json.JSONObject;
-import service.EntityConverter;
-import service.UserDAOService;
-import service.UserJsonParser;
-
-import java.util.List;
+import service.dao.UserDAOService;
+import service.parsers.UserJsonParser;
 
 
 @RestController

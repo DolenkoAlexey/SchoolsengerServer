@@ -24,9 +24,6 @@ public class UserJson implements Serializable {
     @SerializedName("lastname")
     private String lastname;
 
-    @SerializedName("role")
-    protected String role;
-
     public UserJson(){}
 
     public UserJson(Integer id, String email, String username, String password,
@@ -67,10 +64,6 @@ public class UserJson implements Serializable {
         this.id = id;
     }
 
-    public String getRole() {
-        return role;
-    }
-
     public void setLastname(String lastname) {
         this.lastname = lastname;
     }
@@ -89,9 +82,5 @@ public class UserJson implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
     }
 }

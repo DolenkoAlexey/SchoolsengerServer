@@ -1,4 +1,4 @@
-package json;
+package json.userJson;
 
 import java.io.Serializable;
 import java.util.ArrayList;

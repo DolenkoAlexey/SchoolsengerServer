@@ -19,7 +19,6 @@ public class SchoolkidJson extends UserJson implements Serializable {
                          String firstname, String lastname, String classNumber) {
         super(id, email, username, password, firstname, lastname);
         this.setClassNumber(classNumber);
-        role = "schoolkid";
     }
 
     public String getClassNumber() {
