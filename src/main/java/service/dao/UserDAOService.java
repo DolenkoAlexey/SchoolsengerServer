@@ -199,10 +199,13 @@ public class UserDAOService implements UserDAO {
 	}
 
     @Override
-    public UserEntity delete(Integer id) {
+    public UserJson delete(Integer id) {
 
         Session session = sessionFactory.openSession();
         Transaction trans = session.beginTransaction();
+
+        UserConverter converter = new UserConverter();
+        UserJsonParser parser = new UserJsonParser();
 
         Query querySchoolkids = session.createQuery("FROM SchoolkidEntity WHERE id = '" + id + "'");
         Query queryTeachers = session.createQuery("FROM TeacherEntity WHERE id = '" + id + "'");
@@ -213,16 +216,16 @@ public class UserDAOService implements UserDAO {
         List<TeacherEntity> teacherList = (List<TeacherEntity>)queryTeachers.list();
         List<SuperadminEntity> superadminList = (List<SuperadminEntity>)querySuperadmins.list();
 
-        UserEntity user = null;
+        UserJson user = null;
 
         if(!schoolkidList.isEmpty()){
-            user = schoolkidList.get(0);
+            user =  parser.ParseUserToJson(converter.convertUserEntityToUser(schoolkidList.get(0)));
         }
         else if(!teacherList.isEmpty()){
-            user = teacherList.get(0);
+            user =  parser.ParseUserToJson(converter.convertUserEntityToUser(teacherList.get(0)));
         }
         else if (!superadminList.isEmpty()){
-            user = superadminList.get(0);
+            user =  parser.ParseUserToJson(converter.convertUserEntityToUser(superadminList.get(0)));
         }
 
         //session.delete(user);
