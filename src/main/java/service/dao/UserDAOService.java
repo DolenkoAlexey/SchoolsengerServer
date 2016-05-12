@@ -207,7 +207,6 @@ public class UserDAOService implements UserDAO {
         Query querySchoolkids = session.createQuery("FROM SchoolkidEntity WHERE id = '" + id + "'");
         Query queryTeachers = session.createQuery("FROM TeacherEntity WHERE id = '" + id + "'");
         Query querySuperadmins = session.createQuery("FROM SuperadminEntity WHERE id = '" + id + "'");
-        trans.commit();
 
         List<SchoolkidEntity> schoolkidList = (List<SchoolkidEntity>)querySchoolkids.list();
         List<TeacherEntity> teacherList = (List<TeacherEntity>)queryTeachers.list();
