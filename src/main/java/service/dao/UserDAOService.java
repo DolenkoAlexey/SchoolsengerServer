@@ -199,7 +199,7 @@ public class UserDAOService implements UserDAO {
 	}
 
     @Override
-    public void delete(Integer id) {
+    public UserEntity delete(Integer id) {
 
         Session session = sessionFactory.openSession();
         Transaction trans = session.beginTransaction();
@@ -213,23 +213,19 @@ public class UserDAOService implements UserDAO {
         List<TeacherEntity> teacherList = (List<TeacherEntity>)queryTeachers.list();
         List<SuperadminEntity> superadminList = (List<SuperadminEntity>)querySuperadmins.list();
 
+        UserEntity user = null;
 
         if(!schoolkidList.isEmpty()){
-            SchoolkidEntity user = schoolkidList.get(0);
-            session.delete(user);
+            user = schoolkidList.get(0);
         }
         else if(!teacherList.isEmpty()){
-            TeacherEntity user = teacherList.get(0);
-            session.delete(user);
+            user = teacherList.get(0);
         }
         else if (!superadminList.isEmpty()){
-            SuperadminEntity user = superadminList.get(0);
-            session.delete(user);
-        }
-        else{
-            return;
+            user = superadminList.get(0);
         }
 
         //session.delete(user);
+        return user;
     }
 }

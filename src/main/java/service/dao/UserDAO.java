@@ -1,5 +1,6 @@
 package service.dao;
 
+import entities.UserEntity;
 import json.usersDataJson.UsersDataMapJson;
 import json.userJson.UsersMapJson;
 import json.userJson.UserJson;
@@ -23,5 +24,5 @@ public interface UserDAO {
 
 	void addUser(Teacher teacher);
 
-	void delete(Integer id);
+	UserEntity delete(Integer id);
 }
