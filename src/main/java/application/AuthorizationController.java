@@ -71,6 +71,6 @@ public class AuthorizationController {
 
         userService.delete(id);
 
-        return new GsonBuilder().create().toJson(new JSONObject(new HashMap<String, Object>()));
+        return new GsonBuilder().create().toJson(userService.delete(id));
     }
 }
