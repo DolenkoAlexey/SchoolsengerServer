@@ -23,22 +23,24 @@ import service.parsers.UserJsonParser;
 public class AuthorizationController {
 
 	@RequestMapping(method=RequestMethod.GET, value="/all")
-	public String getAll() throws ClassNotFoundException {
+	public String getAll() {
 
 		UserDAOService userService = new UserDAOService();
 		return new GsonBuilder().create().toJson(userService.selectAll());
 	}
+
 	
 	@RequestMapping(method=RequestMethod.GET, value="/user")
-	public String getUserByEmail(@Param(value="email") String email) throws ClassNotFoundException {
+	public String getUserByEmail(@Param(value="email") String email) {
 
 		UserDAOService userService = new UserDAOService();
 		UserJson selectedUser = userService.selectUserByEmail(email);
 		return new GsonBuilder().create().toJson(selectedUser);
 	}
+
 	
 	@RequestMapping(method=RequestMethod.POST, value="/schoolkid")
-	public String addUser(@RequestBody SchoolkidJson schoolkidJson) throws ClassNotFoundException {
+	public String addUser(@RequestBody SchoolkidJson schoolkidJson) {
 
 		UserDAOService userService = new UserDAOService();
 		UserJsonParser parser =  new UserJsonParser();
@@ -48,8 +50,9 @@ public class AuthorizationController {
 		return new GsonBuilder().create().toJson(new JSONObject(new HashMap<String, Object>()));
 	}
 
+
 	@RequestMapping(method=RequestMethod.POST, value="/teacher")
-	public String addUser(@RequestBody TeacherJson teacherJson) throws ClassNotFoundException {
+	public String addUser(@RequestBody TeacherJson teacherJson) {
 
 		UserDAOService userService = new UserDAOService();
 		UserJsonParser parser =  new UserJsonParser();
@@ -58,4 +61,16 @@ public class AuthorizationController {
 
 		return new GsonBuilder().create().toJson(new JSONObject(new HashMap<String, Object>()));
 	}
+
+
+    @RequestMapping(method=RequestMethod.DELETE, value="/user")
+    public String deleteUser(@Param(value="id") Integer id) throws ClassNotFoundException {
+
+        UserDAOService userService = new UserDAOService();
+        UserJsonParser parser =  new UserJsonParser();
+
+        userService.delete(id);
+
+        return null;
+    }
 }
