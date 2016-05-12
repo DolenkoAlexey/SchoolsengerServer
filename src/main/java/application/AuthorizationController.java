@@ -67,7 +67,6 @@ public class AuthorizationController {
     public String deleteUser(@Param(value="id") Integer id) throws ClassNotFoundException {
 
         UserDAOService userService = new UserDAOService();
-        UserJsonParser parser =  new UserJsonParser();
 
         userService.delete(id);
 

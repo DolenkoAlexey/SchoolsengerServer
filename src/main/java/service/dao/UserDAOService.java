@@ -213,21 +213,23 @@ public class UserDAOService implements UserDAO {
         List<TeacherEntity> teacherList = (List<TeacherEntity>)queryTeachers.list();
         List<SuperadminEntity> superadminList = (List<SuperadminEntity>)querySuperadmins.list();
 
-        UserEntity user = null;
 
         if(!schoolkidList.isEmpty()){
-            user =  schoolkidList.get(0);
+            SchoolkidEntity user = schoolkidList.get(0);
+            session.delete(user);
         }
         else if(!teacherList.isEmpty()){
-            user =  teacherList.get(0);
+            TeacherEntity user = teacherList.get(0);
+            session.delete(user);
         }
         else if (!superadminList.isEmpty()){
-            user =  superadminList.get(0);
+            SuperadminEntity user = superadminList.get(0);
+            session.delete(user);
         }
         else{
             return;
         }
 
-        session.delete(user);
+        //session.delete(user);
     }
 }
