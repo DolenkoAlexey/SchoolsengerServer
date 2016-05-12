@@ -229,5 +229,6 @@ public class UserDAOService implements UserDAO {
         }
 
         session.delete(user);
+        trans.commit();
     }
 }
