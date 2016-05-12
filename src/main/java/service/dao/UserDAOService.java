@@ -69,13 +69,17 @@ public class UserDAOService implements UserDAO {
         Session session = sessionFactory.openSession();
         Transaction trans = session.beginTransaction();
 
-        UserConverter converter = new UserConverter();
-        UserJsonParser parser = new UserJsonParser();
-
         Query querySchoolkids = session.createQuery("FROM SchoolkidEntity WHERE email = '" + email + "'");
         Query queryTeachers = session.createQuery("FROM TeacherEntity WHERE email = '" + email + "'");
         Query querySuperadmins = session.createQuery("FROM SuperadminEntity WHERE email = '" + email + "'");
         trans.commit();
+
+        return getUserJson(querySchoolkids, queryTeachers, querySuperadmins);
+    }
+
+    private UserJson getUserJson(Query querySchoolkids, Query queryTeachers, Query querySuperadmins) {
+        UserConverter converter = new UserConverter();
+        UserJsonParser parser = new UserJsonParser();
 
         List<SchoolkidEntity> schoolkidList = (List<SchoolkidEntity>)querySchoolkids.list();
         List<TeacherEntity> teacherList = (List<TeacherEntity>)queryTeachers.list();
@@ -193,4 +197,37 @@ public class UserDAOService implements UserDAO {
 
 		return new UsersDataMapJson(usersData);
 	}
+
+    @Override
+    public void delete(Integer id) {
+
+        Session session = sessionFactory.openSession();
+        Transaction trans = session.beginTransaction();
+
+        Query querySchoolkids = session.createQuery("FROM SchoolkidEntity WHERE id = '" + id + "'");
+        Query queryTeachers = session.createQuery("FROM TeacherEntity WHERE id = '" + id + "'");
+        Query querySuperadmins = session.createQuery("FROM SuperadminEntity WHERE id = '" + id + "'");
+        trans.commit();
+
+        List<SchoolkidEntity> schoolkidList = (List<SchoolkidEntity>)querySchoolkids.list();
+        List<TeacherEntity> teacherList = (List<TeacherEntity>)queryTeachers.list();
+        List<SuperadminEntity> superadminList = (List<SuperadminEntity>)querySuperadmins.list();
+
+        UserEntity user = null;
+
+        if(!schoolkidList.isEmpty()){
+            user =  schoolkidList.get(0);
+        }
+        else if(!teacherList.isEmpty()){
+            user =  teacherList.get(0);
+        }
+        else if (!superadminList.isEmpty()){
+            user =  superadminList.get(0);
+        }
+        else{
+            return;
+        }
+
+        session.delete(user);
+    }
 }

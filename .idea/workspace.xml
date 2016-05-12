@@ -2,28 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="588a524f-6d5b-40ef-a981-4091511ed350" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/json/messagesJson/MessageJson.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/service/converters/MessageConverter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/service/dao/MessageDAO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/service/parsers/MessageJsonParser.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/service/MessageDAO.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/json/MessagesListJson.java" afterPath="$PROJECT_DIR$/src/main/java/json/messagesJson/MessagesListJson.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/json/UsersDataMapJson.java" afterPath="$PROJECT_DIR$/src/main/java/json/usersDataJson/UsersDataMapJson.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/json/UsersMapJson.java" afterPath="$PROJECT_DIR$/src/main/java/json/userJson/UsersMapJson.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/modeles/MessageModel.java" afterPath="$PROJECT_DIR$/src/main/java/modeles/Message.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/service/EntityConverter.java" afterPath="$PROJECT_DIR$/src/main/java/service/converters/UserConverter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/service/MessageDAOService.java" afterPath="$PROJECT_DIR$/src/main/java/service/dao/MessageDAOService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/service/UserDAO.java" afterPath="$PROJECT_DIR$/src/main/java/service/dao/UserDAO.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/service/UserDAOService.java" afterPath="$PROJECT_DIR$/src/main/java/service/dao/UserDAOService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/service/UserJsonParser.java" afterPath="$PROJECT_DIR$/src/main/java/service/parsers/UserJsonParser.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/application/AuthorizationController.java" afterPath="$PROJECT_DIR$/src/main/java/application/AuthorizationController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/application/SessionController.java" afterPath="$PROJECT_DIR$/src/main/java/application/SessionController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/json/userJson/SchoolkidJson.java" afterPath="$PROJECT_DIR$/src/main/java/json/userJson/SchoolkidJson.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/json/userJson/SuperadminJson.java" afterPath="$PROJECT_DIR$/src/main/java/json/userJson/SuperadminJson.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/json/userJson/TeacherJson.java" afterPath="$PROJECT_DIR$/src/main/java/json/userJson/TeacherJson.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/json/userJson/UserJson.java" afterPath="$PROJECT_DIR$/src/main/java/json/userJson/UserJson.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/example/DemoApplicationTests.java" afterPath="$PROJECT_DIR$/src/test/java/com/example/DemoApplicationTests.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/service/dao/UserDAO.java" afterPath="$PROJECT_DIR$/src/main/java/service/dao/UserDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/service/dao/UserDAOService.java" afterPath="$PROJECT_DIR$/src/main/java/service/dao/UserDAOService.java" />
     </list>
     <ignored path="SchoolsengerServer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,10 +28,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SessionController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SessionController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/application/SessionController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.67421603">
+            <state vertical-scroll-proportion="0.0">
               <caret line="50" column="60" selection-start-line="50" selection-start-column="60" selection-end-line="50" selection-end-column="60" />
               <folding />
             </state>
@@ -65,30 +48,63 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UsersDataMapJson.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/json/usersDataJson/UsersDataMapJson.java">
+      <file leaf-file-name="UserDAOService.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/service/dao/UserDAOService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.58536583">
+              <caret line="225" column="9" selection-start-line="225" selection-start-column="9" selection-end-line="225" selection-end-column="9" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="method#selectAll#0;class#UserDAOService#0" expanded="false" />
+                <element signature="method#getUserJson#0;class#UserDAOService#0" expanded="false" />
+                <element signature="method#addUser#0;class#UserDAOService#0" expanded="false" />
+                <element signature="method#addUser#1;class#UserDAOService#0" expanded="false" />
+                <element signature="method#selectUsersDataById#0;class#UserDAOService#0" expanded="false" />
+                <element signature="method#getUsersDataListByIds#0;class#UserDAOService#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserDAOService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/service/dao/UserDAOService.java">
+      <file leaf-file-name="UserJsonParser.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/service/parsers/UserJsonParser.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="129" column="53" selection-start-line="129" selection-start-column="53" selection-end-line="129" selection-end-column="53" />
+              <caret line="37" column="23" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
               <folding>
-                <element signature="method#selectAll#0;class#UserDAOService#0" expanded="false" />
-                <element signature="method#selectUserByEmail#0;class#UserDAOService#0" expanded="false" />
-                <element signature="method#addUser#0;class#UserDAOService#0" expanded="false" />
-                <element signature="method#addUser#1;class#UserDAOService#0" expanded="false" />
-                <element signature="method#getUsersDataListByIds#0;class#UserDAOService#0" expanded="false" />
+                <element signature="method#ParseUserFromJson#0;class#UserJsonParser#0" expanded="false" />
+                <element signature="method#ParseUserFromJson#1;class#UserJsonParser#0" expanded="false" />
+                <element signature="method#ParseUserToJson#0;class#UserJsonParser#0" expanded="false" />
+                <element signature="method#ParseUserToJson#1;class#UserJsonParser#0" expanded="false" />
+                <element signature="method#ParseUserToJson#2;class#UserJsonParser#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserConverter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/service/converters/UserConverter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="91" column="4" selection-start-line="91" selection-start-column="4" selection-end-line="91" selection-end-column="4" />
+              <folding>
+                <element signature="method#convertUserEntitiesToUsersJson#0;class#UserConverter#0" expanded="false" />
+                <element signature="method#convertUserToUserEntity#0;class#UserConverter#0" expanded="false" />
+                <element signature="method#convertUserToUserEntity#1;class#UserConverter#0" expanded="false" />
+                <element signature="method#convertUserToUserEntity#2;class#UserConverter#0" expanded="false" />
+                <element signature="method#convertUserEntityToUser#0;class#UserConverter#0" expanded="false" />
+                <element signature="method#convertUserEntityToUser#1;class#UserConverter#0" expanded="false" />
+                <element signature="method#convertUserEntityToUser#2;class#UserConverter#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/service/dao/UserDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-11.333333">
+              <caret line="25" column="28" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -97,7 +113,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/json/userJson/UserJson.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
+              <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -106,38 +122,15 @@
       <file leaf-file-name="AuthorizationController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/application/AuthorizationController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+            <state vertical-scroll-proportion="-11.333333">
+              <caret line="35" column="48" selection-start-line="35" selection-start-column="48" selection-end-line="35" selection-end-column="48" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserEntity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/entities/UserEntity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="70" column="5" selection-start-line="70" selection-start-column="5" selection-end-line="70" selection-end-column="5" />
-              <folding>
-                <element signature="e#1374#1375#0" expanded="true" />
-                <element signature="e#1408#1409#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="TeacherJson.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/json/userJson/TeacherJson.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="66" selection-start-line="12" selection-start-column="66" selection-end-line="12" selection-end-column="66" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SuperadminJson.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/json/userJson/SuperadminJson.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="12" column="66" selection-start-line="12" selection-start-column="66" selection-end-line="12" selection-end-column="66" />
@@ -193,7 +186,6 @@
         <option value="$PROJECT_DIR$/src/main/java/service/UserJsonParser.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/EntityConverter.java" />
         <option value="$PROJECT_DIR$/src/main/java/modeles/Schoolkid.java" />
-        <option value="$PROJECT_DIR$/src/main/java/application/AuthorizationController.java" />
         <option value="$PROJECT_DIR$/src/main/java/json/usersDataJson/UsersDataJson.java" />
         <option value="$PROJECT_DIR$/src/main/java/json/usersDataJson/TeachersDataJson.java" />
         <option value="$PROJECT_DIR$/src/main/java/json/usersDataJson/SuperadminsDataJson.java" />
@@ -217,16 +209,17 @@
         <option value="$PROJECT_DIR$/src/main/java/service/MessageDAOService.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/DAOs/MessageDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/DAOs/UserDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/service/dao/UserDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/converters/MessageConverter.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/dao/MessageDAOService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/json/userJson/TeacherJson.java" />
         <option value="$PROJECT_DIR$/src/main/java/json/userJson/SuperadminJson.java" />
         <option value="$PROJECT_DIR$/src/main/java/json/userJson/SchoolkidJson.java" />
         <option value="$PROJECT_DIR$/src/main/java/json/messagesJson/MessageJson.java" />
-        <option value="$PROJECT_DIR$/src/main/java/service/dao/UserDAOService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/json/userJson/UserJson.java" />
         <option value="$PROJECT_DIR$/src/main/java/application/SessionController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/json/userJson/TeacherJson.java" />
+        <option value="$PROJECT_DIR$/src/main/java/json/userJson/UserJson.java" />
+        <option value="$PROJECT_DIR$/src/main/java/application/AuthorizationController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/service/dao/UserDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/service/dao/UserDAOService.java" />
       </list>
     </option>
   </component>
@@ -626,6 +619,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/Alex/Documents/GitHub/SchoolsengerServer/src/main/java/service/Converter.java" />
+    <property name="extract.method.default.visibility" value="private" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -984,7 +978,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1370" height="735" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -994,7 +988,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24961832" sideWeight="0.53932583" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24961832" sideWeight="0.53932583" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1023,7 +1017,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="27" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/service/dao/UserDAOService.java</url>
+          <line>80</line>
+          <properties />
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="28" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1219,22 +1221,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/converters/UserConverter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="91" column="4" selection-start-line="91" selection-start-column="4" selection-end-line="91" selection-end-column="4" />
-          <folding>
-            <element signature="method#convertUserEntitiesToUsersJson#0;class#UserConverter#0" expanded="false" />
-            <element signature="method#convertUserToUserEntity#0;class#UserConverter#0" expanded="false" />
-            <element signature="method#convertUserToUserEntity#1;class#UserConverter#0" expanded="false" />
-            <element signature="method#convertUserToUserEntity#2;class#UserConverter#0" expanded="false" />
-            <element signature="method#convertUserEntityToUser#0;class#UserConverter#0" expanded="false" />
-            <element signature="method#convertUserEntityToUser#1;class#UserConverter#0" expanded="false" />
-            <element signature="method#convertUserEntityToUser#2;class#UserConverter#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/service/converters/MessageConverter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1244,14 +1230,6 @@
             <element signature="docComment;class#MessageConverter#0" expanded="false" />
             <element signature="method#convertMessageEntitiesToMessageJsons#0;class#MessageConverter#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/dao/UserDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1359,20 +1337,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/parsers/UserJsonParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="34" selection-end-column="5" />
-          <folding>
-            <element signature="method#ParseUserFromJson#0;class#UserJsonParser#0" expanded="false" />
-            <element signature="method#ParseUserFromJson#1;class#UserJsonParser#0" expanded="false" />
-            <element signature="method#ParseUserToJson#0;class#UserJsonParser#0" expanded="false" />
-            <element signature="method#ParseUserToJson#1;class#UserJsonParser#0" expanded="false" />
-            <element signature="method#ParseUserToJson#2;class#UserJsonParser#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/json/messagesJson/MessageJson.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1408,28 +1372,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/dao/UserDAOService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="129" column="53" selection-start-line="129" selection-start-column="53" selection-end-line="129" selection-end-column="53" />
-          <folding>
-            <element signature="method#selectAll#0;class#UserDAOService#0" expanded="false" />
-            <element signature="method#selectUserByEmail#0;class#UserDAOService#0" expanded="false" />
-            <element signature="method#addUser#0;class#UserDAOService#0" expanded="false" />
-            <element signature="method#addUser#1;class#UserDAOService#0" expanded="false" />
-            <element signature="method#getUsersDataListByIds#0;class#UserDAOService#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/application/AuthorizationController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/entities/UserEntity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1438,14 +1380,6 @@
             <element signature="e#1374#1375#0" expanded="true" />
             <element signature="e#1408#1409#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/json/userJson/TeacherJson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="66" selection-start-line="12" selection-start-column="66" selection-end-line="12" selection-end-column="66" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1465,14 +1399,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/json/userJson/UserJson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/service/dao/MessageDAOService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1483,9 +1409,86 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/application/SessionController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.67421603">
+        <state vertical-scroll-proportion="0.0">
           <caret line="50" column="60" selection-start-line="50" selection-start-column="60" selection-end-line="50" selection-end-column="60" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/json/userJson/TeacherJson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="66" selection-start-line="12" selection-start-column="66" selection-end-line="12" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/AuthorizationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.333333">
+          <caret line="35" column="48" selection-start-line="35" selection-start-column="48" selection-end-line="35" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/json/userJson/UserJson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/dao/UserDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.333333">
+          <caret line="25" column="28" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/converters/UserConverter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="91" column="4" selection-start-line="91" selection-start-column="4" selection-end-line="91" selection-end-column="4" />
+          <folding>
+            <element signature="method#convertUserEntitiesToUsersJson#0;class#UserConverter#0" expanded="false" />
+            <element signature="method#convertUserToUserEntity#0;class#UserConverter#0" expanded="false" />
+            <element signature="method#convertUserToUserEntity#1;class#UserConverter#0" expanded="false" />
+            <element signature="method#convertUserToUserEntity#2;class#UserConverter#0" expanded="false" />
+            <element signature="method#convertUserEntityToUser#0;class#UserConverter#0" expanded="false" />
+            <element signature="method#convertUserEntityToUser#1;class#UserConverter#0" expanded="false" />
+            <element signature="method#convertUserEntityToUser#2;class#UserConverter#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/parsers/UserJsonParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="37" column="23" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
+          <folding>
+            <element signature="method#ParseUserFromJson#0;class#UserJsonParser#0" expanded="false" />
+            <element signature="method#ParseUserFromJson#1;class#UserJsonParser#0" expanded="false" />
+            <element signature="method#ParseUserToJson#0;class#UserJsonParser#0" expanded="false" />
+            <element signature="method#ParseUserToJson#1;class#UserJsonParser#0" expanded="false" />
+            <element signature="method#ParseUserToJson#2;class#UserJsonParser#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/dao/UserDAOService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.58536583">
+          <caret line="225" column="9" selection-start-line="225" selection-start-column="9" selection-end-line="225" selection-end-column="9" />
+          <folding>
+            <element signature="method#selectAll#0;class#UserDAOService#0" expanded="false" />
+            <element signature="method#getUserJson#0;class#UserDAOService#0" expanded="false" />
+            <element signature="method#addUser#0;class#UserDAOService#0" expanded="false" />
+            <element signature="method#addUser#1;class#UserDAOService#0" expanded="false" />
+            <element signature="method#selectUsersDataById#0;class#UserDAOService#0" expanded="false" />
+            <element signature="method#getUsersDataListByIds#0;class#UserDAOService#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

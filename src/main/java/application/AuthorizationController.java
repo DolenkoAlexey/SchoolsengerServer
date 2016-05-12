@@ -21,6 +21,13 @@ import service.parsers.UserJsonParser;
 @RestController
 @RequestMapping("/authorization")
 public class AuthorizationController {
+
+	@RequestMapping(method=RequestMethod.GET, value="/all")
+	public String getAll() throws ClassNotFoundException {
+
+		UserDAOService userService = new UserDAOService();
+		return new GsonBuilder().create().toJson(userService.selectAll());
+	}
 	
 	@RequestMapping(method=RequestMethod.GET, value="/user")
 	public String getUserByEmail(@Param(value="email") String email) throws ClassNotFoundException {
@@ -50,13 +57,5 @@ public class AuthorizationController {
 		userService.addUser(parser.ParseUserFromJson(teacherJson));
 
 		return new GsonBuilder().create().toJson(new JSONObject(new HashMap<String, Object>()));
-	}
-
-
-	@RequestMapping(method=RequestMethod.GET, value="/all")
-	public String getAll() throws ClassNotFoundException {
-
-		UserDAOService userService = new UserDAOService();
-        return new GsonBuilder().create().toJson(userService.selectAll());
 	}
 }

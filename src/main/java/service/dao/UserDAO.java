@@ -22,4 +22,6 @@ public interface UserDAO {
 	void addUser(Schoolkid schoolkid);
 
 	void addUser(Teacher teacher);
+
+	void delete(Integer id);
 }
