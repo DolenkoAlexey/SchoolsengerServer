@@ -68,8 +68,8 @@ public class AuthorizationController {
 
         UserDAOService userService = new UserDAOService();
 
-        userService.delete(id);
+        //userService.delete(id);
 
-        return null;
+        return new GsonBuilder().create().toJson(userService.delete(id));
     }
 }
