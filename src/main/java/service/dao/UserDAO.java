@@ -9,12 +9,13 @@ import modeles.Schoolkid;
 import modeles.Teacher;
 
 import java.util.List;
+import java.util.Map;
 
 public interface UserDAO {
 
 	UsersMapJson selectAll();
 
-	UserJson selectUserByEmail(String email);
+	Map<Class, List<? extends UserJson>> selectUserByEmail(String email);
 
 	UsersDataJson selectUsersDataById(Integer id);
 

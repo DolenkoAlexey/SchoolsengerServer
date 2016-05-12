@@ -65,7 +65,7 @@ public class UserDAOService implements UserDAO {
 	}
 
     @Override
-    public UserJson selectUserByEmail(String email) {
+    public Map<Class, List<? extends UserJson>> selectUserByEmail(String email) {
         Session session = sessionFactory.openSession();
         Transaction trans = session.beginTransaction();
 
@@ -77,7 +77,7 @@ public class UserDAOService implements UserDAO {
         return getUserJson(querySchoolkids, queryTeachers, querySuperadmins);
     }
 
-    private UserJson getUserJson(Query querySchoolkids, Query queryTeachers, Query querySuperadmins) {
+    private Map<Class, List<? extends UserJson>> getUserJson(Query querySchoolkids, Query queryTeachers, Query querySuperadmins) {
         UserConverter converter = new UserConverter();
         UserJsonParser parser = new UserJsonParser();
 
@@ -85,19 +85,13 @@ public class UserDAOService implements UserDAO {
         List<TeacherEntity> teacherList = (List<TeacherEntity>)queryTeachers.list();
         List<SuperadminEntity> superadminList = (List<SuperadminEntity>)querySuperadmins.list();
 
-        UserJson user = null;
+        Map<Class, List<? extends UserEntity>> users = new HashMap<>();
 
-        if(!schoolkidList.isEmpty()){
-            user =  parser.ParseUserToJson(converter.convertUserEntityToUser(schoolkidList.get(0)));
-        }
-        else if(!teacherList.isEmpty()){
-            user =  parser.ParseUserToJson(converter.convertUserEntityToUser(teacherList.get(0)));
-        }
-        else if (!superadminList.isEmpty()){
-            user =  parser.ParseUserToJson(converter.convertUserEntityToUser(superadminList.get(0)));
-        }
+        users.put(SchoolkidEntity.class, schoolkidList);
+        users.put(TeacherEntity.class, teacherList);
+        users.put(SuperadminEntity.class, superadminList);
 
-        return user;
+        return converter.convertUserEntitiesToUsersJson(users);
     }
 
     @Override

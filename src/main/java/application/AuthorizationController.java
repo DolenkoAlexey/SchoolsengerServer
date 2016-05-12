@@ -4,6 +4,7 @@ package application;
 import json.userJson.SchoolkidJson;
 import json.userJson.TeacherJson;
 import json.userJson.UserJson;
+import json.userJson.UsersMapJson;
 import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +17,9 @@ import scala.collection.immutable.HashMap;
 import scala.util.parsing.json.JSONObject;
 import service.dao.UserDAOService;
 import service.parsers.UserJsonParser;
+
+import java.util.List;
+import java.util.Map;
 
 
 @RestController
@@ -34,8 +38,8 @@ public class AuthorizationController {
 	public String getUserByEmail(@Param(value="email") String email) {
 
 		UserDAOService userService = new UserDAOService();
-		UserJson selectedUser = userService.selectUserByEmail(email);
-		return new GsonBuilder().create().toJson(selectedUser);
+        Map<Class, List<? extends UserJson>> selectedUsers = userService.selectUserByEmail(email);
+		return new GsonBuilder().create().toJson(new UsersMapJson(selectedUsers));
 	}
 
 	
