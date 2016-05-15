@@ -54,10 +54,11 @@ public class SessionController {
     }
 
 	@RequestMapping(method=RequestMethod.GET, value="/dialog")
-	public String getDialog(@RequestParam(value="idFrom") Integer idFrom, @RequestParam(value="idTo") Integer idTo) {
+	public String getDialog(@RequestParam(value="idFirstUser") Integer idFirstUser,
+                            @RequestParam(value="idSecondUser") Integer idSecondUser) {
 
 		MessageDAO messageService = new MessageDAOService();
 
-		return new GsonBuilder().create().toJson(messageService.selectMessagesByIds(idFrom, idTo));
+		return new GsonBuilder().create().toJson(messageService.selectMessagesByIds(idFirstUser, idSecondUser));
 	}
 }
