@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="588a524f-6d5b-40ef-a981-4091511ed350" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/application/SessionController.java" afterPath="$PROJECT_DIR$/src/main/java/application/SessionController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/json/usersDataJson/SchoolkidsDataJson.java" afterPath="$PROJECT_DIR$/src/main/java/json/usersDataJson/SchoolkidsDataJson.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/json/usersDataJson/SuperadminsDataJson.java" afterPath="$PROJECT_DIR$/src/main/java/json/usersDataJson/SuperadminsDataJson.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/json/usersDataJson/TeachersDataJson.java" afterPath="$PROJECT_DIR$/src/main/java/json/usersDataJson/TeachersDataJson.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/json/usersDataJson/UsersDataJson.java" afterPath="$PROJECT_DIR$/src/main/java/json/usersDataJson/UsersDataJson.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/service/dao/UserDAOService.java" afterPath="$PROJECT_DIR$/src/main/java/service/dao/UserDAOService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/service/dao/MessageDAOService.java" afterPath="$PROJECT_DIR$/src/main/java/service/dao/MessageDAOService.java" />
     </list>
     <ignored path="SchoolsengerServer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SessionController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SessionController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/application/SessionController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7630662">
-              <caret line="61" column="5" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="60" column="75" selection-start-line="60" selection-start-column="75" selection-end-line="60" selection-end-column="75" />
               <folding />
             </state>
           </provider>
@@ -50,11 +44,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MessageDAOService.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MessageDAOService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/service/dao/MessageDAOService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="39" column="50" selection-start-line="39" selection-start-column="50" selection-end-line="39" selection-end-column="50" />
+            <state vertical-scroll-proportion="0.6219512">
+              <caret line="64" column="50" selection-start-line="64" selection-start-column="50" selection-end-line="64" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -64,7 +58,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/service/dao/MessageDAO.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+              <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -150,7 +144,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/Schoolkid.hbm.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/Superadmin.hbm.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/Teacher.hbm.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
@@ -187,7 +180,6 @@
         <option value="$PROJECT_DIR$/src/main/java/service/DAOs/MessageDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/DAOs/UserDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/converters/MessageConverter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/service/dao/MessageDAOService.java" />
         <option value="$PROJECT_DIR$/src/main/java/json/userJson/SuperadminJson.java" />
         <option value="$PROJECT_DIR$/src/main/java/json/userJson/SchoolkidJson.java" />
         <option value="$PROJECT_DIR$/src/main/java/json/messagesJson/MessageJson.java" />
@@ -201,6 +193,8 @@
         <option value="$PROJECT_DIR$/src/main/java/json/usersDataJson/SuperadminsDataJson.java" />
         <option value="$PROJECT_DIR$/src/main/java/json/usersDataJson/SchoolkidsDataJson.java" />
         <option value="$PROJECT_DIR$/src/main/java/application/SessionController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/service/dao/MessageDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/service/dao/MessageDAOService.java" />
       </list>
     </option>
   </component>
@@ -1350,22 +1344,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/dao/MessageDAOService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="50" selection-start-line="39" selection-start-column="50" selection-end-line="39" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/dao/MessageDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/service/dao/UserDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1392,8 +1370,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/application/SessionController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7630662">
-          <caret line="61" column="5" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="60" column="75" selection-start-line="60" selection-start-column="75" selection-end-line="60" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/dao/MessageDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/dao/MessageDAOService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6219512">
+          <caret line="64" column="50" selection-start-line="64" selection-start-column="50" selection-end-line="64" selection-end-column="50" />
           <folding />
         </state>
       </provider>

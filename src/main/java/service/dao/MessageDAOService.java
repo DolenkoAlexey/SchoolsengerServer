@@ -1,5 +1,6 @@
 package service.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import json.messagesJson.MessageJson;
@@ -41,18 +42,26 @@ public class MessageDAOService implements MessageDAO {
 	}
 
 	@Override
-	public MessagesListJson selectMessagesByIds(Integer idFrom, Integer idTo) {
+	public MessagesListJson selectMessagesByIds(Integer idFirstUser, Integer idSecondUser) {
 		Session session = sessionFactory.openSession();
 		Transaction trans = session.beginTransaction();
-		Query query = session.createQuery("FROM  MessageEntity m "
-										+ "WHERE m.idFrom = '" + idFrom.toString() 
-										+ "' AND m.idTo = '" + idTo.toString() + "'");
+		Query query1 = session.createQuery("FROM  MessageEntity m "
+										+ "WHERE m.idFrom = '" + idFirstUser.toString()
+										+ "' AND m.idTo = '" + idSecondUser.toString() + "'");
+		Query query2 = session.createQuery("FROM  MessageEntity m "
+										+ "WHERE m.idFrom = '" + idSecondUser.toString()
+										+ "' AND m.idTo = '" + idFirstUser.toString() + "'");
 		trans.commit();
 
         MessageConverter converter = new MessageConverter();
 
-        List<MessageEntity> messages = (List<MessageEntity>) query.list();
-        List<MessageJson> messageJsons = converter.convertMessageEntitiesToMessageJsons(messages);
+        List<MessageEntity> messages1 = (List<MessageEntity>) query1.list();
+		List<MessageEntity> messages2 = (List<MessageEntity>) query2.list();
+		List<MessageEntity> messages = new ArrayList<>();
+		messages.addAll(messages1);
+		messages.addAll(messages2);
+
+		List<MessageJson> messageJsons = converter.convertMessageEntitiesToMessageJsons(messages);
         return new MessagesListJson(messageJsons);
 	}
 
