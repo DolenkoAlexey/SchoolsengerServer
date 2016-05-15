@@ -28,7 +28,6 @@ public class AuthorizationController {
 
 	@RequestMapping(method=RequestMethod.GET, value="/all")
 	public String getAll() {
-
 		UserDAOService userService = new UserDAOService();
 		return new GsonBuilder().create().toJson(userService.selectAll());
 	}
