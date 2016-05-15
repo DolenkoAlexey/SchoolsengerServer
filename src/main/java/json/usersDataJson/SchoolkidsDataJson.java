@@ -13,7 +13,6 @@ public class SchoolkidsDataJson extends UsersDataJson {
     public SchoolkidsDataJson(int id, String username, String firstname, String lastname, String classNumber) {
         super(id, username, firstname, lastname);
         setClassNumber(classNumber);
-        role = "schoolkid";
     }
 
     public String getClassNumber() {

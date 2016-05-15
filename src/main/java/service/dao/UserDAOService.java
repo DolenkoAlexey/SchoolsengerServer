@@ -79,7 +79,6 @@ public class UserDAOService implements UserDAO {
 
     private Map<Class, List<? extends UserJson>> getUserJson(Query querySchoolkids, Query queryTeachers, Query querySuperadmins) {
         UserConverter converter = new UserConverter();
-        UserJsonParser parser = new UserJsonParser();
 
         List<SchoolkidEntity> schoolkidList = (List<SchoolkidEntity>)querySchoolkids.list();
         List<TeacherEntity> teacherList = (List<TeacherEntity>)queryTeachers.list();

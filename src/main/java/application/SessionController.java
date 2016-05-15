@@ -52,4 +52,12 @@ public class SessionController {
 
         return new GsonBuilder().create().toJson(messageService.selectAll());
     }
+
+	@RequestMapping(method=RequestMethod.GET, value="/dialog")
+	public String getDialog(@RequestParam(value="idFrom") Integer idFrom, @RequestParam(value="idTo") Integer idTo) {
+
+		MessageDAO messageService = new MessageDAOService();
+
+		return new GsonBuilder().create().toJson(messageService.selectMessagesByIds(idFrom, idTo));
+	}
 }

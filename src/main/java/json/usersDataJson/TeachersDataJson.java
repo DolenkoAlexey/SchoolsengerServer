@@ -6,6 +6,5 @@ package json.usersDataJson;
 public class TeachersDataJson extends UsersDataJson {
     public TeachersDataJson(int id, String username, String firstname, String lastname) {
         super(id, username, firstname, lastname);
-        role = "teacher";
     }
 }
