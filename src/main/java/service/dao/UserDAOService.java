@@ -9,6 +9,7 @@ import entities.SchoolkidEntity;
 import entities.SuperadminEntity;
 import entities.TeacherEntity;
 import entities.UserEntity;
+import json.TokenJson;
 import json.usersDataJson.UsersDataMapJson;
 import json.userJson.SchoolkidJson;
 import json.usersDataJson.SchoolkidsDataJson;
@@ -28,6 +29,7 @@ import json.userJson.UsersMapJson;
 import service.HibernateUtil;
 import service.dao.UserDAO;
 import service.converters.UserConverter;
+import service.parsers.TokenJsonToEntityParser;
 import service.parsers.UserJsonParser;
 
 @Transactional
@@ -190,6 +192,16 @@ public class UserDAOService implements UserDAO {
 
 		return new UsersDataMapJson(usersData);
 	}
+
+    @Override
+    public void addToken(TokenJson token) {
+        Session session = sessionFactory.getCurrentSession();
+        Transaction trans = session.beginTransaction();
+        TokenJsonToEntityParser parser = new TokenJsonToEntityParser();
+
+        session.save(parser.parse(token));
+        trans.commit();
+    }
 
     @Override
     public void delete(Integer id) {

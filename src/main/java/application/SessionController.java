@@ -61,4 +61,13 @@ public class SessionController {
 
 		return new GsonBuilder().create().toJson(messageService.selectMessagesByIds(idFirstUser, idSecondUser));
 	}
+
+	@RequestMapping(method=RequestMethod.POST, value="/token")
+	public String setToken(@RequestParam(value="idFirstUser") Integer idFirstUser,
+							@RequestParam(value="idSecondUser") Integer idSecondUser) {
+
+		MessageDAO messageService = new MessageDAOService();
+
+		return new GsonBuilder().create().toJson(messageService.selectMessagesByIds(idFirstUser, idSecondUser));
+	}
 }

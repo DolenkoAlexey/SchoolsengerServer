@@ -40,7 +40,6 @@ public class AuthorizationController {
         Map<Class, List<? extends UserJson>> selectedUsers = userService.selectUserByEmail(email);
 		return new GsonBuilder().create().toJson(new UsersMapJson(selectedUsers));
 	}
-
 	
 	@RequestMapping(method=RequestMethod.POST, value="/schoolkid")
 	public String addUser(@RequestBody SchoolkidJson schoolkidJson) {

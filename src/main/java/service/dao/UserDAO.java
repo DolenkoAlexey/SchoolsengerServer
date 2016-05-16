@@ -1,6 +1,7 @@
 package service.dao;
 
 import entities.UserEntity;
+import json.TokenJson;
 import json.usersDataJson.UsersDataMapJson;
 import json.userJson.UsersMapJson;
 import json.userJson.UserJson;
@@ -20,6 +21,8 @@ public interface UserDAO {
 	UsersDataJson selectUsersDataById(Integer id);
 
 	UsersDataMapJson getUsersDataListByIds(List<Integer> ids);
+
+	void addToken(TokenJson token);
 
 	void addUser(Schoolkid schoolkid);
 
