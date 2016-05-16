@@ -68,7 +68,7 @@ public class SessionController {
 
 		UserDAOService userDAOService = new UserDAOService();
 		userDAOService.addToken(tokenJson);
-        
+
 		return new GsonBuilder().create().toJson(new JSONObject(new HashMap<String, Object>()));
 	}
 

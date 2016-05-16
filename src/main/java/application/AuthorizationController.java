@@ -66,7 +66,7 @@ public class AuthorizationController {
 
 
     @RequestMapping(method=RequestMethod.DELETE, value="/user")
-    public String deleteUser(@Param(value="id") Integer id) throws ClassNotFoundException {
+    public String deleteUser(@Param(value="id") Integer id) {
 
         UserDAOService userService = new UserDAOService();
         userService.delete(id);
