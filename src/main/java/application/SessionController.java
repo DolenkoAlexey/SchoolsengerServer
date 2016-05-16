@@ -70,4 +70,12 @@ public class SessionController {
 
 		return new GsonBuilder().create().toJson(messageService.selectMessagesByIds(idFirstUser, idSecondUser));
 	}
+
+	@RequestMapping(method=RequestMethod.GET, value="/alltokens")
+	public String getTokens() {
+
+		UserDAOService userDAOService = new UserDAOService();
+
+		return new GsonBuilder().create().toJson(userDAOService.selectAllTokens());
+	}
 }
