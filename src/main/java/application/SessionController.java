@@ -2,6 +2,7 @@ package application;
 
 
 
+import json.TokenJson;
 import json.messagesJson.MessageJson;
 import json.messagesJson.MessagesListJson;
 import modeles.User;
@@ -63,12 +64,12 @@ public class SessionController {
 	}
 
 	@RequestMapping(method=RequestMethod.POST, value="/token")
-	public String setToken(@RequestParam(value="idFirstUser") Integer idFirstUser,
-							@RequestParam(value="idSecondUser") Integer idSecondUser) {
+	public String setToken(@RequestBody TokenJson tokenJson) {
 
-		MessageDAO messageService = new MessageDAOService();
-
-		return new GsonBuilder().create().toJson(messageService.selectMessagesByIds(idFirstUser, idSecondUser));
+		UserDAOService userDAOService = new UserDAOService();
+		userDAOService.addToken(tokenJson);
+        
+		return new GsonBuilder().create().toJson(new JSONObject(new HashMap<String, Object>()));
 	}
 
 	@RequestMapping(method=RequestMethod.GET, value="/alltokens")
