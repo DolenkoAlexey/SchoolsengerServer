@@ -24,6 +24,8 @@ public interface UserDAO {
 
 	void addToken(TokenJson token);
 
+	List<TokenJson> selectAllTokens();
+
 	void addUser(Schoolkid schoolkid);
 
 	void addUser(Teacher teacher);

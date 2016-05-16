@@ -5,10 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import entities.SchoolkidEntity;
-import entities.SuperadminEntity;
-import entities.TeacherEntity;
-import entities.UserEntity;
+import entities.*;
 import json.TokenJson;
 import json.usersDataJson.UsersDataMapJson;
 import json.userJson.SchoolkidJson;
@@ -27,9 +24,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import json.userJson.UsersMapJson;
 import service.HibernateUtil;
-import service.dao.UserDAO;
 import service.converters.UserConverter;
-import service.parsers.TokenJsonToEntityParser;
+import service.parsers.TokenJsonParser;
 import service.parsers.UserJsonParser;
 
 @Transactional
@@ -197,10 +193,27 @@ public class UserDAOService implements UserDAO {
     public void addToken(TokenJson token) {
         Session session = sessionFactory.getCurrentSession();
         Transaction trans = session.beginTransaction();
-        TokenJsonToEntityParser parser = new TokenJsonToEntityParser();
+        TokenJsonParser parser = new TokenJsonParser();
 
-        session.save(parser.parse(token));
+        session.save(parser.parseTokenFromJson(token));
         trans.commit();
+    }
+
+    @Override
+    public List<TokenJson> selectAllTokens(){
+        Session session = sessionFactory.openSession();
+        Transaction trans = session.beginTransaction();
+        TokenJsonParser parser = new TokenJsonParser();
+
+        Query query = session.createQuery("FROM TokenEntity");
+        trans.commit();
+
+        List<TokenJson> tokenJsons = new ArrayList<>();
+        for(TokenEntity entity : (List<TokenEntity>)query.list()){
+            tokenJsons.add(parser.parseTokenToJson(entity));
+        }
+
+        return tokenJsons;
     }
 
     @Override
