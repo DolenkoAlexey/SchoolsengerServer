@@ -12,6 +12,9 @@ public class TokenJson {
     @SerializedName("token")
     private String token;
 
+    public TokenJson() {
+    }
+
     public TokenJson(String emailUser, String token) {
         this.emailUser = emailUser;
         this.token = token;
