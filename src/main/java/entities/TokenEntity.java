@@ -10,6 +10,8 @@ public class TokenEntity {
     private String token;
     private int id;
 
+    public TokenEntity(){}
+
     public TokenEntity(String emailUser, String token) {
         this.emailUser = emailUser;
         this.token = token;
