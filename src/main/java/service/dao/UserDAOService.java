@@ -222,7 +222,7 @@ public class UserDAOService implements UserDAO {
         Transaction trans = session.beginTransaction();
         TokenJsonParser parser = new TokenJsonParser();
 
-        Query query = session.createQuery("FROM TokenEntity WHERE email = '" + emailUser + "'");
+        Query query = session.createQuery("FROM TokenEntity WHERE emailUser = '" + emailUser + "'");
 
         trans.commit();
         if(!query.list().isEmpty()) {
