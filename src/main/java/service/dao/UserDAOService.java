@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Map;
 
 import entities.*;
-import json.TokenJson;
 import json.usersDataJson.UsersDataMapJson;
 import json.userJson.SchoolkidJson;
 import json.usersDataJson.SchoolkidsDataJson;
@@ -25,7 +24,6 @@ import org.springframework.transaction.annotation.Transactional;
 import json.userJson.UsersMapJson;
 import service.HibernateUtil;
 import service.converters.UserConverter;
-import service.parsers.TokenJsonParser;
 import service.parsers.UserJsonParser;
 
 @Transactional
@@ -72,10 +70,45 @@ public class UserDAOService implements UserDAO {
         Query querySuperadmins = session.createQuery("FROM SuperadminEntity WHERE email = '" + email + "'");
         trans.commit();
 
-        return getUserJson(querySchoolkids, queryTeachers, querySuperadmins);
+        return getUserMapJson(querySchoolkids, queryTeachers, querySuperadmins);
     }
 
-    private Map<Class, List<? extends UserJson>> getUserJson(Query querySchoolkids, Query queryTeachers, Query querySuperadmins) {
+    @Override
+    public UserJson selectUserById(Integer id) {
+        Session session = sessionFactory.openSession();
+        Transaction trans = session.beginTransaction();
+
+        UserConverter converter = new UserConverter();
+        UserJsonParser parser = new UserJsonParser();
+
+        Query querySchoolkids = session.createQuery("FROM SchoolkidEntity WHERE id = '" + id + "'");
+        Query queryTeachers = session.createQuery("FROM TeacherEntity WHERE id = '" + id + "'");
+        Query querySuperadmins = session.createQuery("FROM SuperadminEntity WHERE id = '" + id + "'");
+        trans.commit();
+
+        List<SchoolkidEntity> schoolkidList = (List<SchoolkidEntity>)querySchoolkids.list();
+        List<TeacherEntity> teacherList = (List<TeacherEntity>)queryTeachers.list();
+        List<SuperadminEntity> superadminList = (List<SuperadminEntity>)querySuperadmins.list();
+
+        UserJson userJson;
+
+        if(!schoolkidList.isEmpty()){
+            userJson =  parser.ParseUserToJson(converter.convertUserEntityToUser(schoolkidList.get(0)));
+        }
+        else if(!teacherList.isEmpty()){
+            userJson =  parser.ParseUserToJson(converter.convertUserEntityToUser(teacherList.get(0)));
+        }
+        else if (!superadminList.isEmpty()){
+            userJson =  parser.ParseUserToJson(converter.convertUserEntityToUser(superadminList.get(0)));
+        }
+        else {
+            userJson = new UserJson();
+        }
+
+        return userJson;
+    }
+
+    private Map<Class, List<? extends UserJson>> getUserMapJson(Query querySchoolkids, Query queryTeachers, Query querySuperadmins) {
         UserConverter converter = new UserConverter();
 
         List<SchoolkidEntity> schoolkidList = (List<SchoolkidEntity>)querySchoolkids.list();
@@ -188,63 +221,6 @@ public class UserDAOService implements UserDAO {
 
 		return new UsersDataMapJson(usersData);
 	}
-
-    @Override
-    public void addToken(TokenJson token) {
-        Session session = sessionFactory.getCurrentSession();
-        Transaction trans = session.beginTransaction();
-        TokenJsonParser parser = new TokenJsonParser();
-
-        session.save(parser.parseTokenFromJson(token));
-        trans.commit();
-    }
-
-    @Override
-    public List<TokenJson> selectAllTokens(){
-        Session session = sessionFactory.openSession();
-        Transaction trans = session.beginTransaction();
-        TokenJsonParser parser = new TokenJsonParser();
-
-        Query query = session.createQuery("FROM TokenEntity");
-        trans.commit();
-
-        List<TokenJson> tokenJsons = new ArrayList<>();
-        for(TokenEntity entity : (List<TokenEntity>)query.list()){
-            tokenJsons.add(parser.parseTokenToJson(entity));
-        }
-
-        return tokenJsons;
-    }
-
-    @Override
-    public TokenJson selectTokenByEmail(String emailUser) {
-        Session session = sessionFactory.openSession();
-        Transaction trans = session.beginTransaction();
-        TokenJsonParser parser = new TokenJsonParser();
-
-        Query query = session.createQuery("FROM TokenEntity WHERE emailUser = '" + emailUser + "'");
-
-        trans.commit();
-        if(!query.list().isEmpty()) {
-            return parser.parseTokenToJson(((List<TokenEntity>) query.list()).get(0));
-        }
-        return new TokenJson(emailUser, "");
-    }
-
-    @Override
-    public void refreshToken(TokenJson tokenJson) {
-        TokenJsonParser parser = new TokenJsonParser();
-        TokenEntity tokenEntity = parser.parseTokenFromJson(selectTokenByEmail(tokenJson.getEmailUser()));
-
-        Session session = sessionFactory.openSession();
-        Transaction trans = session.beginTransaction();
-
-        if(!tokenJson.getToken().equals(""))
-            session.delete(tokenEntity);
-        trans.commit();
-
-        addToken(tokenJson);
-    }
 
     @Override
     public void deleteUser(Integer id) {

@@ -8,6 +8,7 @@ import json.userJson.UserJson;
 import json.usersDataJson.UsersDataJson;
 import modeles.Schoolkid;
 import modeles.Teacher;
+import scala.Int;
 
 import java.util.List;
 import java.util.Map;
@@ -18,17 +19,11 @@ public interface UserDAO {
 
 	Map<Class, List<? extends UserJson>> selectUserByEmail(String email);
 
+	UserJson selectUserById(Integer id);
+
 	UsersDataJson selectUsersDataById(Integer id);
 
 	UsersDataMapJson getUsersDataListByIds(List<Integer> ids);
-
-	void addToken(TokenJson token);
-
-	List<TokenJson> selectAllTokens();
-
-	TokenJson selectTokenByEmail(String email);
-
-	void refreshToken(TokenJson tokenJson);
 
 	void addUser(Schoolkid schoolkid);
 

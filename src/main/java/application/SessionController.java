@@ -2,22 +2,23 @@ package application;
 
 
 
+import com.google.android.gcm.server.InvalidRequestException;
+import com.google.android.gcm.server.Message;
+import com.google.android.gcm.server.Result;
+import com.google.android.gcm.server.Sender;
 import json.TokenJson;
 import json.messagesJson.MessageJson;
-import json.messagesJson.MessagesListJson;
-import modeles.User;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 import com.google.gson.GsonBuilder;
 
 import scala.collection.immutable.HashMap;
 import scala.util.parsing.json.JSONObject;
-import service.dao.MessageDAO;
-import service.dao.MessageDAOService;
-import service.dao.UserDAO;
-import service.dao.UserDAOService;
+import service.dao.*;
 import service.parsers.MessageJsonParser;
 
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -43,8 +44,31 @@ public class SessionController {
         MessageJsonParser parser = new MessageJsonParser();
         messageService.add(parser.parseMessageFromJson(messageJson));
 
+        sendToInterlocutor(messageJson);
+
 		return new GsonBuilder().create().toJson(new JSONObject(new HashMap<String, Object>()));
 	}
+
+    private void sendToInterlocutor(MessageJson messageJson){
+        final String GCM_API_KEY = "AIzaSyD6LC8_kHtzPfVSlf39pKl5wyKQfzAI7bQ";
+        final int retries = 3;
+
+        TokenDAO tokenDAOService = new TokenDAOService();
+        final String notificationToken = tokenDAOService.selectTokenByIdTo(messageJson.getIdFrom()).getToken();
+
+        Sender sender = new Sender(GCM_API_KEY);
+        Message msg = new Message.Builder()
+                .addData("message", messageJson.getMessageString())
+                .build();
+
+        try {
+            Result result = sender.send(msg, notificationToken, retries);
+        } catch (InvalidRequestException e) {
+            throw new RuntimeException(e.getMessage());
+        } catch (IOException e) {
+            throw new RuntimeException(e.getMessage());
+        }
+    }
 
     @RequestMapping(method=RequestMethod.GET, value="/allmessages")
     public String getMessages() {
@@ -66,8 +90,8 @@ public class SessionController {
 	@RequestMapping(method=RequestMethod.POST, value="/token")
 	public String setToken(@RequestBody TokenJson tokenJson) {
 
-		UserDAOService userDAOService = new UserDAOService();
-		userDAOService.addToken(tokenJson);
+		TokenDAO tokenDAOService = new TokenDAOService();
+		tokenDAOService.addToken(tokenJson);
 
 		return new GsonBuilder().create().toJson(new JSONObject(new HashMap<String, Object>()));
 	}
@@ -75,25 +99,25 @@ public class SessionController {
     @RequestMapping(method=RequestMethod.POST, value="/refreshtoken")
     public String refreshToken(@RequestBody TokenJson tokenJson) {
 
-        UserDAOService userDAOService = new UserDAOService();
-        userDAOService.refreshToken(tokenJson);
+        TokenDAO tokenDAOService = new TokenDAOService();
+        tokenDAOService.refreshToken(tokenJson);
 
         return new GsonBuilder().create().toJson(new JSONObject(new HashMap<String, Object>()));
     }
 
 	@RequestMapping(method=RequestMethod.GET, value="/alltokens")
 	public String getTokens() {
-		UserDAOService userDAOService = new UserDAOService();
+        TokenDAO tokenDAOService = new TokenDAOService();
 
-		return new GsonBuilder().create().toJson(userDAOService.selectAllTokens());
+		return new GsonBuilder().create().toJson(tokenDAOService.selectAllTokens());
 	}
 
     @RequestMapping(method=RequestMethod.GET, value="/token")
     public String getTokenByEmail(@RequestParam(value="emailUser") String emailUser) {
 
-        UserDAOService userDAOService = new UserDAOService();
+        TokenDAO tokenDAOService = new TokenDAOService();
 
-        return new GsonBuilder().create().toJson(userDAOService.selectTokenByEmail(emailUser));
+        return new GsonBuilder().create().toJson(tokenDAOService.selectTokenByEmail(emailUser));
     }
 
 
