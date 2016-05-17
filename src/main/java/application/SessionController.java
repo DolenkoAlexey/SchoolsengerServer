@@ -72,6 +72,15 @@ public class SessionController {
 		return new GsonBuilder().create().toJson(new JSONObject(new HashMap<String, Object>()));
 	}
 
+    @RequestMapping(method=RequestMethod.POST, value="/refreshtoken")
+    public String refreshToken(@RequestBody TokenJson tokenJson) {
+
+        UserDAOService userDAOService = new UserDAOService();
+        userDAOService.refreshToken(tokenJson);
+
+        return new GsonBuilder().create().toJson(new JSONObject(new HashMap<String, Object>()));
+    }
+
 	@RequestMapping(method=RequestMethod.GET, value="/alltokens")
 	public String getTokens() {
 
@@ -79,4 +88,14 @@ public class SessionController {
 
 		return new GsonBuilder().create().toJson(userDAOService.selectAllTokens());
 	}
+
+    @RequestMapping(method=RequestMethod.GET, value="/token")
+    public String getTokenByEmail(@RequestParam(value="emailUser") String emailUser) {
+
+        UserDAOService userDAOService = new UserDAOService();
+
+        return new GsonBuilder().create().toJson(userDAOService.selectTokenByEmail(emailUser));
+    }
+
+
 }

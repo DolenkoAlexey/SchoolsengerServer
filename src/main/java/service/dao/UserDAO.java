@@ -26,9 +26,13 @@ public interface UserDAO {
 
 	List<TokenJson> selectAllTokens();
 
+	TokenJson selectTokenByEmail(String email);
+
+	void refreshToken(TokenJson tokenJson);
+
 	void addUser(Schoolkid schoolkid);
 
 	void addUser(Teacher teacher);
 
-	void delete(Integer id);
+	void deleteUser(Integer id);
 }

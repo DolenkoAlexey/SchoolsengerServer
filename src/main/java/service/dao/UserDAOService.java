@@ -217,7 +217,37 @@ public class UserDAOService implements UserDAO {
     }
 
     @Override
-    public void delete(Integer id) {
+    public TokenJson selectTokenByEmail(String emailUser) {
+        Session session = sessionFactory.openSession();
+        Transaction trans = session.beginTransaction();
+        TokenJsonParser parser = new TokenJsonParser();
+
+        Query query = session.createQuery("FROM TokenEntity WHERE email = '" + emailUser + "'");
+
+        trans.commit();
+        if(!query.list().isEmpty()) {
+            return parser.parseTokenToJson(((List<TokenEntity>) query.list()).get(0));
+        }
+        return new TokenJson(emailUser, "");
+    }
+
+    @Override
+    public void refreshToken(TokenJson tokenJson) {
+        TokenJsonParser parser = new TokenJsonParser();
+        TokenEntity tokenEntity = parser.parseTokenFromJson(selectTokenByEmail(tokenJson.getEmailUser()));
+
+        Session session = sessionFactory.openSession();
+        Transaction trans = session.beginTransaction();
+
+        if(!tokenJson.getToken().equals(""))
+            session.delete(tokenEntity);
+        trans.commit();
+
+        addToken(tokenJson);
+    }
+
+    @Override
+    public void deleteUser(Integer id) {
 
         Session session = sessionFactory.openSession();
         Transaction trans = session.beginTransaction();

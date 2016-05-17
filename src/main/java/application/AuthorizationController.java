@@ -69,7 +69,7 @@ public class AuthorizationController {
     public String deleteUser(@Param(value="id") Integer id) {
 
         UserDAOService userService = new UserDAOService();
-        userService.delete(id);
+        userService.deleteUser(id);
 
         return new GsonBuilder().create().toJson(new JSONObject(new HashMap<String, Object>()));
     }
