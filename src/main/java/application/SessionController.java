@@ -83,7 +83,6 @@ public class SessionController {
 
 	@RequestMapping(method=RequestMethod.GET, value="/alltokens")
 	public String getTokens() {
-
 		UserDAOService userDAOService = new UserDAOService();
 
 		return new GsonBuilder().create().toJson(userDAOService.selectAllTokens());
