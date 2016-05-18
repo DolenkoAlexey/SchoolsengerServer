@@ -27,8 +27,8 @@
       <file leaf-file-name="SessionController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/application/SessionController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.66027874">
-              <caret line="64" column="49" selection-start-line="64" selection-start-column="49" selection-end-line="64" selection-end-column="49" />
+            <state vertical-scroll-proportion="0.39372823">
+              <caret line="70" column="54" selection-start-line="70" selection-start-column="54" selection-end-line="70" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#getTokens#0;class#SessionController#0" expanded="false" />
@@ -1286,8 +1286,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/application/SessionController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.66027874">
-          <caret line="64" column="49" selection-start-line="64" selection-start-column="49" selection-end-line="64" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.39372823">
+          <caret line="70" column="54" selection-start-line="70" selection-start-column="54" selection-end-line="70" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#getTokens#0;class#SessionController#0" expanded="false" />
