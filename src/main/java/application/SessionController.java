@@ -55,7 +55,7 @@ public class SessionController {
 
         TokenDAO tokenDAOService = new TokenDAOService();
         //final String notificationToken = tokenDAOService.selectTokenByIdTo(messageJson.getIdFrom()).getToken();
-        final String notificationToken = "eyOXNFgxpoY:APA91bE-KrXSYVt_wL6bYr0LVEDbEFDYHVpqdf17HOVoVBQ8LGZzMXluuHCRCrTG2eK956avdp5YnNjgd9R-HyTr1uweoR3u1MXaAYTJ4n2BhaaayHC6QMaToojO2rvfVYWd2yArEPLK";
+        final String notificationToken = "eyOXNFgxpoY:APA91bFCsclpUpP6zTw6zH1bS1n2aoYSQe5NB2vLMEdpy1pq-OK4vgnrtxiyKHZSJqmYt31ObK2lFlN9Gj25gL34ZI7hhxFakMiNiemo3QUNjWC3BnokuRSeKEWRoz0YBuAtGDDRwrf-";
         Sender sender = new Sender(GCM_API_KEY);
         Message msg = new Message.Builder()
                 .addData("message", messageJson.getMessageString())
