@@ -54,7 +54,8 @@ public class SessionController {
         final int retries = 3;
 
         TokenDAO tokenDAOService = new TokenDAOService();
-        final String notificationToken = tokenDAOService.selectTokenByIdTo(messageJson.getIdFrom()).getToken();
+        //final String notificationToken = tokenDAOService.selectTokenByIdTo(messageJson.getIdFrom()).getToken();
+        final String notificationToken = "sad";
         Sender sender = new Sender(GCM_API_KEY);
         Message msg = new Message.Builder()
                 .addData("message", messageJson.getMessageString())
