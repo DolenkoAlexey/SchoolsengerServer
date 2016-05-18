@@ -27,10 +27,15 @@
       <file leaf-file-name="SessionController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/application/SessionController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.39372823">
-              <caret line="70" column="54" selection-start-line="70" selection-start-column="54" selection-end-line="70" selection-end-column="54" />
+            <state vertical-scroll-proportion="0.1445993">
+              <caret line="52" column="76" selection-start-line="52" selection-start-column="76" selection-end-line="52" selection-end-column="76" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#getInterlocutors#0;class#SessionController#0" expanded="false" />
+                <element signature="method#getMessages#0;class#SessionController#0" expanded="false" />
+                <element signature="method#getDialog#0;class#SessionController#0" expanded="false" />
+                <element signature="method#setToken#0;class#SessionController#0" expanded="false" />
+                <element signature="method#refreshToken#0;class#SessionController#0" expanded="false" />
                 <element signature="method#getTokens#0;class#SessionController#0" expanded="false" />
                 <element signature="method#getTokenByEmail#0;class#SessionController#0" expanded="false" />
               </folding>
@@ -1215,14 +1220,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/application/AuthorizationController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="75" selection-start-line="39" selection-start-column="75" selection-end-line="39" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/json/messagesJson/MessageJson.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1284,12 +1281,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/AuthorizationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="39" column="75" selection-start-line="39" selection-start-column="75" selection-end-line="39" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/application/SessionController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39372823">
-          <caret line="70" column="54" selection-start-line="70" selection-start-column="54" selection-end-line="70" selection-end-column="54" />
+        <state vertical-scroll-proportion="0.1445993">
+          <caret line="52" column="76" selection-start-line="52" selection-start-column="76" selection-end-line="52" selection-end-column="76" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#getInterlocutors#0;class#SessionController#0" expanded="false" />
+            <element signature="method#getMessages#0;class#SessionController#0" expanded="false" />
+            <element signature="method#getDialog#0;class#SessionController#0" expanded="false" />
+            <element signature="method#setToken#0;class#SessionController#0" expanded="false" />
+            <element signature="method#refreshToken#0;class#SessionController#0" expanded="false" />
             <element signature="method#getTokens#0;class#SessionController#0" expanded="false" />
             <element signature="method#getTokenByEmail#0;class#SessionController#0" expanded="false" />
           </folding>

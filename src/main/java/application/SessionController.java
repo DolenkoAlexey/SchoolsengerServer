@@ -50,19 +50,14 @@ public class SessionController {
 	}
 
     private void sendToInterlocutor(MessageJson messageJson){
-        final String GCM_API_KEY = "AIzaSyD6LC8_kHtzPfVSlf39pKl5wyKQfzAI7bQ";
+        final String GCM_API_KEY = "ab7283c8f1b13bf91b0b92020f9d73dc4d240807";
         final int retries = 3;
 
         TokenDAO tokenDAOService = new TokenDAOService();
-        //final String notificationToken = tokenDAOService.selectTokenByIdTo(messageJson.getIdFrom()).getToken();
-        final String notificationToken = "eyOXNFgxpoY:APA91bE-KrXSYVt_wL6bYr0LVEDbEFDYHVpqdf17HOVoVBQ8LGZzMXluuHCRCrTG2eK956avdp5YnNjgd9R-HyTr1uweoR3u1MXaAYTJ4n2BhaaayHC6QMaToojO2rvfVYWd2yArEPLK";
+        final String notificationToken = tokenDAOService.selectTokenByIdTo(messageJson.getIdFrom()).getToken();
         Sender sender = new Sender(GCM_API_KEY);
-//        Message msg = new Message.Builder()
-//                .addData("message", messageJson.getMessageString())
-//                .build();
-
         Message msg = new Message.Builder()
-                .addData("message", "hello!!!!!!!")
+                .addData("message", messageJson.getMessageString())
                 .build();
 
         try {
