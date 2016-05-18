@@ -50,7 +50,7 @@ public class SessionController {
 	}
 
     private void sendToInterlocutor(MessageJson messageJson){
-        final String GCM_API_KEY = "AIzaSyCVM3MmzcvwoUvgIekhfozOWzGCD-LIzCo";
+        final String GCM_API_KEY = "AIzaSyBzoxTdQPDMZsrqXSUv8_gp4U-Stu9Ix8U";
         final int retries = 3;
 
         TokenDAO tokenDAOService = new TokenDAOService();
