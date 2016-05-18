@@ -61,6 +61,7 @@ public class SessionController {
                 .addData("message", messageJson.getMessageString())
                 .build();
 
+        
         try {
             Result result = sender.send(msg, notificationToken, retries);
 //            if (StringUtils.isEmpty(result.getErrorCodeName())) {
