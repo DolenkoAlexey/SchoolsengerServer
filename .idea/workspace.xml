@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="588a524f-6d5b-40ef-a981-4091511ed350" name="Default" comment="" />
+    <list default="true" id="588a524f-6d5b-40ef-a981-4091511ed350" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/application/SessionController.java" afterPath="$PROJECT_DIR$/src/main/java/application/SessionController.java" />
+    </list>
     <ignored path="SchoolsengerServer.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -25,8 +27,8 @@
       <file leaf-file-name="SessionController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/application/SessionController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44076654">
-              <caret line="59" column="43" selection-start-line="59" selection-start-column="43" selection-end-line="59" selection-end-column="43" />
+            <state vertical-scroll-proportion="0.3815331">
+              <caret line="57" column="194" selection-start-line="57" selection-start-column="194" selection-end-line="57" selection-end-column="194" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#getInterlocutors#0;class#SessionController#0" expanded="false" />
@@ -1297,8 +1299,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/application/SessionController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44076654">
-          <caret line="59" column="43" selection-start-line="59" selection-start-column="43" selection-end-line="59" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.3815331">
+          <caret line="57" column="194" selection-start-line="57" selection-start-column="194" selection-end-line="57" selection-end-column="194" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#getInterlocutors#0;class#SessionController#0" expanded="false" />
