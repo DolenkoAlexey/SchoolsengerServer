@@ -69,7 +69,7 @@ public class SessionController {
         } catch (InvalidRequestException e) {
             throw new RuntimeException(e.getMessage());
         } catch (IOException e) {
-            throw new RuntimeException(e.getMessage());
+            e.printStackTrace();
         }
     }
 
