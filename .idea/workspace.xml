@@ -27,8 +27,8 @@
       <file leaf-file-name="SessionController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/application/SessionController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4965157">
-              <caret line="49" column="66" selection-start-line="49" selection-start-column="66" selection-end-line="49" selection-end-column="66" />
+            <state vertical-scroll-proportion="0.73344946">
+              <caret line="57" column="94" selection-start-line="57" selection-start-column="94" selection-end-line="57" selection-end-column="94" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#getInterlocutors#0;class#SessionController#0" expanded="false" />
@@ -66,10 +66,20 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/service/dao/TokenDAO.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+              <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TokenJson.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/json/TokenJson.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -78,7 +88,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/service/dao/TokenDAOService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="103" column="28" selection-start-line="103" selection-start-column="16" selection-end-line="103" selection-end-column="28" />
+              <caret line="78" column="69" selection-start-line="78" selection-start-column="69" selection-end-line="78" selection-end-column="69" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#addToken#0;class#TokenDAOService#0" expanded="false" />
@@ -112,27 +122,6 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TokenEntity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/entities/TokenEntity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
-              <folding>
-                <element signature="e#402#403#0" expanded="true" />
-                <element signature="e#430#431#0" expanded="true" />
-                <element signature="e#472#473#0" expanded="true" />
-                <element signature="e#506#507#0" expanded="true" />
-                <element signature="e#625#626#0" expanded="true" />
-                <element signature="e#667#668#0" expanded="true" />
-                <element signature="e#694#695#0" expanded="true" />
-                <element signature="e#719#720#0" expanded="true" />
-                <element signature="e#752#753#0" expanded="true" />
-                <element signature="e#780#781#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -1185,14 +1174,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/json/TokenJson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/entities/TokenEntity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1268,10 +1249,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/json/TokenJson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/service/dao/TokenDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1281,7 +1270,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/service/dao/TokenDAOService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="103" column="28" selection-start-line="103" selection-start-column="16" selection-end-line="103" selection-end-column="28" />
+          <caret line="78" column="69" selection-start-line="78" selection-start-column="69" selection-end-line="78" selection-end-column="69" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#addToken#0;class#TokenDAOService#0" expanded="false" />
@@ -1292,8 +1281,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/application/SessionController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4965157">
-          <caret line="49" column="66" selection-start-line="49" selection-start-column="66" selection-end-line="49" selection-end-column="66" />
+        <state vertical-scroll-proportion="0.73344946">
+          <caret line="57" column="94" selection-start-line="57" selection-start-column="94" selection-end-line="57" selection-end-column="94" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#getInterlocutors#0;class#SessionController#0" expanded="false" />
