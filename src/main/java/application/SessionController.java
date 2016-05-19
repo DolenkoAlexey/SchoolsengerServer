@@ -45,7 +45,6 @@ public class SessionController {
         messageService.add(parser.parseMessageFromJson(messageJson));
 
         sendToInterlocutor(messageJson);
-
 		return new GsonBuilder().create().toJson(new JSONObject(new HashMap<String, Object>()));
 	}
 
@@ -54,8 +53,7 @@ public class SessionController {
         final int retries = 3;
 
         TokenDAO tokenDAOService = new TokenDAOService();
-        //final String notificationToken = tokenDAOService.selectTokenByIdTo(messageJson.getIdFrom()).getToken();
-        final String notificationToken = "cc-eq03CKEs:APA91bGReoTmxLtnrS_64pB3ZJNwoIKmI-rW3fYZBSix1dIMrLAdkxyPDBAuv5jrBLUAS3cyl6y4JQCkzzKdDSKmFK8IqNc3_SLQivU-NWBwADJUbiqhu_gFho0cBELaJMaqoYMs6sOh";
+        final String notificationToken = tokenDAOService.selectTokenByIdTo(messageJson.getIdFrom()).getToken();
         Sender sender = new Sender(GCM_API_KEY);
         Message msg = new Message.Builder()
                 .addData("message", messageJson.getMessageString())
@@ -78,6 +76,7 @@ public class SessionController {
 
         MessageDAO messageService = new MessageDAOService();
 
+        new TokenDAOService().deleteTokens();
         return new GsonBuilder().create().toJson(messageService.selectAll());
     }
 

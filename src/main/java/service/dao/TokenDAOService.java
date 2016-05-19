@@ -99,4 +99,19 @@ public class TokenDAOService implements TokenDAO {
 
         addToken(tokenJson);
     }
+
+    @Override
+    public void deleteTokens() {
+        Session session = sessionFactory.openSession();
+        Transaction trans = session.beginTransaction();
+        TokenJsonParser parser = new TokenJsonParser();
+
+        Query query = session.createQuery("FROM TokenEntity");
+
+        for (TokenEntity tokenEntity : (List<TokenEntity>)query.list()){
+            session.delete(tokenEntity);
+        }
+
+        trans.commit();
+    }
 }

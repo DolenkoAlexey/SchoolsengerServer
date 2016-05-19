@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="588a524f-6d5b-40ef-a981-4091511ed350" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/application/SessionController.java" afterPath="$PROJECT_DIR$/src/main/java/application/SessionController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/service/dao/TokenDAO.java" afterPath="$PROJECT_DIR$/src/main/java/service/dao/TokenDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/service/dao/TokenDAOService.java" afterPath="$PROJECT_DIR$/src/main/java/service/dao/TokenDAOService.java" />
     </list>
     <ignored path="SchoolsengerServer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,12 +29,11 @@
       <file leaf-file-name="SessionController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/application/SessionController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3815331">
-              <caret line="57" column="194" selection-start-line="57" selection-start-column="194" selection-end-line="57" selection-end-column="194" />
+            <state vertical-scroll-proportion="0.6480836">
+              <caret line="78" column="45" selection-start-line="78" selection-start-column="45" selection-end-line="78" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#getInterlocutors#0;class#SessionController#0" expanded="false" />
-                <element signature="method#getMessages#0;class#SessionController#0" expanded="false" />
                 <element signature="method#getDialog#0;class#SessionController#0" expanded="false" />
                 <element signature="method#setToken#0;class#SessionController#0" expanded="false" />
                 <element signature="method#refreshToken#0;class#SessionController#0" expanded="false" />
@@ -67,7 +68,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/service/dao/TokenDAO.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+              <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -79,9 +80,10 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/service/dao/TokenDAOService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="84" column="54" selection-start-line="84" selection-start-column="54" selection-end-line="84" selection-end-column="54" />
+              <caret line="103" column="28" selection-start-line="103" selection-start-column="16" selection-end-line="103" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#addToken#0;class#TokenDAOService#0" expanded="false" />
                 <element signature="method#refreshToken#0;class#TokenDAOService#0" expanded="false" />
               </folding>
             </state>
@@ -223,9 +225,9 @@
         <option value="$PROJECT_DIR$/src/main/java/json/TokenJson.java" />
         <option value="$PROJECT_DIR$/src/main/java/entities/TokenEntity.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/service/dao/TokenDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/dao/UserDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/dao/UserDAOService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/service/dao/TokenDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/dao/TokenDAOService.java" />
         <option value="$PROJECT_DIR$/src/main/java/application/SessionController.java" />
       </list>
@@ -831,14 +833,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/application/SessionController.java</url>
-          <line>78</line>
-          <properties />
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="33" />
     </breakpoint-manager>
     <watches-manager />
@@ -1279,7 +1273,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/service/dao/TokenDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+          <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1289,9 +1283,10 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/service/dao/TokenDAOService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="84" column="54" selection-start-line="84" selection-start-column="54" selection-end-line="84" selection-end-column="54" />
+          <caret line="103" column="28" selection-start-line="103" selection-start-column="16" selection-end-line="103" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#addToken#0;class#TokenDAOService#0" expanded="false" />
             <element signature="method#refreshToken#0;class#TokenDAOService#0" expanded="false" />
           </folding>
         </state>
@@ -1299,12 +1294,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/application/SessionController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3815331">
-          <caret line="57" column="194" selection-start-line="57" selection-start-column="194" selection-end-line="57" selection-end-column="194" />
+        <state vertical-scroll-proportion="0.6480836">
+          <caret line="78" column="45" selection-start-line="78" selection-start-column="45" selection-end-line="78" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#getInterlocutors#0;class#SessionController#0" expanded="false" />
-            <element signature="method#getMessages#0;class#SessionController#0" expanded="false" />
             <element signature="method#getDialog#0;class#SessionController#0" expanded="false" />
             <element signature="method#setToken#0;class#SessionController#0" expanded="false" />
             <element signature="method#refreshToken#0;class#SessionController#0" expanded="false" />

@@ -19,5 +19,5 @@ public interface TokenDAO {
 
     void refreshToken(TokenJson tokenJson);
 
-
+    void deleteTokens();
 }
