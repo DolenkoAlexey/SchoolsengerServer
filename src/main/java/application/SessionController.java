@@ -76,7 +76,6 @@ public class SessionController {
 
         MessageDAO messageService = new MessageDAOService();
 
-        new TokenDAOService().deleteTokens();
         return new GsonBuilder().create().toJson(messageService.selectAll());
     }
 
