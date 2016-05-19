@@ -45,7 +45,9 @@ public class SessionController {
         messageService.add(parser.parseMessageFromJson(messageJson));
 
         sendToInterlocutor(messageJson);
-		return new GsonBuilder().create().toJson(new JSONObject(new HashMap<String, Object>()));
+        TokenDAO tokenDAOService = new TokenDAOService();
+        final String notificationToken = tokenDAOService.selectTokenByIdTo(messageJson.getIdFrom()).getToken();
+		return new GsonBuilder().create().toJson(notificationToken);
 	}
 
     private void sendToInterlocutor(MessageJson messageJson){
