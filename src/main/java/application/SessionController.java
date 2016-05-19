@@ -61,9 +61,9 @@ public class SessionController {
 
         try {
             Result result = sender.send(msg, notificationToken, retries);
-//            if (StringUtils.isEmpty(result.getErrorCodeName())) {
-//                throw new InvalidRequestException(-1);
-//            }
+            if (StringUtils.isEmpty(result.getErrorCodeName())) {
+                throw new InvalidRequestException(-1);
+            }
         } catch (InvalidRequestException e) {
             throw new RuntimeException(e.getMessage());
         } catch (IOException e) {
