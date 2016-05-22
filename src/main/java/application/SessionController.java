@@ -8,7 +8,6 @@ import com.google.android.gcm.server.Result;
 import com.google.android.gcm.server.Sender;
 import json.TokenJson;
 import json.messagesJson.MessageJson;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 import com.google.gson.GsonBuilder;
@@ -33,7 +32,7 @@ public class SessionController {
 		
 		List<Integer> idsTo = messageService.selectIdsToByIdFrom(idFrom);
 
-		return new GsonBuilder().create().toJson(userService.getUsersDataListByIds(idsTo));
+		return new GsonBuilder().create().toJson(userService.getUsersDataMapByIds(idsTo));
 	}
 
 	@RequestMapping(method=RequestMethod.POST, value="/message")
@@ -118,5 +117,13 @@ public class SessionController {
         TokenDAO tokenDAOService = new TokenDAOService();
 
         return new GsonBuilder().create().toJson(tokenDAOService.selectTokenByEmail(emailUser));
+    }
+
+    @RequestMapping(method=RequestMethod.GET, value="/byusername")
+    public String getUsersDataByUsername(@RequestParam(value="username") String username) {
+
+        UserDAO userDAOService = new UserDAOService();
+
+        return new GsonBuilder().create().toJson(userDAOService.getUsersDataMapByUsername(username));
     }
 }

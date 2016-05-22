@@ -19,6 +19,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.neo4j.cypher.internal.compiler.v2_0.ast.In;
 import org.springframework.transaction.annotation.Transactional;
 
 import json.userJson.UsersMapJson;
@@ -194,7 +195,7 @@ public class UserDAOService implements UserDAO {
 	}
 
 	@Override
-	public UsersDataMapJson getUsersDataListByIds(List<Integer> ids) {
+	public UsersDataMapJson getUsersDataMapByIds(List<Integer> ids) {
 		List<SchoolkidsDataJson> schoolkidsDataJsons = new ArrayList();
         List<TeachersDataJson> teachersDataJsons = new ArrayList();
         List<SuperadminsDataJson> superadminsDataJsons = new ArrayList();
@@ -221,6 +222,30 @@ public class UserDAOService implements UserDAO {
 
 		return new UsersDataMapJson(usersData);
 	}
+
+    @Override
+    public UsersDataMapJson getUsersDataMapByUsername(String username) {
+        Session session = sessionFactory.openSession();
+        Transaction trans = session.beginTransaction();
+
+        List<Integer> schoolkids = (List<Integer>)  session.createQuery("SELECT id FROM " +
+                "SchoolkidEntity WHERE username = '" + username + "'");
+
+        List<Integer> teachers = (List<Integer>)  session.createQuery("SELECT id FROM " +
+                "TeacherEntity WHERE username = '" + username + "'");
+
+        List<Integer> superadmins = (List<Integer>) session.createQuery("SELECT id FROM " +
+                "SuperadminEntity WHERE username = '" + username + "'");
+
+        trans.commit();
+
+        List<Integer> all = new ArrayList<>();
+        all.addAll(schoolkids);
+        all.addAll(teachers);
+        all.addAll(superadmins);
+
+        return getUsersDataMapByIds(all);
+    }
 
     @Override
     public void deleteUser(Integer id) {

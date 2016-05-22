@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="588a524f-6d5b-40ef-a981-4091511ed350" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/application/SessionController.java" afterPath="$PROJECT_DIR$/src/main/java/application/SessionController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/modeles/Chat.java" afterPath="$PROJECT_DIR$/src/main/java/modeles/Chat.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/service/dao/UserDAO.java" afterPath="$PROJECT_DIR$/src/main/java/service/dao/UserDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/service/dao/UserDAOService.java" afterPath="$PROJECT_DIR$/src/main/java/service/dao/UserDAOService.java" />
     </list>
     <ignored path="SchoolsengerServer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,19 +27,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SessionController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SessionController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/application/SessionController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="120" column="5" selection-start-line="120" selection-start-column="5" selection-end-line="120" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.7667239">
+              <caret line="126" column="101" selection-start-line="126" selection-start-column="101" selection-end-line="126" selection-end-column="101" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#getInterlocutors#0;class#SessionController#0" expanded="false" />
+                <element signature="method#addMessage#0;class#SessionController#0" expanded="false" />
+                <element signature="method#sendToInterlocutor#0;class#SessionController#0" expanded="false" />
                 <element signature="method#getDialog#0;class#SessionController#0" expanded="false" />
                 <element signature="method#setToken#0;class#SessionController#0" expanded="false" />
                 <element signature="method#refreshToken#0;class#SessionController#0" expanded="false" />
                 <element signature="method#getTokens#0;class#SessionController#0" expanded="false" />
-                <element signature="method#getTokenByEmail#0;class#SessionController#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserDAOService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/service/dao/UserDAOService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="244" column="32" selection-start-line="244" selection-start-column="32" selection-end-line="244" selection-end-column="32" />
+              <folding>
+                <element signature="method#selectAll#0;class#UserDAOService#0" expanded="false" />
+                <element signature="method#selectUserById#0;class#UserDAOService#0" expanded="false" />
+                <element signature="method#getUserMapJson#0;class#UserDAOService#0" expanded="false" />
+                <element signature="method#addUser#0;class#UserDAOService#0" expanded="false" />
+                <element signature="method#addUser#1;class#UserDAOService#0" expanded="false" />
+                <element signature="method#selectUsersDataById#0;class#UserDAOService#0" expanded="false" />
+                <element signature="method#getUsersDataMapByIds#0;class#UserDAOService#0" expanded="false" />
+                <element signature="method#deleteUser#0;class#UserDAOService#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -46,32 +69,32 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/service/dao/UserDAO.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <caret line="27" column="36" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Chat.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Chat.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/modeles/Chat.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.34991422">
-              <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding>
-                <element signature="e#381#382#0" expanded="true" />
-                <element signature="e#414#415#0" expanded="true" />
-                <element signature="e#444#445#0" expanded="true" />
-                <element signature="e#469#470#0" expanded="true" />
-                <element signature="e#506#507#0" expanded="true" />
-                <element signature="e#534#535#0" expanded="true" />
-                <element signature="e#565#566#0" expanded="true" />
-                <element signature="e#592#593#0" expanded="true" />
-                <element signature="e#632#633#0" expanded="true" />
-                <element signature="e#664#665#0" expanded="true" />
-                <element signature="e#702#703#0" expanded="true" />
-                <element signature="e#732#733#0" expanded="true" />
-                <element signature="e#782#783#0" expanded="true" />
-                <element signature="e#820#821#0" expanded="true" />
+                <element signature="e#377#378#0" expanded="true" />
+                <element signature="e#410#411#0" expanded="true" />
+                <element signature="e#440#441#0" expanded="true" />
+                <element signature="e#465#466#0" expanded="true" />
+                <element signature="e#502#503#0" expanded="true" />
+                <element signature="e#530#531#0" expanded="true" />
+                <element signature="e#561#562#0" expanded="true" />
+                <element signature="e#588#589#0" expanded="true" />
+                <element signature="e#628#629#0" expanded="true" />
+                <element signature="e#660#661#0" expanded="true" />
+                <element signature="e#698#699#0" expanded="true" />
+                <element signature="e#728#729#0" expanded="true" />
+                <element signature="e#778#779#0" expanded="true" />
+                <element signature="e#816#817#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -107,33 +130,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Superadmin.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/modeles/Superadmin.java">
+      <file leaf-file-name="AuthorizationController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/application/AuthorizationController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="5" column="66" selection-start-line="5" selection-start-column="66" selection-end-line="5" selection-end-column="66" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TokenDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/service/dao/TokenDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+              <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="method#getAll#0;class#AuthorizationController#0" expanded="false" />
+                <element signature="method#getUserByEmail#0;class#AuthorizationController#0" expanded="false" />
+                <element signature="method#addUser#0;class#AuthorizationController#0" expanded="false" />
+                <element signature="method#addUser#1;class#AuthorizationController#0" expanded="false" />
+                <element signature="method#deleteUser#0;class#AuthorizationController#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TokenJson.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/json/TokenJson.java">
+      <file leaf-file-name="Superadmin.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/modeles/Superadmin.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <caret line="5" column="66" selection-start-line="5" selection-start-column="66" selection-end-line="5" selection-end-column="66" />
               <folding />
             </state>
           </provider>
@@ -218,12 +235,12 @@
         <option value="$PROJECT_DIR$/src/main/java/json/TokenJson.java" />
         <option value="$PROJECT_DIR$/src/main/java/entities/TokenEntity.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/service/dao/UserDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/service/dao/UserDAOService.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/dao/TokenDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/dao/TokenDAOService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/application/SessionController.java" />
         <option value="$PROJECT_DIR$/src/main/java/modeles/Chat.java" />
+        <option value="$PROJECT_DIR$/src/main/java/service/dao/UserDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/service/dao/UserDAOService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/application/SessionController.java" />
       </list>
     </option>
   </component>
@@ -1246,30 +1263,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/dao/UserDAOService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="76" column="34" selection-start-line="76" selection-start-column="20" selection-end-line="76" selection-end-column="34" />
-          <folding>
-            <element signature="method#selectAll#0;class#UserDAOService#0" expanded="false" />
-            <element signature="method#selectUserById#0;class#UserDAOService#0" expanded="false" />
-            <element signature="method#getUserMapJson#0;class#UserDAOService#0" expanded="false" />
-            <element signature="method#addUser#0;class#UserDAOService#0" expanded="false" />
-            <element signature="method#addUser#1;class#UserDAOService#0" expanded="false" />
-            <element signature="method#getUsersDataListByIds#0;class#UserDAOService#0" expanded="false" />
-            <element signature="method#deleteUser#0;class#UserDAOService#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/application/AuthorizationController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="75" selection-start-line="39" selection-start-column="75" selection-end-line="39" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/json/TokenJson.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1297,14 +1290,6 @@
             <element signature="method#addToken#0;class#TokenDAOService#0" expanded="false" />
             <element signature="method#refreshToken#0;class#TokenDAOService#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/dao/UserDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1340,41 +1325,81 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/application/SessionController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/modeles/Chat.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="120" column="5" selection-start-line="120" selection-start-column="5" selection-end-line="120" selection-end-column="5" />
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getInterlocutors#0;class#SessionController#0" expanded="false" />
-            <element signature="method#getDialog#0;class#SessionController#0" expanded="false" />
-            <element signature="method#setToken#0;class#SessionController#0" expanded="false" />
-            <element signature="method#refreshToken#0;class#SessionController#0" expanded="false" />
-            <element signature="method#getTokens#0;class#SessionController#0" expanded="false" />
-            <element signature="method#getTokenByEmail#0;class#SessionController#0" expanded="false" />
+            <element signature="e#377#378#0" expanded="true" />
+            <element signature="e#410#411#0" expanded="true" />
+            <element signature="e#440#441#0" expanded="true" />
+            <element signature="e#465#466#0" expanded="true" />
+            <element signature="e#502#503#0" expanded="true" />
+            <element signature="e#530#531#0" expanded="true" />
+            <element signature="e#561#562#0" expanded="true" />
+            <element signature="e#588#589#0" expanded="true" />
+            <element signature="e#628#629#0" expanded="true" />
+            <element signature="e#660#661#0" expanded="true" />
+            <element signature="e#698#699#0" expanded="true" />
+            <element signature="e#728#729#0" expanded="true" />
+            <element signature="e#778#779#0" expanded="true" />
+            <element signature="e#816#817#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/modeles/Chat.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/AuthorizationController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34991422">
-          <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
           <folding>
-            <element signature="e#381#382#0" expanded="true" />
-            <element signature="e#414#415#0" expanded="true" />
-            <element signature="e#444#445#0" expanded="true" />
-            <element signature="e#469#470#0" expanded="true" />
-            <element signature="e#506#507#0" expanded="true" />
-            <element signature="e#534#535#0" expanded="true" />
-            <element signature="e#565#566#0" expanded="true" />
-            <element signature="e#592#593#0" expanded="true" />
-            <element signature="e#632#633#0" expanded="true" />
-            <element signature="e#664#665#0" expanded="true" />
-            <element signature="e#702#703#0" expanded="true" />
-            <element signature="e#732#733#0" expanded="true" />
-            <element signature="e#782#783#0" expanded="true" />
-            <element signature="e#820#821#0" expanded="true" />
+            <element signature="method#getAll#0;class#AuthorizationController#0" expanded="false" />
+            <element signature="method#getUserByEmail#0;class#AuthorizationController#0" expanded="false" />
+            <element signature="method#addUser#0;class#AuthorizationController#0" expanded="false" />
+            <element signature="method#addUser#1;class#AuthorizationController#0" expanded="false" />
+            <element signature="method#deleteUser#0;class#AuthorizationController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/dao/UserDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="36" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/dao/UserDAOService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="244" column="32" selection-start-line="244" selection-start-column="32" selection-end-line="244" selection-end-column="32" />
+          <folding>
+            <element signature="method#selectAll#0;class#UserDAOService#0" expanded="false" />
+            <element signature="method#selectUserById#0;class#UserDAOService#0" expanded="false" />
+            <element signature="method#getUserMapJson#0;class#UserDAOService#0" expanded="false" />
+            <element signature="method#addUser#0;class#UserDAOService#0" expanded="false" />
+            <element signature="method#addUser#1;class#UserDAOService#0" expanded="false" />
+            <element signature="method#selectUsersDataById#0;class#UserDAOService#0" expanded="false" />
+            <element signature="method#getUsersDataMapByIds#0;class#UserDAOService#0" expanded="false" />
+            <element signature="method#deleteUser#0;class#UserDAOService#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/application/SessionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7667239">
+          <caret line="126" column="101" selection-start-line="126" selection-start-column="101" selection-end-line="126" selection-end-column="101" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getInterlocutors#0;class#SessionController#0" expanded="false" />
+            <element signature="method#addMessage#0;class#SessionController#0" expanded="false" />
+            <element signature="method#sendToInterlocutor#0;class#SessionController#0" expanded="false" />
+            <element signature="method#getDialog#0;class#SessionController#0" expanded="false" />
+            <element signature="method#setToken#0;class#SessionController#0" expanded="false" />
+            <element signature="method#refreshToken#0;class#SessionController#0" expanded="false" />
+            <element signature="method#getTokens#0;class#SessionController#0" expanded="false" />
           </folding>
         </state>
       </provider>

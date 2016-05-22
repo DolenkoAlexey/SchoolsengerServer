@@ -23,7 +23,9 @@ public interface UserDAO {
 
 	UsersDataJson selectUsersDataById(Integer id);
 
-	UsersDataMapJson getUsersDataListByIds(List<Integer> ids);
+	UsersDataMapJson getUsersDataMapByIds(List<Integer> ids);
+
+    UsersDataMapJson getUsersDataMapByUsername(String username);
 
 	void addUser(Schoolkid schoolkid);
 
