@@ -229,13 +229,13 @@ public class UserDAOService implements UserDAO {
         Transaction trans = session.beginTransaction();
 
         List<Integer> schoolkids = (List<Integer>)  session.createQuery("SELECT id FROM " +
-                "SchoolkidEntity WHERE username = '" + username + "'");
+                "SchoolkidEntity WHERE username = '" + username + "'").list();
 
         List<Integer> teachers = (List<Integer>)  session.createQuery("SELECT id FROM " +
-                "TeacherEntity WHERE username = '" + username + "'");
+                "TeacherEntity WHERE username = '" + username + "'").list();
 
         List<Integer> superadmins = (List<Integer>) session.createQuery("SELECT id FROM " +
-                "SuperadminEntity WHERE username = '" + username + "'");
+                "SuperadminEntity WHERE username = '" + username + "'").list();
 
         trans.commit();
 
