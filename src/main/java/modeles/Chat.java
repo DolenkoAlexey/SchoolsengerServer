@@ -19,7 +19,6 @@ public class Chat {
     public void addMember(Schoolkid user){
         members.add(user);
     }
-    
 
     public Integer getId() {
         return id;
