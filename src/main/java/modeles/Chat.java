@@ -16,6 +16,7 @@ public class Chat {
         this.members = members;
     }
 
+    
     public void addMember(Schoolkid user){
         members.add(user);
     }
