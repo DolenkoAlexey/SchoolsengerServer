@@ -237,7 +237,6 @@ public class UserDAOService implements UserDAO {
         List<Integer> superadmins = (List<Integer>) session.createQuery("SELECT id FROM " +
                 "SuperadminEntity WHERE username = '" + username + "'").list();
 
-
         trans.commit();
 
         List<Integer> all = new ArrayList<>();
