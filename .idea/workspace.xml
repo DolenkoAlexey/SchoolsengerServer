@@ -46,8 +46,8 @@
       <file leaf-file-name="UserDAOService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/service/dao/UserDAOService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.38765007">
-              <caret line="237" column="79" selection-start-line="237" selection-start-column="79" selection-end-line="237" selection-end-column="79" />
+            <state vertical-scroll-proportion="0.41680962">
+              <caret line="238" column="8" selection-start-line="238" selection-start-column="8" selection-end-line="238" selection-end-column="8" />
               <folding>
                 <element signature="method#selectAll#0;class#UserDAOService#0" expanded="false" />
                 <element signature="method#selectUserById#0;class#UserDAOService#0" expanded="false" />
@@ -1386,8 +1386,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/service/dao/UserDAOService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38765007">
-          <caret line="237" column="79" selection-start-line="237" selection-start-column="79" selection-end-line="237" selection-end-column="79" />
+        <state vertical-scroll-proportion="0.41680962">
+          <caret line="238" column="8" selection-start-line="238" selection-start-column="8" selection-end-line="238" selection-end-column="8" />
           <folding>
             <element signature="method#selectAll#0;class#UserDAOService#0" expanded="false" />
             <element signature="method#selectUserById#0;class#UserDAOService#0" expanded="false" />
